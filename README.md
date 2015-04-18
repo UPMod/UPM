@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://i.imgur.com/WLSUYM2.png" />
+  <img src="http://i.imgur.com/daXMVci.png" />
 </p>
 <p align="center"><sup><strong>Requires the latest version of <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://forums.bistudio.com/showthread.php?181348-WIP-Urban-Patrol-Modification">BIF thread</a></strong></sup></p>
 
