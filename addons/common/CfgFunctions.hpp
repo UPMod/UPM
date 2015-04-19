@@ -4,10 +4,10 @@ class CfgFunctions
 	{
 		class ADDON
 		{
-			// upm_fnc_getArguments
-			class getArguments
+			// upm_fnc_arrStrToUpper
+			class arrStrToUpper
 			{
-				file = PATHF(getArguments);
+				file = PATHF(arrStrToUpper);
 			};
 		};
 	};
