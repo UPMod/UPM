@@ -1,0 +1,12 @@
+version = "1.0";
+picture = "UPM.paa";
+actionName = "GitHub";
+action = "https://github.com/upmod/UPM";
+description = "UPM - Version 0.0.1";
+logo = "UPM.paa";
+logoOver = "UPM.paa";
+tooltip = "Urban Patrol Modification";
+tooltipOwned = "Urban Patrol Modification Owned";
+overview = "UPM is a mod for Arma 3 to improve the control, behaviour, control and realism of AI.";
+author = "UPM Team";
+overviewPicture = "UPM.paa";
