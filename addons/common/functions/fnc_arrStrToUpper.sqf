@@ -22,11 +22,11 @@ Returns:
 
 #include "script_component.hpp";
 
+PARAMS_1(_params);
+
 private ["_args"];
 
 _args = [];
-
-PARAMS_1(_params);
 
 for [{ _i = 0 },{ _i < count _params },{ _i = _i + 1 }] do {
 	_e =_params select _i;
