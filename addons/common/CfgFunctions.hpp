@@ -9,6 +9,11 @@ class CfgFunctions
 			{
 				file = PATHF(arrStrToUpper);
 			};
+			// upm_fnc_debug
+			class debug
+			{
+				file = PATHF(debug);
+			};
 		};
 	};
 };

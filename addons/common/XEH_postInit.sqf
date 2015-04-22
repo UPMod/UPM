@@ -17,3 +17,5 @@ if(isServer || {!hasInterface && !isDedicated}) then {
 if (!isServer && hasInterface ) exitWith {};
 
     diag_log "UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT AFTER EXITWITH";
+
+
