@@ -31,21 +31,21 @@ UPM
 #define PATHF_SUB(subFolder,fncName) QUOTE(PATHTOF(functions\subFolder\DOUBLES(fnc,fncName).sqf))
 
 /*
-	FUNCTIONS
-*/
-
-// NAME FUNCTION upm_fnc_yourfunction
-#define FUNC(var1) TRIPLES(PREFIX,fnc,var1)
-
-// NAME FUNCTION QUOTED "upm_fnc_yourfunction"
-#define QFUNC(var1) QUOTE(TRIPLES(PREFIX,fnc,var1))
-
-/*
 	VARIABLES
 */
 
+// GLOBAL VARIABLE: INTERNAL upm_currentmodule_var1
+// GVAR(var)	
+
+// GLOBAL VARIABLE: QUOTED INTERNAL "upm_currentmodule_var1"
+// QGVAR(var)	
+
+// GLOBAL VARIABLE: EXTERNAL MODULE upm_common_var1
 #define EGVAR(module,var) TRIPLES(PREFIX,module,var)
+
+// GLOBAL VARIABLE: QUOTED EXTERNAL MODULE "upm_common_var1"
 #define QEGVAR(module,var) QUOTE(EGVAR(module,var))
+
 
 #define GETVAR_SYS(var1,var2) getVariable [ARR_2(QUOTE(var1),var2)]
 #define SETVAR_SYS(var1,var2) setVariable [ARR_2(QUOTE(var1),var2)]
@@ -64,26 +64,25 @@ UPM
 #define SETPRVAR(var1,var2) profileNamespace SETVAR_SYS(var1,var2)
 #define SETPAVAR(var1,var2) parsingNamespace SETVAR_SYS(var1,var2)
 
+
 #define GETGVAR(var1,var2) GETMVAR(GVAR(var1),var2)
 #define GETEGVAR(var1,var2,var3) GETMVAR(EGVAR(var1,var2),var3)
+
+/*
+	FUNCTIONS
+*/
+
+// NAME FUNCTION upm_fnc_yourfunction
+#define FUNC(var1) TRIPLES(PREFIX,fnc,var1)
+
+// NAME FUNCTION QUOTED "upm_fnc_yourfunction"
+#define QFUNC(var1) QUOTE(TRIPLES(PREFIX,fnc,var1))
 
 /*
 	ARRAYS
 */
 
 #define ARR_SELECT(ARRAY,INDEX,DEFAULT) if (count ARRAY > INDEX) then {ARRAY select INDEX} else {DEFAULT}
-
-/*
-	COMPILING FILES
-*/
-
-#ifdef DISABLE_COMPILE_CACHE
-    #define PREP(fncName) DFUNC(fncName) = compile preprocessFileLineNumbers QUOTE(PATHTOF(functions\DOUBLES(fnc,fncName).sqf))
-#else
-    #define PREP(fncName) DFUNC(fncName) = QUOTE(PATHTOF(functions\DOUBLES(fnc,fncName).sqf)) call SLX_XEH_COMPILE
-#endif
-
-#define PREP_MODULE(folder) [] call compile preprocessFileLineNumbers QUOTE(PATHTOF(folder\__PREP__.sqf))
 
 
 /****************************************************************
