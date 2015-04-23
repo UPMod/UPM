@@ -557,9 +557,9 @@ class CfgMods {
         picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
         hidePicture = "false";
         hideName = "false";
-        actionName = "Website";
+        actionName = "GitHub";
         action = "https://github.com/upmod/UPM";
-        description = "test ";
+        description = "UPM - Version 0.0.1";
     };
 };
 

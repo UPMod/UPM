@@ -1,21 +1,41 @@
-// UPM - COMMON
+/****************************************************************
+
+Author(s):
+	oscarmolinadev
+
+File:
+	XEH_preInit.sqf
+
+Description:
+	Init global variables
+
+Performance:
+	0 ms
+
+Parameter(s):
+	NOTHING
+
+Returns:
+	NOTHING
+
+****************************************************************/
+
 #include "script_component.hpp"
 
 if (!hasInterface && !isDedicated) then {
-    diag_log "UPM: ONLY HEADLESS CLIENT";
+    ["UPM: ONLY HEADLESS CLIENT",0] call FUNC(debug);
 };
 
 if (isServer) then {
-    diag_log "UPM: SERVER OR PLAYER HOST";
+    ["UPM: SERVER OR PLAYER HOST",0] call FUNC(debug);
 };
 
 if(isServer || {!hasInterface && !isDedicated}) then {
-     diag_log "UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT";
+     ["UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT",0] call FUNC(debug);
 };
-
 
 if (!isServer && hasInterface ) exitWith {};
 
-    diag_log "UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT AFTER EXITWITH";
+	["UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT AFTER EXITWITH",0] call FUNC(debug);
 
 

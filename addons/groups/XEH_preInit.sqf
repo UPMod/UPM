@@ -1,7 +1,33 @@
+/****************************************************************
+
+Author(s):
+	oscarmolinadev
+
+File:
+	XEH_preInit.sqf
+
+Description:
+	Init global variables
+
+Performance:
+	0 ms
+
+Parameter(s):
+	NOTHING
+
+Returns:
+	NOTHING
+
+****************************************************************/
+
 #include "script_component.hpp"
 
-ADDON = false;
+if (!isServer && hasInterface ) exitWith {};
 
-//PREP(init);
+// upm_groups_all - Global variable of groups
+GVAR(all) = [];
+publicVariable QGVAR(all);
 
-ADDON = true;
+// upm_group_qtt - Global variable quantity
+GVAR(qtt) = 0;
+publicVariable QGVAR(qtt);

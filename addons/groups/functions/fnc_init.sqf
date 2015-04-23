@@ -39,7 +39,7 @@ _params = [_this] call FUNC(arrStrToUpper);
 
 // Check if exist min 2 parameters on init leader of group
 if ((count _params)<2) exitWith {
-	["Group/Unit and marker name have to be defined!",0] call FUNC(debug);
+	["Group/Unit and marker name have to be defined!",3] call FUNC(debug);
 };
 
 // Get group/unit
@@ -50,21 +50,25 @@ _grpLeader = leader(_object);
 
 // Check if is alive leader(group or unit)
 if !(alive _grpLeader) exitWith {
-	["This object isn't alive group or unit!",0] call FUNC(debug);
+	["This object isn't alive group or unit!",3] call FUNC(debug);
 };
 
 //TODO oscarmolinadev: Temporary! Future patrols have more one marker.
 //Get marker and check if exist
 _marker = toLower(_params select 1);
 if(markerType _marker == "") exitWith {
-	["Marker not exist!",0] call FUNC(debug);
+	["Marker not exist!",3] call FUNC(debug);
 };
 
 //
-[format["%1 initialize successfully!",_grpLeader],3] call FUNC(debug);
+[format["%1 minimum init successfully!",_grpLeader],0] call FUNC(debug);
 
 // INFORMATION GROUP -------------------------------------------- //
 //----------------------------------------------------------------//
+
+_grp = group _grpLeader;
+
+
 
 
 // INFORMATION MARKER ------------------------------------------- //

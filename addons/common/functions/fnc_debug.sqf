@@ -31,10 +31,10 @@ if !(IS_NUMBER(_level)) then {
 };
 
 _prefix = switch (_level) do {
-    case 0: { "UPM Error" };
+	case 0: { "UPM Info" };
     case 1: { "UPM Warn" };
     case 2: { "UPM Debug" };
-    case 3: { "UPM Info" };
+    case 3: { "UPM Error" };
     default { "UPM Unknown" };
 };
 
