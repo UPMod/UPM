@@ -4,7 +4,11 @@ class CfgFunctions
 	{
 		class ADDON
 		{
-
+			// upm_fnc_hideMarker
+			class hideMarker
+			{
+				file = PATHF(hideMarker);
+			};
 		};
 	};
 };

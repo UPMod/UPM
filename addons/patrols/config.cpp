@@ -9,7 +9,7 @@ class CfgPatches {
             "upm_common"
         };
         author[] = {"oscarmolinadev"};
-        authorUrl = "";
+        authorUrl = "https://github.com/upmod/UPM";
         versionDesc = "UPM";
         VERSION_CONFIG;
     };

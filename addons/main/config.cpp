@@ -544,7 +544,7 @@ class CfgPatches {
             "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3"
         };
         author[] = {"oscarmolinadev"};
-        authorUrl = "";
+        authorUrl = "https://github.com/upmod/UPM";
         versionDesc = "UPM";
         VERSION_CONFIG;
     };
@@ -554,7 +554,7 @@ class CfgMods {
     class PREFIX {
         dir = "@upm";
         name = "Urban Patrol Modification";
-        picture = "A3\Ui_f\data\Logos\arma3_expansion_alpha_ca";
+        picture = "u\upm\UPM";
         hidePicture = "false";
         hideName = "false";
         actionName = "GitHub";

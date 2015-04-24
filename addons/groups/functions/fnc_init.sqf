@@ -60,13 +60,19 @@ if(markerType _marker == "") exitWith {
 	["Marker not exist!",3] call FUNC(debug);
 };
 
-//
 [format["%1 minimum init successfully!",_grpLeader],0] call FUNC(debug);
 
 // INFORMATION GROUP -------------------------------------------- //
 //----------------------------------------------------------------//
 
+//
 _grp = group _grpLeader;
+
+//
+_grpPosition = getPosATL _grpLeader;
+
+//
+_grpDirection = getDir _grpLeader;
 
 
 
