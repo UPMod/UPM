@@ -8,7 +8,7 @@ class CfgPatches {
         requiredAddons[] = {
             "upm_common"
         };
-        author[] = {"oscarmolinadev"};
+        author[] = {"UPM Team"};
         authorUrl = "https://github.com/upmod/UPM";
         versionDesc = "UPM";
         VERSION_CONFIG;

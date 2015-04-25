@@ -543,7 +543,7 @@ class CfgPatches {
             "map_vr",
             "extended_eventhandlers", "CBA_UI", "CBA_XEH", "CBA_XEH_A3"
         };
-        author[] = {"oscarmolinadev"};
+        author[] = {"UPM Team"};
         authorUrl = "https://github.com/upmod/UPM";
         versionDesc = "UPM";
         VERSION_CONFIG;

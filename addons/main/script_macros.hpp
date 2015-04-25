@@ -24,10 +24,10 @@ UPM
 	PATHS
 */
 
-// PATH FUNCTION ROOT FOLDER "\functions\fnc_yourfunction.sqf"
+// PATH ROOT FUNCTIONS FOLDER "\functions\fnc_yourfunction.sqf"
 #define PATHF(fncName) QUOTE(PATHTOF(functions\DOUBLES(fnc,fncName).sqf)) 
 
-// PATH FUNCTION WITH SUBFOLDER "\functions\subfolder\fnc_yourfunction.sqf"
+// PATH ROOT FUNCTION WITH SUBFOLDER "\functions\subfolder\fnc_yourfunction.sqf"
 #define PATHF_SUB(subFolder,fncName) QUOTE(PATHTOF(functions\subFolder\DOUBLES(fnc,fncName).sqf))
 
 /*
