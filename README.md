@@ -45,7 +45,7 @@ oscarmolinadev (Lead developer)
 
 Cool=Azroul13 (Developer, UPSMON developer)
 
-## Colaborators
+## Collaborators
 
 
 ## Contributing
