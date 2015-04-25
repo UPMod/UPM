@@ -7,6 +7,9 @@
     <a href="https://github.com/upmod/UPM/issues/">
         <img src="https://img.shields.io/github/issues/upmod/UPM.svg" alt="UPM issues">
     </a>
+    <a href="http://forums.bistudio.com/showthread.php?181348-WIP-Urban-Patrol-Modification">
+        <img src="https://img.shields.io/badge/BIF-Thread-lightgrey.svg" alt="UPM thread">
+    </a>
     <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
         <img src="https://img.shields.io/badge/license-CC%20BY--NC--ND%203.0-blue.svg" alt="UPM license">
     </a>
