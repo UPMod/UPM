@@ -22,3 +22,4 @@ Returns:
 
 #include "script_component.hpp"
 
+//[QUOTE(PATHTOF(ui\ButtonTools.hpp)),2] call FUNC(debug);

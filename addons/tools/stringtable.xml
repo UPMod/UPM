@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UPM">
+  <Package name="Tools">
+      <Key ID="STR_UPM_Tools_Tools">
+      <English>UPM Debug / Spectator</English>
+      <German>UPM Debug / Spectator</German>
+      <Spanish>UPM Debug / Spectator</Spanish>
+      <Polish>UPM Debug / Spectator</Polish>
+      <Czech>UPM Debug / Spectator</Czech>
+      <French>UPM Debug / Spectator</French>
+      <Russian>UPM Debug / Spectator</Russian>
+      <Portuguese>UPM Debug / Spectator</Portuguese>
+      <Hungarian>UPM Debug / Spectator</Hungarian>
+      <Italian>UPM Debug / Spectator</Italian>
+    </Key>
+  </Package>
+</Project>
