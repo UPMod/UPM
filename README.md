@@ -52,4 +52,4 @@ Cool=Azroul13 (Developer, UPSMON developer)
 
 ## Contributing
 
-If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/oscarmolinadev/UPM/issues).
+If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/upmod/UPM/issues).
