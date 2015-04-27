@@ -2,6 +2,7 @@
 <p align="center">
   <img src="http://i.imgur.com/wmKMuNl.png" />
 </p>
+<br />
 <p align="center">
     <a href="https://github.com/upmod/UPM/issues/">
         <img src="https://img.shields.io/github/issues/upmod/UPM.svg" alt="UPM issues">
