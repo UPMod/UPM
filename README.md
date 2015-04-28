@@ -1,8 +1,8 @@
-## Urban Patrol Modification
- 
+<br />
 <p align="center">
   <img src="http://i.imgur.com/wmKMuNl.png" />
 </p>
+<br />
 <p align="center">
     <a href="https://github.com/upmod/UPM/issues/">
         <img src="https://img.shields.io/github/issues/upmod/UPM.svg" alt="UPM issues">
@@ -16,7 +16,7 @@
 </p>
 <p align="center"><sup><strong>Requires the latest version of <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a></strong></sup></p>
 
-**UPM** is a mod for Arma 3 to improve the control, behaviour and realism of AI. Allows easy creation of randomly patrolling units as UPSMON / UPS, only needs three basic steps: 
+**Urban Patrol Modification [UPM]** is a mod for Arma 3 to improve the control, behaviour and realism of AI. Allows easy creation of randomly patrolling units as UPSMON / UPS, only needs three basic steps: 
 
 <ol>
 <li>Put in your player's unit/group.</li>
