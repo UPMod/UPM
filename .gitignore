@@ -4,3 +4,6 @@ release/*
 texHeaders.bin
 *.swp
 *.swo
+extensions/mapping_export/Release/*
+extensions/mapping_export/mapping_export/Release/*
+extensions/mapping_export.opensdf
