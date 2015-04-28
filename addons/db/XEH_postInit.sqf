@@ -24,7 +24,7 @@ Returns:
 
 //[QUOTE(PATHTOF(ui\ButtonTools.hpp)),2] call FUNC(debug);
 
-_configs = "diag_log configName _x; true" configClasses (configFile >> "UPM_Cities");
+_configs = "diag_log configName _x; true" configClasses (configFile >> "UPM_Cities_Altis");
 
 
 

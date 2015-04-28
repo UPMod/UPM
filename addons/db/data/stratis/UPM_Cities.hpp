@@ -1,4 +1,4 @@
-class UPM_Cities 
+class UPM_Cities_Stratis
 {
 	class upm_city_test1 
 	{
