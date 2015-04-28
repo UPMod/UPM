@@ -18,5 +18,8 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
 
-// DATA
-#include <data\UPM_Cities.hpp>
+// DATA ALTIS
+#include <data\altis\UPM_Cities.hpp>
+
+// DATA STRATIS
+#include <data\stratis\UPM_Cities.hpp>
