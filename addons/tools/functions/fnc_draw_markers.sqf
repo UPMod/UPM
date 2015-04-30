@@ -34,7 +34,7 @@ private ["_grpid","_grp","_leader","_units","_rankshort","_lastname","_markercol
 				  _lastname = name _leader;
 
 				  _markercolor = (side _leader) call UPM_fnc_GetRGBcolorside;
-				  _grptype = _grp getvariable ["UPSMON_typeofgrp","ISMAN"];
+				  _grptype = _grp getvariable ["UPM_typeofgrp","ISMAN"];
 				  _drawicon = gettext ([_grptype,side _leader] call UPM_fnc_geticonfromgrptype);
 				  _text = format ["Grp:%1: %2. %3 %4",_grpid,_rankshort, _lastname,_grp getvariable ["UPM_GrpMission",""]];
 
