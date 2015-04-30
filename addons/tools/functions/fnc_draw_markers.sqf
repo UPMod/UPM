@@ -4,7 +4,7 @@ Author(s):
 File:
 	fnc_draw_markers.sqf
 Description:
-	Create group 2D markers
+	Create 2D markers for groups
 Performance:
 	0 ms
 Parameter(s):
