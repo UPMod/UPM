@@ -33,9 +33,9 @@ private ["_grpid","_grp","_leader","_units","_rankshort","_lastname","_markercol
 				  _rankshort = [rank _leader,"displayNameShort"] call BIS_fnc_rankparams;
 				  _lastname = name _leader;
 
-				  _markercolor = (side _leader) call UPM_fnc_GetRGBcolorside;
+				  _markercolor = (side _leader) call FUNC(GetRGBcolorside);
 				  _grptype = _grp getvariable ["UPM_typeofgrp","ISMAN"];
-				  _drawicon = gettext ([_grptype,side _leader] call UPM_fnc_geticonfromgrptype);
+				  _drawicon = gettext ([_grptype,side _leader] call FUNC(geticonfromgrptype));
 				  _text = format ["Grp:%1: %2. %3 %4",_grpid,_rankshort, _lastname,_grp getvariable ["UPM_GrpMission",""]];
 
 				  (_this select 0) drawIcon [_drawicon,_markercolor,visiblePosition _leader,0.5/ctrlMapScale (_this select 0),0.5/ctrlMapScale (_this select 0),direction _leader,_text];
@@ -61,7 +61,7 @@ private ["_grpid","_grp","_leader","_units","_rankshort","_lastname","_markercol
 
 						  If (!(_wppos isequalto [0,0,0])) then
 						  {
-							  _behaviourcolor =  (behaviour _leader) call UPM_fnc_GetRGBcolorbehaviour;
+							  _behaviourcolor =  (behaviour _leader) call FUNC(GetRGBcolorbehaviour);
 							  (_this select 0) drawArrow [visiblePosition _leader,_wppos,_behaviourcolor];
 						  };
 					  };
