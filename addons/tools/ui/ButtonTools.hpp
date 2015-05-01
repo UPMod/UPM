@@ -71,7 +71,7 @@ class UPM_Tile_Tools_Base {
 	h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 };
 
-class RscStandardDisplay;
+/*class RscStandardDisplay;
 
 class RscDisplayMPInterrupt: RscStandardDisplay {
 	class controls {
@@ -92,4 +92,4 @@ class RscDisplayInterruptEditorPreview: RscStandardDisplay {
 	class controls {
 		class UPM_Tile_Tools : UPM_Tile_Tools_Base {};
 	};
-};
+};*/

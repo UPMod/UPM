@@ -23,3 +23,5 @@ Returns:
 #include "script_component.hpp"
 
 //[QUOTE(PATHTOF(ui\ButtonTools.hpp)),2] call FUNC(debug);
+
+//findDisplay 46 ctrlCreate ["UPM_Tile_Tools_Base", -1];

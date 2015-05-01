@@ -4,7 +4,11 @@ class CfgFunctions
 	{
 		class ADDON
 		{
-
+			// upm_fnc_moduleActivateTools
+			class moduleActivateTools
+			{
+				file = PATHF(moduleActivateTools);
+			};
 		};
 	};
 };
