@@ -25,6 +25,7 @@ Returns:
 #include "dik_codes.hpp"
 
 disableserialization;
+
 _mode = [_this,0,"Init",[displaynull,""]] call bis_fnc_param;
 _this = [_this,1,[]] call bis_fnc_param;
 
@@ -32,7 +33,6 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "Init": {
-		upm_fnc_camera_draw3D = addmissioneventhandler ["draw3d","with (uinamespace) do {['Draw3D',_this] call upm_fnc_camera;};"];
 
 		//--- Create camera
 		_camPos = [
@@ -58,10 +58,9 @@ switch _mode do {
 		upm_fnc_camera_RMBclick = [0,0];
 		upm_fnc_camera_pitchbank = [0,0];
 		upm_fnc_camera_fov = 0.7;
-		upm_fnc_camera_iconCamera = gettext (configfile >> "RscDisplayCamera" >> "iconCamera");
+		upm_fnc_camera_iconCamera = gettext (configfile >> "RscUPM_Tools" >> "iconCamera");
 		upm_fnc_camera_vision = 0;
 		upm_fnc_camera_visibleHUD = true;
-		upm_fnc_camera_cameraView = cameraview;
 
 		cameraon switchcamera "internal";
 
@@ -864,9 +863,6 @@ switch _mode do {
 		upm_fnc_camera_vision = nil;
 		upm_fnc_camera_visibleHUD = nil;
 		upm_fnc_camera_cameraView = nil;
-
-		removemissioneventhandler ["draw3d",upm_fnc_camera_draw3D];
-		upm_fnc_camera_draw3D = nil;
 
 		camusenvg false;
 		false SetCamUseTi 0;

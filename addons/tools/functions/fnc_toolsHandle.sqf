@@ -32,7 +32,7 @@ if (_mode == "INIT") exitWith {
 
 		waitUntil {!(isNull (findDisplay 85001))};
 
-		['Init'] call FUNC(camera);
+		[(findDisplay 85001)] call FUNC(camera);
 
 	};
 
