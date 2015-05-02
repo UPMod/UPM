@@ -22,3 +22,4 @@ Returns:
 
 #include "script_component.hpp"
 
+GVAR(listPlayers) = [];

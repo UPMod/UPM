@@ -28,7 +28,7 @@ class UPM_Tile_Tools_Base {
 		right = 0;
 		bottom = 0;
 	};
-	action = "(findDisplay 49) closeDisplay 0; hint 'UPM TOOLS';";
+	action = "(findDisplay 49) closeDisplay 0; [] call upm_fnc_toolsInit;";
 	animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
 	animTextureDisabled = "#(argb,8,8,3)color(1,1,1,1)";
 	animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";
@@ -71,25 +71,28 @@ class UPM_Tile_Tools_Base {
 	h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 };
 
-/*class RscStandardDisplay;
+class RscStandardDisplay;
 
 class RscDisplayMPInterrupt: RscStandardDisplay {
 	class controls {
 		class UPM_Tile_Tools : UPM_Tile_Tools_Base {};
 	};
 };
+
 class RscDisplayInterrupt: RscStandardDisplay {
 	class controls {
 		class UPM_Tile_Tools : UPM_Tile_Tools_Base {};
 	};
 };
+
 class RscDisplayInterruptEditor3D: RscStandardDisplay {
 	class controls {
 		class UPM_Tile_Tools : UPM_Tile_Tools_Base {};
 	};
 };
+
 class RscDisplayInterruptEditorPreview: RscStandardDisplay {
 	class controls {
 		class UPM_Tile_Tools : UPM_Tile_Tools_Base {};
 	};
-};*/
+};

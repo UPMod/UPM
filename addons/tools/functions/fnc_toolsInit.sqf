@@ -4,24 +4,26 @@ Author(s):
 	oscarmolinadev
 
 File:
-	XEH_postInit.sqf
+	fnc_moduleActivateTools.sqf
 
 Description:
-	Init global variables
+
 
 Performance:
 	0 ms
 
 Parameter(s):
-	NOTHING
+
 
 Returns:
-	NOTHING
+
 
 ****************************************************************/
 
 #include "script_component.hpp"
 
-//[QUOTE(PATHTOF(ui\ButtonTools.hpp)),2] call FUNC(debug);
+["RUN INIT TOOLS",0] call FUNC(debug);
 
-//findDisplay 46 ctrlCreate ["UPM_Tile_Tools_Base", -1];
+if !(player in GVAR(listPlayers)) exitWith{};
+
+[format["%1",player],2] call FUNC(debug);

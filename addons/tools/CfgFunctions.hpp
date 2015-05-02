@@ -9,6 +9,11 @@ class CfgFunctions
 			{
 				file = PATHF(moduleActivateTools);
 			};
+			// upm_fnc_toolsInit
+			class toolsInit
+			{
+				file = PATHF(toolsInit);
+			};
 		};
 	};
 };
