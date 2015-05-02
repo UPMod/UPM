@@ -72,15 +72,9 @@ switch _mode do {
 
 		_display = _this select 0;
 		upm_fnc_camera_display = _display;
-		_display displayaddeventhandler ["keydown","with (uinamespace) do {['KeyDown',_this] call upm_fnc_camera;};"];
-		_display displayaddeventhandler ["keyup","with (uinamespace) do {['KeyUp',_this] call upm_fnc_camera;};"];
-		_display displayaddeventhandler ["mousebuttondown","with (uinamespace) do {['MouseButtonDown',_this] call upm_fnc_camera;};"];
-		_display displayaddeventhandler ["mousebuttonup","with (uinamespace) do {['MouseButtonUp',_this] call upm_fnc_camera;};"];
-		_display displayaddeventhandler ["mousezchanged","with (uinamespace) do {['MouseZChanged',_this] call upm_fnc_camera;};"];
 
-	/*	_ctrlMouseArea = _display displayctrl 3140;
-		_ctrlMouseArea ctrladdeventhandler ["mousemoving","with (uinamespace) do {['Mouse',_this] call upm_fnc_camera;};"];
-		_ctrlMouseArea ctrladdeventhandler ["mouseholding","with (uinamespace) do {['Mouse',_this] call upm_fnc_camera;};"];
+
+		_ctrlMouseArea = _display displayctrl 3140;
 		ctrlsetfocus _ctrlMouseArea;
 
 		_ctrlMap = _display displayctrl 3141;
@@ -91,64 +85,6 @@ switch _mode do {
 		_ctrlOverlay = _display displayctrl 3142;
 		_ctrlOverlay ctrlenable false;
 
-		_positions = profilenamespace getvariable ["upm_fnc_camera_positions",[]];
-		_positions resize 10;
-		profilenamespace setvariable ["upm_fnc_camera_positions",_positions];
-		_ctrlPositions = _display displayctrl 31422;
-		_ctrlPositions ctrlsettext "1:\n2:\n3:\n4:\n5:\n6:\n7:\n8:\n9:\n0";
-
-		_ctrlSliderFocus = _display displayctrl 31430;
-		_ctrlSliderFocus ctrladdeventhandler ["sliderposchanged","with (uinamespace) do {['SliderFocus',_this] call upm_fnc_camera;};"];
-		_ctrlSliderFocus slidersetposition 0;
-		["SliderFocus",[_ctrlSliderFocus,sliderposition _ctrlSliderFocus]] call upm_fnc_camera;
-
-		_ctrlSliderAperture = _display displayctrl 31432;
-		_ctrlSliderAperture ctrladdeventhandler ["sliderposchanged","with (uinamespace) do {['SliderAperture',_this] call upm_fnc_camera;};"];
-		_ctrlSliderAperture slidersetposition 0;
-		_ctrlSliderAperture ctrlsettooltip "Aperture changes takes some time and cannot be achieved when game is paused.";
-		["SliderAperture",[_ctrlSliderAperture,sliderposition _ctrlSliderAperture]] call upm_fnc_camera;
-
-		_ctrlSliderDaytime = _display displayctrl 31434;
-		_ctrlSliderDaytime slidersetrange [0,24 * 60];
-		_ctrlSliderDaytime ctrladdeventhandler ["sliderposchanged","with (uinamespace) do {['SliderDaytime',_this] call upm_fnc_camera;};"];
-		_ctrlSliderDaytime slidersetposition (daytime * 60);
-		["SliderDaytime",[_ctrlSliderDaytime,sliderposition _ctrlSliderDaytime]] call upm_fnc_camera;
-
-		_ctrlSliderOvercast = _display displayctrl 31436;
-		_ctrlSliderOvercast slidersetrange [0,1];
-		_ctrlSliderOvercast ctrladdeventhandler ["sliderposchanged","with (uinamespace) do {['SliderOvercast',_this] call upm_fnc_camera;};"];
-		_ctrlSliderOvercast slidersetposition overcast;
-		_ctrlSliderOvercast ctrlsettooltip "In order for changes to take effect, you have to modify daytime as well.";
-		["SliderOvercast",[_ctrlSliderOvercast,sliderposition _ctrlSliderOvercast]] call upm_fnc_camera;
-
-		_ctrlSliderAcctime = _display displayctrl 31438;
-		_ctrlSliderAcctime slidersetrange [0,1];
-		_ctrlSliderAcctime ctrladdeventhandler ["sliderposchanged","with (uinamespace) do {['SliderAcctime',_this] call upm_fnc_camera;};"];
-		_ctrlSliderAcctime slidersetposition 0;
-		["SliderAcctime",[_ctrlSliderOvercast,sliderposition _ctrlSliderAcctime]] call upm_fnc_camera;*/
-
-		upm_fnc_camera_showPositions = {
-			disableserialization;
-			_display = _this;
-			_ctrlPositions = _display displayctrl 31422;
-			_text = "";
-			{
-				_text = _text + str _foreachindex + ": ";
-				if (isnil "_x") then {
-					_text = _text + format ["[ Ctrl + %1 ]",_foreachindex];
-				} else {
-					_params = _positions select _foreachindex;
-					_text = _text + format [
-						"%1",
-						mapgridposition (_params select 1)
-						//[(_params select 5),"HH:MM:SS"] call bis_fnc_timetostring
-					]
-				};
-				_text = _text + "\n";
-			} foreach _positions;
-			_ctrlPositions ctrlsettext _text;
-		};
-		_display call upm_fnc_camera_showPositions;
 
 		//--- Disable menu chromatic aberration
 		[] call bis_fnc_guiEffectTiles;
@@ -481,23 +417,6 @@ switch _mode do {
 			case (DIK_9): {9 call _camSave;};
 			case (DIK_0): {0 call _camSave;};
 
-			case (DIK_F1): {
-				_display createdisplay "RscDisplayDebugPublic";
-				_result = true;
-			};
-/*
-			case (DIK_F2);
-			case (DIK_F3);
-			case (DIK_F4);
-			case (DIK_F5);
-			case (DIK_F6);
-			case (DIK_F7);
-			case (DIK_F8);
-			case (DIK_F9);
-			case (DIK_F10);
-			case (DIK_F11);
-			case (DIK_F12): {_return = true;};
-*/
 
 			case (DIK_NUMPAD5): {
 				upm_fnc_camera_pitchbank = [0,0];
@@ -788,55 +707,6 @@ switch _mode do {
 		_ctrlValue ctrlsettext _text;
 	};
 
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "Paste": {
-		_this spawn {
-			disableserialization;
-			[] call upm_fnc_camera;
-			waituntil {!isnil {uinamespace getvariable "upm_fnc_camera_display"}};
-			with uinamespace do {
-				_worldname =	[_this,0,"",[""]] call bis_fnc_paramIn;
-				if (_worldname != worldname) exitwith {["Camera params are for world ""%1"", you're currently on ""%2""",_worldname,worldname] call bis_fnc_error;};
-				_pos =		[_this,1,position player,[[]],[3]] call bis_fnc_paramIn;
-				_dir =		[_this,2,direction player,[0]] call bis_fnc_paramIn;
-				_fov =		[_this,3,upm_fnc_camera_fov,[0]] call bis_fnc_paramIn;
-				_pitchbank =	[_this,4,[0,0],[[]],[2]] call bis_fnc_paramIn;
-				_focus =	[_this,5,0,[0]] call bis_fnc_paramIn;
-				_aperture =	[_this,6,0,[0]] call bis_fnc_paramIn;
-				_daytime =	[_this,7,daytime,[0]] call bis_fnc_paramIn;
-				_overcast =	[_this,8,overcast,[0]] call bis_fnc_paramIn;
-				_acctime =	[_this,9,0,[0]] call bis_fnc_paramIn;
-
-				_pitch =	[_pitchbank,0,0,[0]] call bis_fnc_paramIn;
-				_bank =		[_pitchbank,1,0,[0]] call bis_fnc_paramIn;
-
-				_display = uinamespace getvariable ["upm_fnc_camera_display",displaynull];
-				_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
-				_cam setpos _pos;
-				_cam setdir _dir;
-				upm_fnc_camera_fov = _fov;
-				[
-					_cam,
-					_pitch,
-					_bank
-				] call bis_fnc_setpitchbank;
-
-				_cam campreparefov upm_fnc_camera_fov;
-				_cam camcommitprepared 0;
-				upm_fnc_camera_pitchbank = _pitchbank;
-				(_display displayctrl 31430) slidersetposition _focus;
-				(_display displayctrl 31432) slidersetposition _aperture;
-				(_display displayctrl 31434) slidersetposition _daytime ;
-				(_display displayctrl 31436) slidersetposition _overcast;
-				(_display displayctrl 31438) slidersetposition _acctime;
-				["SliderFocus",		[(_display displayctrl 31430),_focus]] call upm_fnc_camera;
-				["SliderAperture",	[(_display displayctrl 31432),_aperture]] call upm_fnc_camera;
-				["SliderDaytime",	[(_display displayctrl 31434),_daytime]] call upm_fnc_camera;
-				["SliderOvercast",	[(_display displayctrl 31436),_overcast]] call upm_fnc_camera;
-				["SliderAcctime",	[(_display displayctrl 31438),_acctime]] call upm_fnc_camera;
-			};
-		};
-	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "Exit": {
