@@ -64,7 +64,7 @@ class UPM_Tile_Tools_Base {
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
 	tooltipColorText[] = {1,1,1,1};
-	type = 16;
+	type = CT_SHORTCUTBUTTON;
 	x = "1 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX)";
 	y = "(0.1 * safezoneH + safezoneY) + (1.2 * 2) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 	w = "15 * (((safezoneW / safezoneH) min 1.2) / 40)";

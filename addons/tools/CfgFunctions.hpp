@@ -14,6 +14,17 @@ class CfgFunctions
 			{
 				file = PATHF(toolsInit);
 			};
+			// upm_fnc_toolsHandle
+			class toolsHandle
+			{
+				file = PATHF(toolsHandle);
+			};
+			// ========================================
+			// upm_fnc_camera
+			class camera
+			{
+				file = PATHF_SUB(spectator,camera);
+			};
 		};
 	};
 };
