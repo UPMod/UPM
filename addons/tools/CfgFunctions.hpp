@@ -25,6 +25,16 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(spectator,camera);
 			};
+			// upm_fnc_cameraMove
+			class cameraMove
+			{
+				file = PATHF_SUB(spectator,cameraMove);
+			};
+			// upm_fnc_cameraRotate
+			class cameraRotate
+			{
+				file = PATHF_SUB(spectator,cameraRotate);
+			};
 		};
 	};
 };

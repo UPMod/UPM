@@ -40,51 +40,42 @@ switch _mode do {
 			(position cameraon select 1),
 			(position cameraon select 2) + 2
 		];
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam","camera" camcreate _camPos];
-		_cam cameraeffect ["internal","back"];
-		//_cam campreparefov 0.7;
-		//_cam camcommitprepared 0;
-		showcinemaborder false;
-		cameraEffectEnableHUD true;
-		vehicle cameraon switchcamera cameraview;
 
-		//--- Declare variables
-		missionnamespace setvariable ["upm_fnc_camera_cam",_cam];
+		_cam = "camera" camcreate _camPos;
 
-		upm_fnc_camera_LMB = false;
-		upm_fnc_camera_RMB = false;
-		upm_fnc_camera_keys = [];
-		upm_fnc_camera_LMBclick = [0,0];
-		upm_fnc_camera_RMBclick = [0,0];
-		upm_fnc_camera_pitchbank = [0,0];
-		upm_fnc_camera_fov = 0.7;
-		upm_fnc_camera_iconCamera = gettext (configfile >> "RscUPM_Tools" >> "iconCamera");
-		upm_fnc_camera_vision = 0;
-		upm_fnc_camera_visibleHUD = true;
+		missionnamespace setvariable ["UPM_Tools_Camera",_cam];
 
-		cameraon switchcamera "internal";
+		UPM_Tools_LMB = false;
+		UPM_Tools_RMB = false;
+		UPM_Tools_keys = [];
+		UPM_Tools_LMBclick = [0,0];
+		UPM_Tools_RMBclick = [0,0];
+		UPM_Tools_pitchbank = [0,0];
+		UPM_Tools_fov = 0.7;
+		UPM_Tools_iconCamera = gettext (configfile >> "RscUPM_Tools" >> "iconCamera");
+		UPM_Tools_vision = 0;
+		UPM_Tools_visibleHUD = true;
+
+		uinamespace setVariable ["BIS_fnc_guiMessage_status",false];
+		uiNameSpace setVariable ["UPM_RscTools",(findDisplay D_TOOLS)];
 
 		_DIKcodes = true call bis_fnc_keyCode;
 		_DIKlast = _DIKcodes select (count _DIKcodes - 1);
 		for "_k" from 0 to (_DIKlast - 1) do {
-			upm_fnc_camera_keys set [_k,false];
+			UPM_Tools_keys set [_k,false];
 		};
 
-		_display = _this select 0;
-		upm_fnc_camera_display = _display;
+		_display = uiNameSpace getVariable 'UPM_RscTools';
 
-
-		_ctrlMouseArea = _display displayctrl 3140;
+		_ctrlMouseArea = _display displayctrl D_CB_MOUSEAREA;
 		ctrlsetfocus _ctrlMouseArea;
 
-		_ctrlMap = _display displayctrl 3141;
+		_ctrlMap = _display displayctrl D_CB_MAP;
 		_ctrlMap ctrlenable false;
-		_ctrlMap ctrladdeventhandler ["draw","with (uinamespace) do {['MapDraw',_this] call upm_fnc_camera;};"];
-		_ctrlMap ctrladdeventhandler ["mousebuttonclick","with (uinamespace) do {['MapClick',_this] call upm_fnc_camera;};"];
+		_ctrlMap ctrladdeventhandler ["draw","['MapDraw',_this] call upm_fnc_camera;"];
+		_ctrlMap ctrladdeventhandler ["mousebuttonclick","['MapClick',_this] call upm_fnc_camera;"];
 
-		_ctrlOverlay = _display displayctrl 3142;
-		_ctrlOverlay ctrlenable false;
-
+		ppEffectDestroy [BIS_SuffRadialBlur, BIS_SuffBlur, BIS_SuffCC];
 
 		//--- Disable menu chromatic aberration
 		[] call bis_fnc_guiEffectTiles;
@@ -110,20 +101,20 @@ switch _mode do {
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "Mouse": {
 		_display = ctrlparent (_this select 0);
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
-		_pitchbank = upm_fnc_camera_pitchbank;
+		_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
+		_pitchbank = UPM_Tools_pitchbank;
 		_pitch = _pitchbank select 0;
 		_bank = _pitchbank select 1;
 
 		//--- Camera movement
-		if (upm_fnc_camera_LMB || upm_fnc_camera_RMB) then {
+		if (UPM_Tools_LMB || UPM_Tools_RMB) then {
 			_mX = _this select 1;
 			_mY = _this select 2;
 
-			if (upm_fnc_camera_LMB) then {
+			if (UPM_Tools_LMB) then {
 
-				_defX = upm_fnc_camera_LMBclick select 0;
-				_defY = upm_fnc_camera_LMBclick select 1;
+				_defX = UPM_Tools_LMBclick select 0;
+				_defY = UPM_Tools_LMBclick select 1;
 
 				_camZ = (getposatl _cam select 2) max 1 min 256;
 				_dX = (_mX - _defX) * _camZ / 2;
@@ -134,18 +125,18 @@ switch _mode do {
 				_camPos = [_camPos,_dX,direction _cam + 90] call bis_fnc_relpos;
 				_cam setposasl _camPos;
 			//};
-			//if (upm_fnc_camera_RMB) then  {
+			//if (UPM_Tools_RMB) then  {
 			} else {
 
-				_defX = upm_fnc_camera_RMBclick select 0;
-				_defY = upm_fnc_camera_RMBclick select 1;
+				_defX = UPM_Tools_RMBclick select 0;
+				_defY = UPM_Tools_RMBclick select 1;
 
 				_dX = (_mX - _defX) * 180;
 				_dY = -(_mY - _defY) * 180;
 
-				if (upm_fnc_camera_keys select DIK_LCONTROL) then {
+				if (UPM_Tools_keys select DIK_LCONTROL) then {
 					_bank = (_bank + _dX * 0.1) max -180 min +180;
-					upm_fnc_camera_pitchbank set [1,_bank];
+					UPM_Tools_pitchbank set [1,_bank];
 				} else {
 					_cam setdir (direction _cam + _dX);
 					_pitch = (_pitch + _dY) max -90 min +90;
@@ -155,145 +146,42 @@ switch _mode do {
 					_pitch,
 					_bank
 				] call bis_fnc_setpitchbank;
-				upm_fnc_camera_RMBclick = [_mX,_defY];
+				UPM_Tools_RMBclick = [_mX,_defY];
 			};
 
-		};
-
-		//--- Cursortarget
-		_pos = screentoworld [0.5,0.5];
-		_intersectCam = getposasl _cam;
-		_intersectTarget = [_pos select 0,_pos select 1,getterrainheightasl _pos];
-		_objects = lineIntersectswith [
-			_intersectCam,
-			_intersectTarget,
-			objnull,
-			objnull,
-			true
-		];
-		_ctrlFrame = _display displayctrl 31421;
-		_object = objnull;
-		if (count _objects > 0) then {
-			_ctrlOverlay = _display displayctrl 3142;
-			_object = _objects select (count _objects - 1);
-			missionnamespace setvariable ["upm_fnc_camera_target",_object];
-
-			_objectBbox = boundingbox _object;
-			_objectBboxZ = (abs((_objectBbox select 0) select 2) + abs((_objectBbox select 1) select 2)) / 2;
-			_objectPos = worldtoscreen [position _object select 0,position _object select 1,(getposatl _object select 2) + _objectBboxZ / 2];
-			if (count _objectPos > 0) then {
-				//_objectSize = sizeof typeof _object;
-				_objectSize =
-					abs((_objectBbox select 0) select 0) + abs((_objectBbox select 1) select 0)
-					max
-					abs((_objectBbox select 0) select 1) + abs((_objectBbox select 1) select 1)
-					max
-					abs((_objectBbox select 0) select 2) + abs((_objectBbox select 1) select 2);
-				_objectDis = _cam distance _object;
-
-				_ctrlFrameSize = (_objectSize / _objectDis / 2) max 0.1;
-				_ctrlFrame ctrlsetposition [
-					(_objectPos select 0) - safezoneX - ((_ctrlFrameSize / 2) * 3/4),
-					(_objectPos select 1) - safezoneY - (_ctrlFrameSize / 2),
-					_ctrlFrameSize * 3/4,
-					_ctrlFrameSize
-				];
-			} else {
-				missionnamespace setvariable ["upm_fnc_camera_target",objnull];
-				_ctrlFrame ctrlsetposition [-10,-10,0,0];
-			};
-		} else {
-			missionnamespace setvariable ["upm_fnc_camera_target",objnull];
-			_ctrlFrame ctrlsetposition [-10,-10,0,0];
-		};
-		_ctrlFrame ctrlcommit 0;
-
-		_camDir = direction _cam;
-		_cardinalDir = round (_camDir / 45);
-		_cardinalDirText = [
-			"str_move_n",
-			"str_move_ne",
-			"str_move_e",
-			"str_move_se",
-			"str_move_s",
-			"str_move_sw",
-			"str_move_w",
-			"str_move_nw"
-		] select _cardinalDir;
-		_cardinalDirText = localize _cardinalDirText;
-
-		//--- Debug text
-		_ctrlDebug = _display displayctrl 31420;
-		_ctrlDebug ctrlsettext (
-			"\n\n" +
-			"X = " + str(position _cam select 0) + "\n" +
-			"Y = " + str(position _cam select 1) + "\n" +
-			"Z = " + str(position _cam select 2) + "\n" +
-			"FOV = " + str(upm_fnc_camera_fov) + "\n" +
-			"Dir = " + str(round _camDir) + "° (" + _cardinalDirText + ")\n" +
-			"Pitch = " + str(round (_pitch)) + "°\n" +
-			"Bank = " + str(round (_bank) % 360) + "°\n" +
-			"upm_fnc_camera_target = " + str(_object) + "\n"
-		);
-
-		//--- Nelson's solution for key lag
-		_camMove = {
-			_dX = _this select 0;
-			_dY = _this select 1;
-			_dZ = _this select 2;
-			_pos = getposasl _cam;
-			_dir = (direction _cam) + _dX * 90;
-			_camPos = [
-				(_pos select 0) + ((sin _dir) * _coef * _dY),
-				(_pos select 1) + ((cos _dir) * _coef * _dY),
-				(_pos select 2) + _dZ * _coef
-			];
-			_camPos set [2,(_camPos select 2) max (getterrainheightasl _camPos)];
-			_cam setposasl _camPos;
-		};
-		_camRotate = {
-			_dX = _this select 0;
-			_dY = _this select 1;
-			_pitchbank = _cam call bis_fnc_getpitchbank;
-			_cam setdir (direction _cam + _dX);
-			[
-				_cam,
-				(_pitchbank select 0) + _dY,
-				0
-			] call bis_fnc_setpitchbank;
 		};
 
 		_coef = 0.1;
-		if (upm_fnc_camera_keys select DIK_LMENU) then {_coef = _coef * 100;};
-		if (upm_fnc_camera_keys select DIK_LSHIFT) then {_coef = _coef * 10;};
-		if (upm_fnc_camera_keys select DIK_RSHIFT) then {_coef = _coef / 10;};
+		if (UPM_Tools_keys select DIK_LMENU) then {_coef = _coef * 100;};
+		if (UPM_Tools_keys select DIK_LSHIFT) then {_coef = _coef * 10;};
+		if (UPM_Tools_keys select DIK_RSHIFT) then {_coef = _coef / 10;};
 
-		if (upm_fnc_camera_keys select DIK_W) then {[0,1,0] call _camMove;};
-		if (upm_fnc_camera_keys select DIK_S) then {[0,-1,0] call _camMove;};
-		if (upm_fnc_camera_keys select DIK_A) then {[-1,1,0] call _camMove;};
-		if (upm_fnc_camera_keys select DIK_D) then {[1,1,0] call _camMove;};
+		if (UPM_Tools_keys select DIK_W) then {[0,1,0,_coef] call upm_fnc_cameraMove;};
+		if (UPM_Tools_keys select DIK_S) then {[0,-1,0,_coef] call upm_fnc_cameraMove;};
+		if (UPM_Tools_keys select DIK_A) then {[-1,1,0,_coef] call upm_fnc_cameraMove;};
+		if (UPM_Tools_keys select DIK_D) then {[1,1,0,_coef] call upm_fnc_cameraMove;};
 
-		if (upm_fnc_camera_keys select DIK_Q) then {[0,0,1] call _camMove;};
-		if (upm_fnc_camera_keys select DIK_Z) then {[0,0,-1] call _camMove;};
+		if (UPM_Tools_keys select DIK_Q) then {[0,0,1,_coef] call upm_fnc_cameraMove;};
+		if (UPM_Tools_keys select DIK_Z) then {[0,0,-1,_coef] call upm_fnc_cameraMove;};
 
-		if (upm_fnc_camera_keys select DIK_NUMPAD1) then {[-1,-1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD1) then {[-1,-1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD2) then {[+0,-1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD3) then {[+1,-1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD4) then {[-1,+0] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD6) then {[+1,+0] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD7) then {[-1,+1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD8) then {[+0,+1] call _camRotate;};
-		if (upm_fnc_camera_keys select DIK_NUMPAD9) then {[+1,+1] call _camRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD1) then {[-1,-1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD1) then {[-1,-1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD2) then {[+0,-1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD3) then {[+1,-1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD4) then {[-1,+0] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD6) then {[+1,+0] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD7) then {[-1,+1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD8) then {[+0,+1] call upm_fnc_cameraRotate;};
+		if (UPM_Tools_keys select DIK_NUMPAD9) then {[+1,+1] call upm_fnc_cameraRotate;};
 
-		if (upm_fnc_camera_keys select DIK_ADD) then {
-			upm_fnc_camera_fov = (upm_fnc_camera_fov - 0.01) max 0.01;
-			_cam campreparefov upm_fnc_camera_fov;
+		if (UPM_Tools_keys select DIK_ADD) then {
+			UPM_Tools_fov = (UPM_Tools_fov - 0.01) max 0.01;
+			_cam campreparefov UPM_Tools_fov;
 			_cam camcommitprepared 0;
 		};
-		if (upm_fnc_camera_keys select DIK_SUBTRACT) then {
-			upm_fnc_camera_fov = (upm_fnc_camera_fov + 0.01) min 1;
-			_cam campreparefov upm_fnc_camera_fov;
+		if (UPM_Tools_keys select DIK_SUBTRACT) then {
+			UPM_Tools_fov = (UPM_Tools_fov + 0.01) min 1;
+			_cam campreparefov UPM_Tools_fov;
 			_cam camcommitprepared 0;
 		};
 	};
@@ -301,7 +189,7 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "MouseButtonDown": {
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+		_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 		_button = _this select 1;
 		_mX = _this select 2;
 		_mY = _this select 3;
@@ -310,37 +198,40 @@ switch _mode do {
 		_alt = _this select 6;
 
 		if (_button > 0) then {
-			upm_fnc_camera_RMB = true;
-			upm_fnc_camera_RMBclick = [_mX,_mY];
+			UPM_Tools_RMB = true;
+			UPM_Tools_RMBclick = [_mX,_mY];
 		} else {
-			upm_fnc_camera_LMB = true;
-			upm_fnc_camera_LMBclick = [_mX,_mY];
+			UPM_Tools_LMB = true;
+			UPM_Tools_LMBclick = [_mX,_mY];
 		};
-		upm_fnc_camera_pitchbank = _cam call bis_fnc_getpitchbank;
+		UPM_Tools_pitchbank = _cam call bis_fnc_getpitchbank;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "MouseButtonUp": {
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+		_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 		_button = _this select 1;
 		if (_button > 0) then {
-			upm_fnc_camera_RMB = false;
-			upm_fnc_camera_RMBclick = [0,0];
+			UPM_Tools_RMB = false;
+			UPM_Tools_RMBclick = [0,0];
 		} else {
-			upm_fnc_camera_LMB = false;
-			upm_fnc_camera_LMBclick = [0,0];
+			UPM_Tools_LMB = false;
+			UPM_Tools_LMBclick = [0,0];
 		};
 
-		upm_fnc_camera_pitchbank = _cam call bis_fnc_getpitchbank;
+		UPM_Tools_pitchbank = _cam call bis_fnc_getpitchbank;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "MouseZChanged": {
-		_display = _this select 0;
-		_ctrlMap = _display displayctrl 3141;
+
+		_display = uiNameSpace getVariable 'UPM_RscTools';
+
+		_ctrlMap = _display displayctrl D_CB_MAP;
+
 		if !(ctrlenabled _ctrlMap) then {
 
-			_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+			_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 			_camVector = vectordir _cam;
 
 			_dZ = (_this select 1) * 10;
@@ -369,72 +260,27 @@ switch _mode do {
 		_alt = _this select 4;
 		_return = false;
 
-		upm_fnc_camera_keys set [_key,true];
+		UPM_Tools_keys set [_key,true];
 
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
-		_camSave = {
-			_positions = profilenamespace getvariable ["upm_fnc_camera_positions",[]];
-			if (_ctrl) then {
-				_positions set [
-					_this,
-					_camParams
-				];
-				profilenamespace setvariable ["upm_fnc_camera_positions",_positions];
-				saveprofilenamespace;
-
-				_display call upm_fnc_camera_showPositions;
-			} else {
-				_params = _positions select _this;
-				if !(isnil "_params") then {
-					["Paste",_params] call upm_fnc_camera;
-				};
-			};
-			_return = true;
-		};
-		_camParams = [
-			worldname,
-			position _cam,
-			direction _cam,
-			upm_fnc_camera_fov,
-			upm_fnc_camera_pitchbank,
-			sliderposition (_display displayctrl 31430),
-			sliderposition (_display displayctrl 31432),
-			sliderposition (_display displayctrl 31434),
-			sliderposition (_display displayctrl 31436),
-			sliderposition (_display displayctrl 31438)
-		];
+		_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 
 		switch (_key) do {
 
-			case (DIK_1): {1 call _camSave;};
-			case (DIK_2): {2 call _camSave;};
-			case (DIK_3): {3 call _camSave;};
-			case (DIK_4): {4 call _camSave;};
-			case (DIK_5): {5 call _camSave;};
-			case (DIK_6): {6 call _camSave;};
-			case (DIK_7): {7 call _camSave;};
-			case (DIK_8): {8 call _camSave;};
-			case (DIK_9): {9 call _camSave;};
-			case (DIK_0): {0 call _camSave;};
-
-
 			case (DIK_NUMPAD5): {
-				upm_fnc_camera_pitchbank = [0,0];
-				[0,0] call _camRotate;
-				upm_fnc_camera_fov = 0.7;
+				_cam = missionnamespace getvariable "UPM_Tools_Camera";
+				UPM_Tools_pitchbank = [0,0];
+				[0,0] call upm_fnc_cameraRotate;
+				UPM_Tools_fov = 0.7;
 				_camPos = position _cam;
 				_camDir = direction _cam;
-				_cam cameraeffect ["terminate","back"];
-				camdestroy _cam;
-				_cam = "camera" camcreate _camPos;
-				_cam cameraeffect ["internal","back"];
 				_cam setdir _camDir;
-				missionnamespace setvariable ["upm_fnc_camera_cam",_cam];
+				_cam campreparefov UPM_Tools_fov;
+				_cam camcommitprepared 0;
 			};
 
 			case (DIK_M): {
-				_ctrlMouseArea = _display displayctrl 3140;
-				_ctrlMap = _display displayctrl 3141;
+				_ctrlMouseArea = _display displayctrl D_CB_MOUSEAREA;
+				_ctrlMap = _display displayctrl D_CB_MAP;
 				if (ctrlenabled _ctrlMap) then {
 					_ctrlMouseArea ctrlenable true;
 					_ctrlMap ctrlenable false;
@@ -452,6 +298,7 @@ switch _mode do {
 						0.8 * safezoneH
 					];
 					_ctrlMap ctrlsetposition _ctrlMapPos;
+					_ctrlMap ctrlSetFade 0;
 					_ctrlMap ctrlcommit 0;
 					_ctrlMap ctrlmapanimadd [0,0.1,position _cam];
 					ctrlmapanimcommit _ctrlMap;
@@ -461,54 +308,26 @@ switch _mode do {
 
 			case (DIK_H);
 			case (DIK_L): {
-				_ctrlOverlays = [_display displayctrl 3142,_display displayctrl 3143];
-				if (upm_fnc_camera_visibleHUD) then {
+				/*_ctrlOverlays = [
+
+				];
+				if (UPM_Tools_visibleHUD) then {
 					{_x ctrlsetfade 1;} foreach _ctrlOverlays;
-					(_display displayctrl 3142) ctrlenable false;
+					(_display displayctrl D_CB_OVERLAY) ctrlenable false;
 					cameraEffectEnableHUD false;
 				} else {
 					{_x ctrlsetfade 0;} foreach _ctrlOverlays;
-					(_display displayctrl 3142) ctrlenable true;
+					(_display displayctrl D_CB_OVERLAY) ctrlenable true;
 					cameraEffectEnableHUD true;
 				};
-				upm_fnc_camera_visibleHUD = !upm_fnc_camera_visibleHUD;
-				{_x ctrlcommit 0.1} foreach _ctrlOverlays;
+				UPM_Tools_visibleHUD = !UPM_Tools_visibleHUD;
+				{_x ctrlcommit 0.1} foreach _ctrlOverlays;*/
 			};
 
-			case (DIK_X): {
-				if (_ctrl) then {
-					[
-						"Paste",
-						_camParams
-					] spawn {
-						copytoclipboard format ["%1 call upm_fnc_camera;",_this];
-					};
-				};
-			};
-			case (DIK_C): {
-				if (_ctrl) then {
-					_camParams spawn {
-						copytoclipboard format ["%1",_this];
-					};
-				};
-			};
-			case (DIK_V): {
-				if (_ctrl) then {
-					_clipboard = call compile copyfromclipboard;
-					if (typename _clipboard == typename []) then {
-						_clipboard = [[_clipboard],0,[],[[]],[10]] call bis_fnc_paramIn;
-						if (count _clipboard == 10) then {
-							["Paste",_clipboard] call upm_fnc_camera;
-						} else {
-							["Wrong format of camera params (""%1"")",copyfromclipboard] call bis_fnc_error;
-						};
-					};
-				};
-			};
 
 			case (DIK_N): {
-				upm_fnc_camera_vision = upm_fnc_camera_vision + 1;
-				_vision = upm_fnc_camera_vision % 4;
+				UPM_Tools_vision = UPM_Tools_vision + 1;
+				_vision = UPM_Tools_vision % 4;
 				switch (_vision) do {
 					case 0: {
 						camusenvg false;
@@ -525,15 +344,6 @@ switch _mode do {
 					case 3: {
 						camusenvg false;
 						true SetCamUseTi 1;
-					};
-				};
-			};
-
-			case (DIK_P): {
-				if (_ctrl) then {
-					if (cheatsenabled) then {
-						_filename = format (["SplendidCamera\%1_['%2',%3,%4,%5,%6,%7,%8,%9,%10,%11].png",profilename] + _camParams);
-						_filename call compile "diag_screenshot _this;";
 					};
 				};
 			};
@@ -569,37 +379,15 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "KeyUp": {
-		upm_fnc_camera_keys set [_this select 1,false];
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "Draw3D": {
-		if (upm_fnc_camera_visibleHUD) then {
-			_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
-			_locations = nearestlocations [position _cam,["nameVillage","nameCity","nameCityCapital"],2000];
-			{
-				_pos = locationposition _x;
-				_pos set [2,0];
-				drawicon3d [
-					"#(argb,8,8,3)color(0,0,0,0)",
-					[1,1,1,1],
-					_pos,
-					0,
-					0,
-					0,
-					text _x,
-					1
-				];
-			} foreach _locations;
-		};
+		UPM_Tools_keys set [_this select 1,false];
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "MapDraw": {
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+		_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 		_ctrlMap = _this select 0;
 		_ctrlMap drawIcon [
-			upm_fnc_camera_iconCamera,
+			UPM_Tools_iconCamera,
 			[0,1,1,1],
 			position _cam,
 			32,
@@ -617,135 +405,64 @@ switch _mode do {
 		_button = _this select 1;
 		_posX = _this select 2;
 		_posY = _this select 3;
+
 		if (_button == 0) then {
+
 			_worldPos = _ctrlMap ctrlmapscreentoworld [_posX,_posY];
-			_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+			_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
+
 			_cam setpos [
 				_worldPos select 0,
 				_worldPos select 1,
 				getposatl _cam select 2
 			];
+
 		};
+
 	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "SliderFocus": {
-		private ["_display"];
-		_display = ctrlparent (_this select 0);
-		_value = _this select 1;
-		_value = _value^2;
-		_focus = 1;
-		_text = str (round (_value * 1000) / 1000) + " m";
-		if (_value == 0) then {_value = -1; _text = "AUTO";};
-		if (_value == 100) then {_value = -1; _focus = -1; _text = "DISABLED";};
-
-		_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
-		_cam campreparefocus [_value,_focus];
-		_cam camcommitprepared 0;
-
-		_ctrlValue = _display displayctrl 31431;
-		_ctrlValue ctrlsettext _text;
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "SliderAperture": {
-		private ["_display"];
-		_display = ctrlparent (_this select 0);
-		_value = _this select 1;
-		_value = _value^2;
-		_text = str (round (_value * 100) / 100);
-		if (_value == 0) then {_value = -1; _text = "AUTO";};
-
-		setaperture _value;
-
-		_ctrlValue = _display displayctrl 31433;
-		_ctrlValue ctrlsettext _text;
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "SliderDaytime": {
-		private ["_display"];
-		_display = ctrlparent (_this select 0);
-		_value = _this select 1;
-		_text = [_value / 60,"HH:MM:SS"] call bis_fnc_timetostring;
-
-		0 setovercast (sliderposition (_display displayctrl 31436));
-
-		_date = date;
-		_date set [3,0];
-		_date set [4,_value];
-		setdate _date;
-
-		_ctrlValue = _display displayctrl 31435;
-		_ctrlValue ctrlsettext _text;
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "SliderOvercast": {
-		private ["_display"];
-		_display = ctrlparent (_this select 0);
-		_value = _this select 1;
-		_text = str (round (_value * 100) / 100);
-
-		0 setovercast _value;
-		forceweatherchange;
-
-		_ctrlValue = _display displayctrl 31437;
-		_ctrlValue ctrlsettext _text;
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////
-	case "SliderAcctime": {
-		private ["_display"];
-		_display = ctrlparent (_this select 0);
-		_value = _this select 1;
-		_text = str (round (_value * 100) / 100);
-
-		setacctime _value;
-
-		_ctrlValue = _display displayctrl 31439;
-		_ctrlValue ctrlsettext _text;
-	};
-
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "Exit": {
+
+		((findDisplay 49) displayCtrl 1010) ctrlEnable true;
+
 		with missionnamespace do {
-			_cam = missionnamespace getvariable ["upm_fnc_camera_cam",objnull];
+			_cam = missionnamespace getvariable ["UPM_camera_cam",objnull];
 			_cam cameraeffect ["terminate","back"];
 			camdestroy _cam;
 
-			upm_fnc_camera_cam = nil;
-			upm_fnc_camera_target = nil;
+			UPM_camera_cam = nil;
+			UPM_camera_target = nil;
 		};
 
-		cameraon switchcamera upm_fnc_camera_cameraView;
+		UPM_Tools_LMB = nil;
+		UPM_Tools_RMB = nil;
+		UPM_Tools_keys = nil;
+		UPM_Tools_LMBclick = nil;
+		UPM_Tools_RMBclick = nil;
+		UPM_Tools_pitchbank = nil;
+		UPM_Tools_fov = nil;
+		UPM_Tools_iconCamera = nil;
+		UPM_Tools_vision = nil;
+		UPM_Tools_visibleHUD = nil;
+		UPM_Tools_cameraView = nil;
 
-		upm_fnc_camera_display = nil;
-		upm_fnc_camera_LMB = nil;
-		upm_fnc_camera_RMB = nil;
-		upm_fnc_camera_keys = nil;
-		upm_fnc_camera_LMBclick = nil;
-		upm_fnc_camera_RMBclick = nil;
-		upm_fnc_camera_pitchbank = nil;
-		upm_fnc_camera_fov = nil;
-		upm_fnc_camera_iconCamera = nil;
-		upm_fnc_camera_vision = nil;
-		upm_fnc_camera_visibleHUD = nil;
-		upm_fnc_camera_cameraView = nil;
+		//Reapply underwater PP effects.
+		_null = [] spawn {
+			//suffocating
+			BIS_SuffCC = ppEffectCreate ["ColorCorrections", 1610];
+
+			// init PP to avoid artefacts after going under water.
+			BIS_SuffCC ppEffectAdjust [1,1,0,[0, 0, 0, 0 ],[1, 1, 1, 1],[0,0,0,0], [-1, -1, 0, 0, 0, 0.001, 0.5]];
+
+			BIS_SuffRadialBlur = ppEffectCreate ["RadialBlur", 270];
+			BIS_SuffBlur = ppEffectCreate ["DynamicBlur", 170];
+		};
 
 		camusenvg false;
 		false SetCamUseTi 0;
 
-		setacctime 1;
-		setaperture -1;
 		enableradio true;
 
-		if ((productVersion select 4) == "Development") then {
-			_displayMission = [] call (uinamespace getvariable "bis_fnc_displayMission");
-			_control = _displayMission displayctrl 11400;
-			_control ctrlsetfade 0;
-			_control ctrlcommit 0;
-		};
 	};
 };
