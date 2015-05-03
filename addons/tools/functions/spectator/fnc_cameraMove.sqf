@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 private ["_dX","_dY","_dZ","_coef","_cam","_dir","_camPos"];
 
 _dX = _this select 0;
@@ -6,6 +8,7 @@ _dZ = _this select 2;
 _coef = _this select 3;
 
 _cam = missionnamespace getvariable "UPM_Tools_Camera";
+
 _pos = getposasl _cam;
 _dir = (direction _cam) + _dX * 90;
 

@@ -35,6 +35,11 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(spectator,cameraRotate);
 			};
+			// upm_fnc_cameraSelectView
+			class cameraSelectView
+			{
+				file = PATHF_SUB(spectator,cameraSelectView);
+			};
 		};
 	};
 };

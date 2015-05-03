@@ -96,6 +96,8 @@ switch _mode do {
 		};
 		clearradio;
 		enableradio false;
+
+		[] spawn upm_fnc_cameraSelectView;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -348,12 +350,12 @@ switch _mode do {
 				};
 			};
 
-			case (DIK_SPACE): {
+			/*case (DIK_SPACE): {
 				_vehicle = vehicle player;
 				_worldPos = screentoworld [0.5,0.5];
 				_vehicle setposatl [_worldPos select 0,_worldPos select 1,getposatl _vehicle select 2];
 				_vehicle setvelocity [0,0,0];
-			};
+			};*/
 
 			case (DIK_ESCAPE): {
 				_return = true;
@@ -427,13 +429,15 @@ switch _mode do {
 		((findDisplay 49) displayCtrl 1010) ctrlEnable true;
 
 		with missionnamespace do {
-			_cam = missionnamespace getvariable ["UPM_camera_cam",objnull];
+			_cam = missionnamespace getvariable ["UPM_Tools_Camera",objnull];
 			_cam cameraeffect ["terminate","back"];
 			camdestroy _cam;
 
-			UPM_camera_cam = nil;
-			UPM_camera_target = nil;
+			UPM_Tools_Camera = nil;
+			BIS_fnc_camera_target = nil;
 		};
+
+		uiNameSpace setVariable ['UPM_RscTools',nil];
 
 		UPM_Tools_LMB = nil;
 		UPM_Tools_RMB = nil;
@@ -463,6 +467,10 @@ switch _mode do {
 		false SetCamUseTi 0;
 
 		enableradio true;
+
+		player switchCamera "Internal";
+
+		["DENTRO EXIT",2] call FUNC(debug);
 
 	};
 };

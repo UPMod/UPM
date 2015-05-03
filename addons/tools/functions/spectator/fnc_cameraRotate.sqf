@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+
 private ["_cam","_dX","_dY","_pitchbank"];
 
 _cam = missionnamespace getvariable "UPM_Tools_Camera";

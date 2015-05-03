@@ -4,7 +4,7 @@ class RscText;
 class RscUPM_Tools
 {
 	onLoad = "";
-	onUnload = "['EXIT',objNull] spawn upm_toolsHandle";
+	onUnload = "['EXIT'] spawn upm_fnc_toolsHandle";
 	idd = D_TOOLS; //314
 	movingEnable = 0;
 	enableSimulation = 1;
