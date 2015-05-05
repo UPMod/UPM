@@ -1,3 +1,27 @@
+/****************************************************************
+
+Author(s):
+	Karel Moricky - Bohemia Interactive
+	Nelson - Bohemia Interactive
+	oscarmolinadev
+
+File:
+	fnc_cameraMove.sqf
+
+Description:
+	Camera move - Nelson's solution for key lag
+
+Performance:
+	0 ms
+
+Parameter(s):
+
+
+Returns:
+	Nothing
+
+****************************************************************/
+
 #include "script_component.hpp"
 
 private ["_dX","_dY","_dZ","_coef","_cam","_dir","_camPos"];

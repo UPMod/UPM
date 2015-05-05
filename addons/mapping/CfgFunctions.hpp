@@ -7,7 +7,7 @@ class CfgFunctions
 			// upm_fnc_dbExportCity
 			class dbExportCity
 			{
-				file = PATHF_SUB(export,dbExportCity);
+				file = PATHF_SUB(export,exportCity);
 			};
 		};
 	};

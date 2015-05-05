@@ -24,10 +24,10 @@ Returns:
 
 if (!isServer && hasInterface ) exitWith {};
 
-// upm_groups_all - Global variable of groups
+// upm_groups_all
 GVAR(all) = [];
 publicVariable QGVAR(all);
 
-// upm_group_qtt - Global variable quantity
+// upm_group_qtt
 GVAR(qtt) = 0;
 publicVariable QGVAR(qtt);

@@ -22,7 +22,7 @@ Returns:
 
 #include "script_component.hpp"
 
-if (!hasInterface && !isDedicated) then {
+/*if (!hasInterface && !isDedicated) then {
     ["UPM: ONLY HEADLESS CLIENT",0] call FUNC(debug);
 };
 
@@ -36,6 +36,6 @@ if(isServer || {!hasInterface && !isDedicated}) then {
 
 if (!isServer && hasInterface ) exitWith {};
 
-	["UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT AFTER EXITWITH",0] call FUNC(debug);
+	["UPM: SERVER OR PLAYER HOST AND HEADLESS CLIENT AFTER EXITWITH",0] call FUNC(debug);*/
 
 

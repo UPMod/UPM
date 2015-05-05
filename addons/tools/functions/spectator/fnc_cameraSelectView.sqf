@@ -1,7 +1,60 @@
+/****************************************************************
+
+Author(s):
+	Karel Moricky
+	Nelson
+	oscarmolinadev
+
+File:
+	fnc_cameraMove.sqf
+
+Description:
+	Camera move - Nelson's solution for key lag
+
+Performance:
+	0 ms
+
+Parameter(s):
+
+
+Returns:
+	Nothing
+
+****************************************************************/
+
 
 #include "script_component.hpp"
 
-private ["_cam", "_unit", "_bbr", "_p1", "_p2", "_vehicleLength", "_vehicleHeight", "_lengthSpacing", "_heightSpacing", "_newCamPosition", "_vector", "_objectloc", "_angle", "_unitRole", "_display", "_ctrlText"];
+/****************************************************************
+
+Author(s):
+	Karel Moricky - Bohemia Interactive
+	Nelson - Bohemia Interactive
+	oscarmolinadev
+
+File:
+	fnc_cameraMove.sqf
+
+Description:
+	Camera move - Nelson's solution for key lag
+
+Performance:
+	0 ms
+
+Parameter(s):
+
+
+Returns:
+	Nothing
+
+****************************************************************/
+
+#include "script_component.hpp"
+
+private [
+	"_type","_unit",
+	"_cam", "_newCamPosition","_vector", "_objectLocation","_angle"
+];
 
 disableSerialization;
 
@@ -11,6 +64,13 @@ _cam = missionnamespace getvariable ["UPM_Tools_Camera",objNull];
 
 if (!isNull _cam) then {
 	camDestroy _cam;
+};
+
+
+switch (_type) do {
+    case "FREECAM": {
+    	/* STATEMENT */
+    };
 };
 
 _unit = player;
@@ -29,12 +89,11 @@ _cam setPos _newCamPosition;
 _vector = ((((getPos vehicle _unit select 0) - (getPos _cam select 0)) atan2 ((getPos vehicle _unit select 1) - (getPos _cam select 1))) + 360) % 360;
 _cam setDir _vector;
 
-_objectloc = (getPosASL _cam) vectorDiff (getPosASL _unit);
+_objectLocation = (getPosASL _cam) vectorDiff (getPosASL _unit);
 
-_angle = 90 - (atan (sqrt((((_objectloc select 0)^2)+((_objectloc select 1)^2)) / (_objectloc select 2))));
+_angle = 90 - (atan (sqrt((((_objectLocation select 0)^2)+((_objectLocation select 1)^2)) / (_objectLocation select 2))));
 
 [+0,-_angle] call upm_fnc_cameraRotate;
-
 
 vehicle _unit switchCamera "Internal";
 _cam cameraeffect ["INTERNAL","BACK"];

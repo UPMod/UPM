@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_dbExportCity.sqf
+	fnc_exportCity.sqf
 
 Description:
 	Export info marker

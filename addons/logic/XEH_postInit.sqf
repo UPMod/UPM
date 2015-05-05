@@ -23,7 +23,7 @@ Returns:
 #include "script_component.hpp"
 
 if (!isServer && hasInterface ) exitWith {};
-
+/*
 [{
 
 
@@ -39,4 +39,4 @@ if (!isServer && hasInterface ) exitWith {};
 //diag_log text "addPerFrame loop 2";
 
 
-}, 5] call CBA_fnc_addPerFrameHandler;
+}, 5] call CBA_fnc_addPerFrameHandler;*/

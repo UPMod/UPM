@@ -7,6 +7,6 @@ logo = "UPM.paa";
 logoOver = "UPM.paa";
 tooltip = "Urban Patrol Modification";
 tooltipOwned = "Urban Patrol Modification Owned";
-overview = "UPM is a mod for Arma 3 to improve the control, behaviour, control and realism of AI.";
+overview = "Urban Patrol Modification is a mod for Arma 3 to improve the control, behaviour, control and realism of AI.";
 author = "oscarmolinadev";
 overviewPicture = "UPM.paa";

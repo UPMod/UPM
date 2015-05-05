@@ -1,3 +1,26 @@
+/****************************************************************
+
+Author(s):
+	Karel Moricky
+	oscarmolinadev
+
+File:
+	fnc_cameraRotate.sqf
+
+Description:
+	Camera Rotate
+
+Performance:
+	0 ms
+
+Parameter(s):
+
+
+Returns:
+	Nothing
+
+****************************************************************/
+
 #include "script_component.hpp"
 
 private ["_cam","_dX","_dY","_pitchbank"];

@@ -97,7 +97,7 @@ switch _mode do {
 		clearradio;
 		enableradio false;
 
-		[] spawn upm_fnc_cameraSelectView;
+		[] call upm_fnc_cameraSelectView;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
