@@ -3,6 +3,7 @@ picture = "UPM.paa";
 actionName = "GitHub";
 action = "https://github.com/upmod/UPM";
 description = "UPM - Version 0.0.1";
+logoSmall = "UPM.paa";
 logo = "UPM.paa";
 logoOver = "UPM.paa";
 tooltip = "Urban Patrol Modification";

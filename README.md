@@ -45,7 +45,7 @@ Get started [here](https://github.com/oscarmolinadev/UPM/wiki/Getting-Started).
 
 oscarmolinadev (Lead developer)
 
-Cool=Azroul13 (Developer, UPSMON developer)
+Cool=Azroul13 (Developer, UPSMON Developer)
 
 ## Collaborators
 

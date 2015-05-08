@@ -24,10 +24,8 @@ Returns:
 
 if (!hasInterface) exitWith{};
 
-["RUN INIT TOOLS",0] call FUNC(debug);
-
 if !(player in GVAR(listPlayers)) exitWith {
-	[player] spawn { sleep 0.5; "UPM Debug/Spectator" hintC format["%1 not have permissions for run debug/spectator tools",_this select 0];};
+	0 spawn { sleep 0.01; ["You not have permissions for run debug/spectator tools", "UPM Debug/Spectator", true, false] call BIS_fnc_guiMessage;};
 };
 
 ["INIT"] spawn FUNC(toolsHandle);
