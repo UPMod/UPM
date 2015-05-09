@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="UPM">
+  <Package name="Run">
+    <Key ID="STR_UPM_Run_Authors">
+      <English>UPM Team</English>
+      <German>UPM Team</German>
+      <Spanish>UPM Team</Spanish>
+      <Polish>UPM Team</Polish>
+      <Czech>UPM Team</Czech>
+      <French>UPM Team</French>
+      <Russian>UPM Team</Russian>
+      <Portuguese>UPM Team</Portuguese>
+      <Hungarian>UPM Team</Hungarian>
+      <Italian>UPM Team</Italian>
+    </Key>
+  </Package>
+</Project>
