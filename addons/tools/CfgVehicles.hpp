@@ -7,7 +7,7 @@ class CfgVehicles {
     function = QFUNC(moduleActivateTools);
     scope = 2;
     isGlobal = 1;
-    //icon = QUOTE(PATHTOF(UI\Icon_Module_CheckPBO_ca.paa));
+    //icon ="";
     class Arguments {
       class NamePlayers {
         displayName = "Name players";
