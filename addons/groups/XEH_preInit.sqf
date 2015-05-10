@@ -24,6 +24,10 @@ Returns:
 
 if (!isServer && hasInterface ) exitWith {};
 
+// upm_groups_init
+GVAR(init) = [];
+publicVariable QGVAR(init);
+
 // upm_groups_all
 GVAR(all) = [];
 publicVariable QGVAR(all);

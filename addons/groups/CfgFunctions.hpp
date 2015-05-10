@@ -7,7 +7,17 @@ class CfgFunctions
 			// upm_fnc_groupInit
 			class groupInit
 			{
-				file = PATHF(init);
+				file = PATHF(groupInit);
+			};
+			// upm_fnc_handleGroupInit
+			class handleGroupInit
+			{
+				file = PATHF(handleGroupInit);
+			};
+			// upm_fnc_groupBuild
+			class groupBuild
+			{
+				file = PATHF(groupBuild);
 			};
 		};
 	};

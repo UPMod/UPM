@@ -4,10 +4,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	XEH_preInit.sqf
+	fnc_handleGroupInit.sqf
 
 Description:
-	Init global variables
+	Build all groups
 
 Performance:
 	0 ms
@@ -22,6 +22,13 @@ Returns:
 
 #include "script_component.hpp"
 
-if (!isServer && hasInterface ) exitWith {};
+private ["_grp"];
 
-GVAR(start) = false;
+{
+	_grp = _x;
+
+	_grp call FUNC(groupBuild);
+
+	GVAR(init) = GVAR(init) - [_grp];
+
+} count GVAR(init) > 0;

@@ -26,4 +26,6 @@ PARAMS_3(_logic,_units,_activated);
 
 if !(_activated) exitWith {};
 
+GVAR(start) = true;
+
 ["MODULE [RUN] ACTIVATED SUCCESFULLY!",0] call FUNC(debug);

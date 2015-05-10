@@ -4,24 +4,24 @@ Author(s):
 	oscarmolinadev
 
 File:
-	XEH_preInit.sqf
+	fnc_init.sqf
 
 Description:
-	Init global variables
+	Pre initialize group
 
 Performance:
 	0 ms
 
 Parameter(s):
-	NOTHING
+	ARRAY
 
 Returns:
 	NOTHING
 
 ****************************************************************/
 
-#include "script_component.hpp"
+#include "script_component.hpp";
 
 if (!isServer && hasInterface ) exitWith {};
 
-GVAR(start) = false;
+GVAR(init) pushBack [_this];
