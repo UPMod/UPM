@@ -1,0 +1,12 @@
+﻿# UPM CONTRIBUTOR LIST
+# If you contributed, but are not listed here, contact me:
+# oscarmolinadev@gmail.com
+#
+# Feel free to add yourself to this when creating a pull
+# request, preferably including an email address.
+
+# UPM TEAM
+Oscar Molina "oscarmolinadev" <oscarmolinadev@gmail.com>
+
+# CONTRIBUTORS
+
