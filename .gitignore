@@ -9,3 +9,4 @@ extensions/mapping_export/mapping_export/Release/*
 extensions/mapping_export/mapping_export.opensdf
 extensions/mapping_export/mapping_export.sdf
 extensions/mapping_export/mapping_export.v12.suo
+extensions/mapping_export/ipch/*
