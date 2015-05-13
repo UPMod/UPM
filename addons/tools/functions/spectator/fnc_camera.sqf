@@ -22,7 +22,6 @@ Returns:
 ****************************************************************/
 
 #include "script_component.hpp"
-#include "dik_codes.hpp"
 
 disableserialization;
 

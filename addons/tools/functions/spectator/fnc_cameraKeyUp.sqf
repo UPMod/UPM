@@ -22,3 +22,7 @@ Returns:
 ****************************************************************/
 
 #include "script_component.hpp"
+
+PARAMS_5(_display,_key,_shift,_ctrl,_alt);
+
+UPM_Tools_keys set [_key,false];

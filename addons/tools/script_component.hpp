@@ -13,3 +13,4 @@
 
 #include "\u\upm\addons\main\script_macros.hpp"
 #include <ui\common\UI_Ids.hpp>
+#include <ui\common\DIK_Codes.hpp>

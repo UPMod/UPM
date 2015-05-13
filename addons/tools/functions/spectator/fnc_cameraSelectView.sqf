@@ -22,33 +22,6 @@ Returns:
 
 ****************************************************************/
 
-
-#include "script_component.hpp"
-
-/****************************************************************
-
-Author(s):
-	Karel Moricky - Bohemia Interactive
-	Nelson - Bohemia Interactive
-	oscarmolinadev
-
-File:
-	fnc_cameraMove.sqf
-
-Description:
-	Camera move - Nelson's solution for key lag
-
-Performance:
-	0 ms
-
-Parameter(s):
-
-
-Returns:
-	Nothing
-
-****************************************************************/
-
 #include "script_component.hpp"
 
 private [
@@ -66,6 +39,7 @@ if (!isNull _cam) then {
 	camDestroy _cam;
 };
 
+_type = "";
 
 switch (_type) do {
     case "FREECAM": {
