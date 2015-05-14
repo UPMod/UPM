@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraInit.sqf
+	fnc_spectatorInit.sqf
 
 Description:
-	Camera Key Up
+	Init tools
 
 Performance:
 	0 ms
@@ -29,10 +29,45 @@ private [
 	"_cam","_camPos",
 	"_DIKcodes","_DIKlast",
 	"_display",
-	"_ctrlMouseArea"
+	"_ctrlMouseArea",
+	"_ctrlMap",
+	"_displayMission", "_overlay","_layers"
 ];
 
-// GLOBAL VARIABLES --------------------------------------------- //
+// EFFECTS ------------------------------------------------------ //
+//----------------------------------------------------------------//
+
+// Disable underwater PP effects
+ppEffectDestroy [BIS_SuffRadialBlur, BIS_SuffBlur, BIS_SuffCC];
+
+// Disable menu chromatic aberration
+[] call bis_fnc_guiEffectTiles;
+
+// OVERLAYS ----------------------------------------------------- //
+//----------------------------------------------------------------//
+
+// Remove mission overlay
+_displayMission = [] call (uiNamespace getVariable "bis_fnc_displayMission");
+_overlay = _displayMission displayCtrl 11400;
+_overlay ctrlSetFade 1;
+_overlay ctrlCommit 0;
+
+// Remove overlays
+cutText ["","plain"];
+titleText ["","plain"];
+_layers = missionNamespace getVariable ["bis_fnc_rscLayer_list",[]];
+
+for "_l" from 1 to (count _layers - 1) step 2 do {
+	(_layers select _l) cutText ["","plain"];
+};
+
+// RADIO -------------------------------------------------------- //
+//----------------------------------------------------------------//
+
+clearRadio;
+enableRadio false;
+
+// INIT / GLOBAL VARIABLES -------------------------------------- //
 //----------------------------------------------------------------//
 
 // upm_tools_LMB
@@ -59,6 +94,17 @@ GVAR(cameraVision) = 0;
 
 // upm_tools_visibleHUD
 GVAR(visibleHUD) = true;
+
+// upm_tools_prespective
+GVAR(prespective) = "FREECAM";
+
+// INIT UNIT ---------------------------------------------------- //
+//----------------------------------------------------------------//
+
+player allowDamage false;
+
+// upm_tools_spectateUnit
+GVAR(spectateUnit) = player;
 
 // CAMERA ------------------------------------------------------- //
 //----------------------------------------------------------------//
@@ -103,5 +149,10 @@ ctrlSetFocus _ctrlMouseArea;
 
 _ctrlMap = _display displayCtrl D_CB_MAP;
 _ctrlMap ctrlEnable false;
-_ctrlMap ctrlAddEventHandler ["draw","['MapDraw',_this] call upm_fnc_camera;"];
-_ctrlMap ctrlAddEventHandler ["mousebuttonclick","['MapClick',_this] call upm_fnc_camera;"];
+_ctrlMap ctrlAddEventHandler ["Draw","[_this] call upm_fnc_spectatorMapDraw;"];
+_ctrlMap ctrlAddEventHandler ["MouseButtonClick","[_this] call upm_fnc_spectatorMapClick;"];
+
+// SELECT VIEW -------------------------------------------------- //
+//----------------------------------------------------------------//
+
+[] call upm_fnc_spectatorSelectView;
