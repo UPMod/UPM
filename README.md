@@ -33,22 +33,13 @@
 
 ## Features
 
-For a full list, look at the [wiki](https://github.com/oscarmolinadev/UPM/wiki).
+Coming soon..
 
 ## Guides & How-Tos
 
 You installed UPM, but you have no idea how it works, or where to start?
 
-Get started [here](https://github.com/oscarmolinadev/UPM/wiki/Getting-Started).
-
-## Team
-
-oscarmolinadev (Lead developer)
-
-Cool=Azroul13 (Developer, UPSMON Developer)
-
-## Collaborators
-
+Get started [here](https://github.com/upmod/UPM/blob/master/documentation/missionmaker/getting-started.md).
 
 ## Contributing
 
