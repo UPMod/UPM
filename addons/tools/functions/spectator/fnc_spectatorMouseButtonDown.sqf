@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraKeyDown.sqf
+	fnc_spectatorMouseButtonDown.sqf
 
 Description:
-	Camera Key Down
+	Spectator Mouse Button Down
 
 Performance:
 	0 ms

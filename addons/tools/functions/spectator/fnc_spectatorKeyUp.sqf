@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMapDraw.sqf
+	fnc_spectatorKeyUp.sqf
 
 Description:
-	Camera Map Draw
+	Spectator Key Up
 
 Performance:
 	0 ms
@@ -22,3 +22,7 @@ Returns:
 ****************************************************************/
 
 #include "script_component.hpp"
+
+PARAMS_5(_display,_key,_shift,_ctrl,_alt);
+
+GVAR(keys) set [_key,false];

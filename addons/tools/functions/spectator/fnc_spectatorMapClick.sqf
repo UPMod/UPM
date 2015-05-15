@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraKeyUp.sqf
+	fnc_spectatorMapClick.sqf
 
 Description:
-	Camera Key Up
+	Spectator MapClick
 
 Performance:
 	0 ms
@@ -22,7 +22,3 @@ Returns:
 ****************************************************************/
 
 #include "script_component.hpp"
-
-PARAMS_5(_display,_key,_shift,_ctrl,_alt);
-
-UPM_Tools_keys set [_key,false];

@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMouse.sqf
+	fnc_spectatorMouse.sqf
 
 Description:
-	Camera Mouse
+	Spectator Mouse
 
 Performance:
 	0 ms

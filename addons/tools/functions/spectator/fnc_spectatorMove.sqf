@@ -6,10 +6,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMove.sqf
+	fnc_spectatorMove.sqf
 
 Description:
-	Camera move - Nelson's solution for key lag
+	Spectator move - Nelson's solution for key lag
 
 Performance:
 	0 ms
@@ -24,16 +24,14 @@ Returns:
 
 #include "script_component.hpp"
 
-private ["_dX","_dY","_dZ","_coef","_cam","_dir","_camPos"];
+PARAMS_4(_dX,_dY,_dZ,_coef);
 
-_dX = _this select 0;
-_dY = _this select 1;
-_dZ = _this select 2;
-_coef = _this select 3;
+private ["_cam","_dir","_camPos"];
 
-_cam = missionnamespace getvariable "UPM_Tools_Camera";
+// missionNamespace setVariable ["upm_tools_camera",_cam];
+_cam = GETMVAR(GVAR(camera),objNull);
 
-_pos = getposasl _cam;
+_pos = getPosASL _cam;
 _dir = (direction _cam) + _dX * 90;
 
 _camPos = [
@@ -42,5 +40,5 @@ _camPos = [
 	(_pos select 2) + _dZ * _coef
 ];
 
-_camPos set [2,(_camPos select 2) max (getterrainheightasl _camPos)];
-_cam setposasl _camPos;
+_camPos set [2,(_camPos select 2) max (getTerrainHeightASL _camPos)];
+_cam setPosASL _camPos;

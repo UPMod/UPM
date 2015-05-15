@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMouseZChanged.sqf
+	fnc_spectatorMouseButtonUp.sqf
 
 Description:
-	Camera Mouse Z Changed
+	Spectator Mouse Button Up
 
 Performance:
 	0 ms

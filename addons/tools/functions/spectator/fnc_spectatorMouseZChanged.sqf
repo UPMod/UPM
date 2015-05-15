@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraExit.sqf
+	fnc_spectatorMouseZChanged.sqf
 
 Description:
-	Camera Exit
+	Spectator Mouse Z Changed
 
 Performance:
 	0 ms

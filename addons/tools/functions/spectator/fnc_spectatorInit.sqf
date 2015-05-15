@@ -117,7 +117,7 @@ _camPos = [
 
 _cam = "camera" camCreate _camPos;
 
-// missionnamespace setvariable ["upm_tools_camera",_cam];
+// missionNamespace setVariable ["upm_tools_camera",_cam];
 SETMVAR(GVAR(camera),_cam);
 
 // MAP KEYS ----------------------------------------------------- //

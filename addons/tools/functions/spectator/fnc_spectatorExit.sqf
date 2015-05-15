@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMouseButtonUp.sqf
+	fnc_spectatorExit.sqf
 
 Description:
-	Camera Mouse Button Up
+	Spectator Exit
 
 Performance:
 	0 ms

@@ -5,10 +5,10 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_cameraMouseButtonDown.sqf
+	fnc_spectatorMapDraw.sqf
 
 Description:
-	Camera Mouse Button Down
+	Spectator Map Draw
 
 Performance:
 	0 ms
