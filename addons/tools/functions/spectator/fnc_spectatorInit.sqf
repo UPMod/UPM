@@ -88,7 +88,7 @@ GVAR(cameraPitchBank) = [0,0];
 // upm_tools_cameraFov
 GVAR(cameraFov) = 0.7;
 // upm_tools_cameraIcon
-GVAR(cameraIcon) = gettext (configfile >> "RscUPM_Tools" >> "iconCamera");
+GVAR(cameraIcon) = getText (configfile >> "RscUPM_Tools" >> "iconCamera");
 // upm_tools_cameraVision
 GVAR(cameraVision) = 0;
 
@@ -149,8 +149,8 @@ ctrlSetFocus _ctrlMouseArea;
 
 _ctrlMap = _display displayCtrl D_CB_MAP;
 _ctrlMap ctrlEnable false;
-_ctrlMap ctrlAddEventHandler ["Draw","[_this] call upm_fnc_spectatorMapDraw;"];
-_ctrlMap ctrlAddEventHandler ["MouseButtonClick","[_this] call upm_fnc_spectatorMapClick;"];
+_ctrlMap ctrlAddEventHandler ["Draw","_this call upm_fnc_spectatorMapDraw;"];
+_ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMapClick;"];
 
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//

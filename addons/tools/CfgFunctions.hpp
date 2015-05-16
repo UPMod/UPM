@@ -20,25 +20,70 @@ class CfgFunctions
 				file = PATHF(toolsHandle);
 			};
 			// ========================================
-			// upm_fnc_camera
-			class camera
+			// upm_fnc_spectatorExit
+			class spectatorExit
 			{
-				file = PATHF_SUB(spectator,camera);
+				file = PATHF_SUB(spectator,spectatorExit);
 			};
-			// upm_fnc_cameraMove
-			class cameraMove
+			// upm_fnc_spectatorInit
+			class spectatorInit
 			{
-				file = PATHF_SUB(spectator,cameraMove);
+				file = PATHF_SUB(spectator,spectatorInit);
 			};
-			// upm_fnc_cameraRotate
-			class cameraRotate
+			// upm_fnc_spectatorKeyDown
+			class spectatorKeyDown
 			{
-				file = PATHF_SUB(spectator,cameraRotate);
+				file = PATHF_SUB(spectator,spectatorKeyDown);
 			};
-			// upm_fnc_cameraSelectView
-			class cameraSelectView
+			// upm_fnc_spectatorKeyUp
+			class spectatorKeyUp
 			{
-				file = PATHF_SUB(spectator,cameraSelectView);
+				file = PATHF_SUB(spectator,spectatorKeyUp);
+			};
+			// upm_fnc_spectatorMapClick
+			class spectatorMapClick
+			{
+				file = PATHF_SUB(spectator,spectatorMapClick);
+			};
+			// upm_fnc_spectatorMapDraw
+			class spectatorMapDraw
+			{
+				file = PATHF_SUB(spectator,spectatorMapDraw);
+			};
+			// upm_fnc_spectatorMouse
+			class spectatorMouse
+			{
+				file = PATHF_SUB(spectator,spectatorMouse);
+			};
+			// upm_fnc_spectatorMouseButtonDown
+			class spectatorMouseButtonDown
+			{
+				file = PATHF_SUB(spectator,spectatorMouseButtonDown);
+			};
+			// upm_fnc_spectatorMouseButtonUp
+			class spectatorMouseButtonUp
+			{
+				file = PATHF_SUB(spectator,spectatorMouseButtonUp);
+			};
+			// upm_fnc_spectatorMouseZChanged
+			class spectatorMouseZChanged
+			{
+				file = PATHF_SUB(spectator,spectatorMouseZChanged);
+			};
+			// upm_fnc_spectatorMove
+			class spectatorMove
+			{
+				file = PATHF_SUB(spectator,spectatorMove);
+			};
+			// upm_fnc_spectatorRotate
+			class spectatorRotate
+			{
+				file = PATHF_SUB(spectator,spectatorRotate);
+			};
+			// upm_fnc_spectatorSelectView
+			class spectatorSelectView
+			{
+				file = PATHF_SUB(spectator,spectatorSelectView);
 			};
 		};
 	};

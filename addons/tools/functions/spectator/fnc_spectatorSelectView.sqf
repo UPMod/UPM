@@ -93,7 +93,7 @@ switch (GVAR(prespective)) do {
 		// Angle
 		_objectLocation = (getPosASL _cam) vectorDiff (getPosASL _unit);
 		_angle = 90 - (atan (sqrt((((_objectLocation select 0)^2)+((_objectLocation select 1)^2)) / (_objectLocation select 2))));
-		[+0,-_angle] call upm_fnc_spectatorRotate;
+		[+0,-_angle] call FUNC(spectatorRotate);
 
 		vehicle _unit switchCamera "INTERNAL";
 		_cam cameraEffect ["INTERNAL","BACK"];

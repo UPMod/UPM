@@ -25,10 +25,12 @@ Returns:
 
 PARAMS_5(_display,_key,_shift,_ctrl,_alt);
 
+disableSerialization;
+
 private [
 	"_return",
 	"_cam","_camPos","_camDir",
-	"_display","_ctrlMouseArea","_ctrlMap","_ctrlMapPos",
+	"_ctrlMouseArea","_ctrlMap","_ctrlMapPos",
 	"_vision"
 ];
 
@@ -45,7 +47,7 @@ switch (_key) do {
 	case (DIK_NUMPAD5): {
 	// Reset
 		GVAR(cameraPitchBank) = [0,0];
-		[0,0] call upm_fnc_spectatorRotate;
+		[0,0] call FUNC(spectatorRotate);
 		GVAR(cameraFov) = 0.7;
 		_camPos = position _cam;
 		_camDir = direction _cam;
@@ -140,6 +142,7 @@ switch (_key) do {
 
 		_this spawn {
 			disableSerialization;
+			_display = _this select 0;
 			_message = [
 				"Do you really want to quit?",
 				"UPM Debug/Spectator",

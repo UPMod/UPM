@@ -34,7 +34,7 @@ if (_mode == "INIT") exitWith {
 
 if (_mode == "EXIT") exitWith {
 	if (!isNull (findDisplay D_TOOLS)) then {closeDialog 0};
-	if (!isNil {UPM_Tools_LMB}) then {
-		['Exit'] call FUNC(camera);
+	if (!isNil {GVAR(LMB)}) then {
+		['Exit'] call FUNC(spectatorExit);
 	}
 };

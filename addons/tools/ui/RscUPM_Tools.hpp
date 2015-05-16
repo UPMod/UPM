@@ -9,10 +9,10 @@ class RscUPM_Tools
 	movingEnable = 0;
 	enableSimulation = 1;
 	iconCamera = "\A3\ui_f\data\GUI\Rsc\RscDisplayMissionEditor\iconCamera_ca.paa";
-	onKeyDown = "['KeyDown',_this] call upm_fnc_camera;";
-	onKeyUp = "['KeyUp',_this] call upm_fnc_camera;";
-	onMouseButtonDown = "['MouseButtonDown',_this] call upm_fnc_camera;";
-	onMouseButtonUp = "['MouseButtonUp',_this] call upm_fnc_camera;";
+	onKeyDown = "_this call upm_fnc_spectatorKeyDown;";
+	onKeyUp = "_this call upm_fnc_spectatorKeyUp;";
+	onMouseButtonDown = "_this call upm_fnc_spectatorMouseButtonDown;";
+	onMouseButtonUp = "_this call upm_fnc_spectatorMouseButtonUp;";
 
 	class ControlsBackground
 	{
@@ -24,9 +24,9 @@ class RscUPM_Tools
 			y = "safezoneY";
 			w = "safezoneW";
 			h = "safezoneH";
-			onMouseMoving = "['Mouse',_this] call upm_fnc_camera;";
-			onMouseHolding = "['Mouse',_this] call upm_fnc_camera;";
-			onMouseZchanged = "['MouseZChanged',_this] call upm_fnc_camera;";
+			onMouseMoving = "_this call upm_fnc_spectatorMouse;";
+			onMouseHolding = "_this call upm_fnc_spectatorMouse;";
+			onMouseZchanged = "_this call upm_fnc_spectatorMouseZChanged;";
 		};
 		class Map: RscMapControl
 		{
