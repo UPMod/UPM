@@ -25,9 +25,6 @@ UPM Version: 0.1.x
 **Steps to reproduce:**
 * *Add the steps needed to reproduce the issue.*
 
-**Where did the issue occur?**
-*A possible answer might be "Multiplayer", "Singleplayer"*
-
 **RPT log file:**
 *Add a link (pastebin.com) to the client or server RPT file.*
 ```
