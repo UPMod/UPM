@@ -1,6 +1,3 @@
-class RscMapControl;
-class RscText;
-
 class RscUPM_Tools
 {
 	onLoad = "";
@@ -28,6 +25,7 @@ class RscUPM_Tools
 			onMouseHolding = "_this call upm_fnc_spectatorMouse;";
 			onMouseZchanged = "_this call upm_fnc_spectatorMouseZChanged;";
 		};
+
 		class Map: RscMapControl
 		{
 			idc = D_CB_MAP; //3141
@@ -36,9 +34,12 @@ class RscUPM_Tools
 			w = "0.8 * safezoneW";
 			h = "0.8 * safezoneH";
 		};
+		
+		#include <main_ui\CtrlsUPM_MenuLeftBG.hpp>
 	};
 	class Controls
 	{
-
+		#include <main_ui\CtrlsUPM_MenuLeft.hpp>
+		
 	};
 };
