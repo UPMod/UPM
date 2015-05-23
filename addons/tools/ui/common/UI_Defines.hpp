@@ -3,6 +3,7 @@ class RscText;
 class RscButtonMenu;
 class RscControlsGroup;
 class RscFrame;
+class RscCheckbox;
 
 class RscButtonUPM_Tools: RscButtonMenu
 {

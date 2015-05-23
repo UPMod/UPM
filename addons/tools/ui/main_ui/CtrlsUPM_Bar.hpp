@@ -67,7 +67,7 @@ class BarBottom: RscControlsGroup
 	h = 1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	class controls
 	{
-		class BorderBack
+		class BackgroundBar
 		{
 			idc = 79131;
 			x = 0 * safezoneW;
@@ -97,6 +97,17 @@ class BarBottom: RscControlsGroup
 			linespacing = 1;
 			fixedWidth = 0;
 			sizeEx = (((((2.42424 / 1.81818) min 1.2) / 1.2) / 25) * 0.8);
+		};
+
+		class InfoSpectator: RscCheckbox
+		{
+			idc = 79142;
+			x = 0.46 * safezoneW;
+			y = 0.0007 * safezoneH;
+			w = 0.0175312 * safezoneW;
+			h = 0.030 * safezoneH;
+			onCheckedChanged = "";
+			tooltip = "SHOW INFO SPECTATOR";
 		};
 	};
 };
