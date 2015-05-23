@@ -80,9 +80,23 @@ class BarBottom: RscControlsGroup
 		    colorText[] = {1,1,1,1};
 		    font = "puristaMedium";
 		    sizeEx = 0.02;
-	    	colorBackground[] = {0,0,0,1};
-			colorBackground2[] = {0,0,0,1};
+	    	colorBackground[] = {0,0,0,0.8};
+			colorBackground2[] = {0,0,0,0.8};
 		    text = "";
+		};
+
+		class SpecatorName: RscText
+		{
+			idc = 79135;
+			x = 0.19 * safezoneW;
+			y = 0.00 * safezoneH;
+			w = 0.1004437 * safezoneW;
+			h = 0.030 * safezoneH;
+			text = "";
+			tooltip = "";
+			linespacing = 1;
+			fixedWidth = 0;
+			sizeEx = (((((2.42424 / 1.81818) min 1.2) / 1.2) / 25) * 0.8);
 		};
 	};
 };
