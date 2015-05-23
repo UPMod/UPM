@@ -1,6 +1,8 @@
 class RscMapControl;
 class RscText;
 class RscButtonMenu;
+class RscControlsGroup;
+class RscFrame;
 
 class RscButtonUPM_Tools: RscButtonMenu
 {

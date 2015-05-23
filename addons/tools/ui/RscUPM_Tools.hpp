@@ -40,6 +40,6 @@ class RscUPM_Tools
 	class Controls
 	{
 		#include <main_ui\CtrlsUPM_MenuLeft.hpp>
-		
+		#include <main_ui\CtrlsUPM_Bar.hpp>
 	};
 };
