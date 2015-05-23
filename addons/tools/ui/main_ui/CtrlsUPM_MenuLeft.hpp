@@ -47,11 +47,11 @@ class TabLightVehicles: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 4) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "LIGHT VEHICLES";
 	class TextPos
 	{
 		left = 0;
-		top = 0.01;
+		top = 0.017;
 		right = 0;
 		bottom = 0;
 	};
@@ -67,11 +67,11 @@ class TabHeavyVehicles: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 5) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "HEAVY VEHICLES";
 	class TextPos
 	{
 		left = 0;
-		top = 0.01;
+		top = 0.017;
 		right = 0;
 		bottom = 0;
 	};
@@ -87,7 +87,7 @@ class TabHelis: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 6) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "HELICOPTERS";
 	class TextPos
 	{
 		left = 0;
@@ -107,11 +107,11 @@ class TabPlanes: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 7) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "PLANES";
 	class TextPos
 	{
 		left = 0;
-		top = 0.01;
+		top = 0.017;
 		right = 0;
 		bottom = 0;
 	};
@@ -127,11 +127,11 @@ class TabNaval: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 8) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "NAVAL";
 	class TextPos
 	{
 		left = 0;
-		top = 0.01;
+		top = 0.017;
 		right = 0;
 		bottom = 0;
 	};
@@ -147,7 +147,7 @@ class TabStatics: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 9) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "STATICS";
 	class TextPos
 	{
 		left = 0;
@@ -167,7 +167,7 @@ class TabEnvironment: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 10) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "ENVIRONMENT";
 	class TextPos
 	{
 		left = 0;
@@ -187,7 +187,7 @@ class TabPerformance: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 11) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "PERFORMANCE";
 	class TextPos
 	{
 		left = 0;
@@ -207,7 +207,7 @@ class TabConfig: RscButtonUPM_Tools
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 12) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 	h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-	tooltip = "GROUPS";
+	tooltip = "SETTINGS";
 	class TextPos
 	{
 		left = 0;
