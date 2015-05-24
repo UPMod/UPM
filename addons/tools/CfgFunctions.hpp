@@ -85,6 +85,22 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(spectator,spectatorSelectView);
 			};
+			// ========================================
+			// upm_fnc_debugInit
+			class debugInit
+			{
+				file = PATHF_SUB(debug,debugInit);
+			};
+			// upm_fnc_debugUpdate
+			class debugUpdate
+			{
+				file = PATHF_SUB(debug,debugUpdate);
+			};
+			// upm_fnc_debugListUnits
+			class debugListUnits
+			{
+				file = PATHF_SUB(debug,debugListUnits);
+			};
 		};
 	};
 };

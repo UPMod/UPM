@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_moduleActivateTools.sqf
+	fnc_toolsInit.sqf
 
 Description:
 
@@ -28,4 +28,6 @@ if !(player in GVAR(listPlayers)) exitWith {
 	0 spawn { sleep 0.01; ["You not have permissions for run debug/spectator tools", "UPM Debug/Spectator", true, false] call BIS_fnc_guiMessage;};
 };
 
-["INIT"] spawn FUNC(toolsHandle);
+[] call FUNC(debugInit);
+
+["INIT"] call FUNC(toolsHandle);

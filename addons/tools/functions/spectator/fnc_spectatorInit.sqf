@@ -155,4 +155,6 @@ _ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMa
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//
 
-[] call upm_fnc_spectatorSelectView;
+[] call FUNC(debugUpdate);
+
+[] call FUNC(spectatorSelectView);
