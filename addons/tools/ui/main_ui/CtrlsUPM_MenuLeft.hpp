@@ -1,7 +1,6 @@
 class TabUnits: RscButtonUPM_Tools
 {
-	idc = "930 + 						1";
-	idcx = 931;
+	idc = D_C_TABUNITS;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\unit.paa' align='center' size='0.8' />";
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 2) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
@@ -19,10 +18,8 @@ class TabUnits: RscButtonUPM_Tools
 
 class TabGroups: RscButtonUPM_Tools
 {
-	idc = "930 + 						2";
-	idcx = 932;
+	idc = D_C_TABGROUPS;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\group.paa' align='center' size='0.8' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 3) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -39,10 +36,8 @@ class TabGroups: RscButtonUPM_Tools
 
 class TabLightVehicles: RscButtonUPM_Tools
 {
-	idc = "930 + 						3";
-	idcx = 933;
+	idc = D_C_TABLIGHTVEHICLES;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\car.paa' align='center' size='0.5' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 4) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -59,10 +54,8 @@ class TabLightVehicles: RscButtonUPM_Tools
 
 class TabHeavyVehicles: RscButtonUPM_Tools
 {
-	idc = "930 + 						4";
-	idcx = 934;
+	idc = D_C_TABHEAVYVEHICLES;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\tank.paa' align='center' size='0.5' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 5) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -79,10 +72,8 @@ class TabHeavyVehicles: RscButtonUPM_Tools
 
 class TabHelis: RscButtonUPM_Tools
 {
-	idc = "930 + 						5";
-	idcx = 935;
+	idc = D_C_TABHELIS;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\helicopter.paa' align='center' size='0.5' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 6) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -99,10 +90,8 @@ class TabHelis: RscButtonUPM_Tools
 
 class TabPlanes: RscButtonUPM_Tools
 {
-	idc = "930 + 						6";
-	idcx = 936;
+	idc = D_C_TABPLANES;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\plane.paa' align='center' size='0.5' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 7) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -119,10 +108,8 @@ class TabPlanes: RscButtonUPM_Tools
 
 class TabNaval: RscButtonUPM_Tools
 {
-	idc = "930 + 						7";
-	idcx = 937;
+	idc = D_C_TABNAVAL;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\naval.paa' align='center' size='0.5' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 8) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -139,10 +126,8 @@ class TabNaval: RscButtonUPM_Tools
 
 class TabStatics: RscButtonUPM_Tools
 {
-	idc = "930 + 						8";
-	idcx = 938;
+	idc = D_C_TABSTATICS;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\static.paa' align='center' size='0.9' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 9) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -159,10 +144,8 @@ class TabStatics: RscButtonUPM_Tools
 
 class TabEnvironment: RscButtonUPM_Tools
 {
-	idc = "930 + 						9";
-	idcx = 939;
+	idc = D_C_TABENVIRONMENT;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\environment.paa' align='center' size='0.8' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 10) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -179,10 +162,8 @@ class TabEnvironment: RscButtonUPM_Tools
 
 class TabPerformance: RscButtonUPM_Tools
 {
-	idc = "930 + 						10";
-	idcx = 940;
+	idc = D_C_TABPERFORMANCE;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\performance.paa' align='center' size='0.8' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 11) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -197,12 +178,10 @@ class TabPerformance: RscButtonUPM_Tools
 	};
 };
 
-class TabConfig: RscButtonUPM_Tools
+class TabSettings: RscButtonUPM_Tools
 {
-	idc = "930 + 						11";
-	idcx = 941;
-	text = "<img image='\u\upm\addons\tools\data\icons_menu\config.paa' align='center' size='0.8' />";
-	//x = -0.000156274 * safezoneW + safezoneX;
+	idc = D_C_TABSETTINGS;
+	text = "<img image='\u\upm\addons\tools\data\icons_menu\settings.paa' align='center' size='0.8' />";
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 12) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = "1.4 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";

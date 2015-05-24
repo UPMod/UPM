@@ -1,7 +1,6 @@
 class TabLogo: RscButtonUPM_Tools
 {
-	idc = "930 + 						0";
-	idcx = 930;
+	idc = D_CB_TABLOGO;
 	text = "<img image='\u\upm\addons\tools\data\icons_menu\iconupm.paa' align='center' size='1.1' />";
 	x = 5.44616e-005 * safezoneW + safezoneX;
 	y = (0.1 * safezoneH + safezoneY) + (1.58 * 1) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
