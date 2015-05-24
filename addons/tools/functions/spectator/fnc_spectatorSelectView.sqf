@@ -27,7 +27,8 @@ disableSerialization;
 private [
 	"_unit",
 	"_cam", "_camPos",
-	"_bbr","_p1","_p2","_vehLength","_vehHeight","_lenghtSpacing","_heightSpacing"
+	"_bbr","_p1","_p2","_vehLength","_vehHeight","_lenghtSpacing","_heightSpacing",
+	"_role"
 ];
 
 // If not exist main display (tools).
@@ -99,12 +100,57 @@ switch (GVAR(prespective)) do {
 		_cam cameraEffect ["INTERNAL","BACK"];
     	cameraEffectEnableHUD true;
     };
+
     case "FIRSTPERSON": {
 
-    	cameraEffectEnableHUD true;
+		_cam attachTo [_unit,[0,0,0]];
+		_cam cameraEffect ["TERMINATE","BACK"];
+		cameraEffectEnableHUD true;
+
+		if (vehicle _unit != _unit) then {
+
+			_role = (assignedVehicleRole _unit) select 0;
+
+			switch (_role) do {
+			    case "Driver": {
+					vehicle _unit switchCamera "INTERNAL";
+			    };
+			    case "Gunner": {
+					vehicle _unit switchCamera "GUNNER";
+				};
+			    case "Turret": {
+			    	_unit switchCamera "INTERNAL";
+				};
+			    case "Cargo": {
+					_unit switchCamera "INTERNAL";
+				};
+			    case "Commander": {
+			    	vehicle _unit switchCamera "Internal";
+				};
+			};
+
+		} else {
+			_unit switchCamera "INTERNAL";
+		};
+
     };
+
     case "THIRDPERSON": {
 
-    	cameraEffectEnableHUD true;
+		_cam cameraeffect ["INTERNAL","BACK"];
+		cameraEffectEnableHUD true;
+		_cam camSetTarget vehicle _unit;
+		_cam camCommit 0;
+
+    	_bbr = boundingBoxReal vehicle _unit;
+		_p1 = _bbr select 0;
+		_p2 = _bbr select 1;
+		_vehLength = abs ((_p2 select 1) - (_p1 select 1));
+		_vehHeight = abs ((_p2 select 2) - (_p1 select 2));
+		_lenghtSpacing = _vehLength / 0.5;
+		_heightSpacing = _vehHeight / 0.8;
+
+		_cam attachTo [vehicle _unit, [0, -_lenghtSpacing, _heightSpacing]];
+
     };
 };

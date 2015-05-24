@@ -16,6 +16,7 @@ class TabFreeCam: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(GVAR(prespective) = 'FREECAM'; [] call FUNC(spectatorSelectView););
 };
 
 class TabThirdPerson: RscButtonUPM_Tools
@@ -35,6 +36,7 @@ class TabThirdPerson: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(GVAR(prespective) = 'THIRDPERSON'; [] call FUNC(spectatorSelectView););
 }; 
 
 class TabFirstPerson: RscButtonUPM_Tools
@@ -54,6 +56,7 @@ class TabFirstPerson: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(GVAR(prespective) = 'FIRSTPERSON'; [] call FUNC(spectatorSelectView););
 };
 
 class BarBottom: RscControlsGroup
