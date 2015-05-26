@@ -101,6 +101,31 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugListUnits);
 			};
+						//upm_fnc_Draw2dMkrs
+			class Draw2dMkrs
+			{
+				file = PATHF_SUB(debug,Draw2dMkrs);
+			};
+			//upm_fnc_getColorRgbaBehaviour
+			class getColorRgbaBehaviour
+			{
+				file = PATHF_SUB(debug,getColorRgbaBehaviour);
+			};
+			//upm_fnc_getColorRgbaSide
+			class getColorRgbaSide
+			{
+				file = PATHF_SUB(debug,getColorRgbaSide);
+			};
+			//upm_fnc_getIconGrptype
+			class getIconGrptype
+			{
+				file = PATHF_SUB(debug,getIconGrptype);
+			};
+			//upm_fnc_debugGetTypeofGrp
+			class debugGetTypeofGrp
+			{
+				file = PATHF_SUB(debug,debugGetTypeofGrp);
+			};
 		};
 	};
 };
