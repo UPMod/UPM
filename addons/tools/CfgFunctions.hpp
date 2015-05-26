@@ -107,19 +107,19 @@ class CfgFunctions
 				file = PATHF_SUB(debug,Draw2dMkrs);
 			};
 			//upm_fnc_getColorRgbaBehaviour
-			class getColorRgbaBehaviour
+			class debuggetColorRgbaBehaviour
 			{
-				file = PATHF_SUB(debug,getColorRgbaBehaviour);
+				file = PATHF_SUB(debug,debuggetColorRgbaBehaviour);
 			};
 			//upm_fnc_getColorRgbaSide
-			class getColorRgbaSide
+			class debuggetColorRgbaSide
 			{
-				file = PATHF_SUB(debug,getColorRgbaSide);
+				file = PATHF_SUB(debug,debuggetColorRgbaSide);
 			};
 			//upm_fnc_getIconGrptype
-			class getIconGrptype
+			class debugGetIconGroup
 			{
-				file = PATHF_SUB(debug,getIconGrptype);
+				file = PATHF_SUB(debug,debugGetIconGroup);
 			};
 			//upm_fnc_debugGetTypeofGrp
 			class debugGetTypeofGrp
