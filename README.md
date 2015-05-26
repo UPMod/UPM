@@ -35,11 +35,8 @@
 
 Coming soon..
 
-## Guides & How-Tos
+## Branches
 
-You installed UPM, but you have no idea how it works, or where to start?
-
-Get started [here](https://github.com/upmod/UPM/blob/master/documentation/missionmaker/getting-started.md).
 
 ## Contributing
 
