@@ -59,3 +59,5 @@ See also:
 We welcome any contributions to UPM development through [pull requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
 
 Most of our active development is in the **master branch**, so we prefer to take pull requests there (particularly for new features). We try to make sure that all new code adheres to the [UPM Coding Standard](https://github.com/upmod/UPM/blob/master/documentation/development/coding-standard.md).
+
+For more technical info see [here](https://github.com/upmod/UPM/blob/master/documentation/development/getting-started.md).
