@@ -44,7 +44,8 @@ The **[version branch](https://github.com/upmod/UPM/tree/0.1)** is the intermedi
 
 The **[release branch](https://github.com/upmod/UPM/tree/release)** is extensively tested by our QA-Dev team and Community. Passed all period of test successfully.
 
-### Guides & how-tos
+## Guides & how-tos
+
 If you installed UPM but have trouble understanding how it all works, or where to start, read this first:
 * [Getting started](https://github.com/upmod/UPM/blob/master/documentation/missionmaker/getting-started.md)
 
