@@ -35,6 +35,11 @@
 
 Coming soon..
 
+## Guides & how-tos
+
+If you installed UPM but have trouble understanding how it all works, or where to start, read this first:
+* [Getting started](https://github.com/upmod/UPM/blob/master/documentation/missionmaker/getting-started.md)
+
 ## Branches
 
 The **[master branch](https://github.com/upmod/UPM/tree/master)** tracks [live changes](https://github.com/upmod/UPM/commits/master) by our DEV team. 
@@ -43,11 +48,6 @@ This is the cutting edge and may be buggy - it may not even compile.
 The **[version branch](https://github.com/upmod/UPM/tree/0.1)** is the intermediate step for testing before release. 3 weeks for our QA-DEV team and 2 weeks for Community.
 
 The **[release branch](https://github.com/upmod/UPM/tree/release)** is extensively tested by our QA-Dev team and Community. Passed all period of test successfully.
-
-## Guides & how-tos
-
-If you installed UPM but have trouble understanding how it all works, or where to start, read this first:
-* [Getting started](https://github.com/upmod/UPM/blob/master/documentation/missionmaker/getting-started.md)
 
 ## Contributing
 
