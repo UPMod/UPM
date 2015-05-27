@@ -46,4 +46,11 @@ The **[release branch](https://github.com/upmod/UPM/tree/release)** is extensive
 
 ## Contributing
 
-If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/upmod/UPM/issues).
+We welcome any contributions to UPM development through [pull requests](https://help.github.com/articles/using-pull-requests/) on GitHub.
+
+Most of our active development is in the **master branch**, so we prefer to take pull requests there (particularly for new features). We try to make sure that all new code adheres to the UPM coding standard.
+
+If you find a bug or want to request a feature, please use the [issue tracker](https://github.com/upmod/UPM/issues).
+See also:
+* [How to report an issue](https://github.com/upmod/UPM/blob/master/documentation/how-to-report-an-issue.md)
+* [How to make a feature request](https://github.com/upmod/UPM/blob/master/documentation/how-to-make-a-feature-request.md)
