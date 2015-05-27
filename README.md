@@ -37,7 +37,13 @@ Coming soon..
 
 ## Branches
 
-#### Master
+The **[master branch](https://github.com/upmod/UPM/tree/master)** tracks [live changes](https://github.com/upmod/UPM/commits/master) by our team. 
+This is the cutting edge and may be buggy - it may not even compile. 
+
+The **[version X.X branch](https://github.com/upmod/UPM/tree/0.1)** is the intermediate step for testing before release. 
+Period: 3 weeks QA-DEV team - 2 weeks Community.
+
+The **[release branch](https://github.com/upmod/UPM/tree/release)** is the most stable branch. Passed all period of test successfully.
 
 ## Contributing
 
