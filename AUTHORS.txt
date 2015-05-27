@@ -2,6 +2,8 @@
 # If you contributed, but are not listed here, contact me:
 # oscarmolinadev@gmail.com
 #
+# Example: Your Real Name "NickName" <Email>
+#
 # Feel free to add yourself to this when creating a pull
 # request, preferably including an email address.
 
