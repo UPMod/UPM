@@ -5,7 +5,7 @@
 ```sh
 $ git clone https://github.com/upmod/UPM.git
 ```
-** Configure hooks **
+**Configure hooks**
 ```sh
 $ cd .git/hooks
 $ ln -s ../../tools/hooks/commit-msg commit-msg
