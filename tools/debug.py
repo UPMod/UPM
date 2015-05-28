@@ -33,7 +33,7 @@ def main():
 """)
 
     scriptpath = os.path.realpath(__file__)
-    projectpath = os.path.dirname(os.path.dirname(os.path.dirname(scriptpath)))
+    projectpath = os.path.dirname(os.path.dirname(scriptpath))
     addonspath = os.path.join(projectpath, "addons")
 
     os.chdir(addonspath)
