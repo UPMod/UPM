@@ -39,7 +39,7 @@ _infos = [];
 			If (!((vehicle _x) iskindof "CAManBase")) then
 			{
 			_vehicle = vehicle _x;
-			If (!(_vehicle in _vehicle_checked)) then
+			If (!((typeof _vehicle) in _vehicle_checked)) then
 			{
 				_vehicle_checked pushBack (typeof _vehicle);
 
