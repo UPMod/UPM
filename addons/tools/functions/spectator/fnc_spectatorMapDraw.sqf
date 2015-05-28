@@ -43,3 +43,6 @@ _control drawIcon [
 	"",
 	1
 ];
+
+//Draw group markers
+[_control] call FUNC(debugDraw2dMkrs);
