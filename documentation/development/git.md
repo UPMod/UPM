@@ -1,32 +1,32 @@
 # Git
 
 ## Make repository for work
-** Clone repository from GitHub **
-```git
+**Clone repository from GitHub**
+```sh
 $ git clone https://github.com/upmod/UPM.git
 ```
 ** Configure hooks **
-```git
+```sh
 $ cd .git/hooks
 $ ln -s ../../tools/hooks/commit-msg commit-msg
 $ chmod +x commit-msg
 $ cd ../../
 ```
 ## Required configuration
-** Name/nick and email address**
-```git
+**Name/nick and email address**
+```sh
 $ git config --global user.name "YOUR NAME/NICKNAME"
 $ git config --global user.email "YOUR EMAIL ADDRESS"
 ```
-** Global settings **
-```git
+**Global settings**
+```sh
 $ git config --global color.ui true
 $ git config --global core.mergeoptions --no-edit
 $ git config --global push.default simple
 $ git config --global credential.helper wincred
 ```
-** Force master to use rebase **
-```git
+**Force master to use rebase**
+```sh
 $ git config branch.master.rebase true
 ```
 ## Workflow
