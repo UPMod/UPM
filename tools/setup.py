@@ -99,7 +99,7 @@ def main():
         return -1
 
     try:
-        shutil.copytree(os.path.join(projectpath, "tools_project", "required", "cba"), "P:\\x\\cba")
+        shutil.copytree(os.path.join(projectpath, "tools", "required", "cba"), "P:\\x\\cba")
     except:
         raise
         print("Something went wrong while copying CBA includes. Please copy required\\cba to P:\\x\\cba manually.")
