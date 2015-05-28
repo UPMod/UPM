@@ -62,4 +62,4 @@ Most of our active development is in the **master branch**, so we prefer to take
 
 For more technical info see [here](https://github.com/upmod/UPM/blob/master/documentation/development/getting-started.md).
 
-Remember to add yourself to the author array of any PBO you will be editing and the [`AUTHORS.txt`](https://github.com/acemod/UPM/blob/master/AUTHORS.txt) file including a valid email address.
+Remember to add yourself to the author array of any PBO you will be editing and the [`AUTHORS.txt`](https://github.com/upmod/UPM/blob/master/AUTHORS.txt) file including a valid email address.
