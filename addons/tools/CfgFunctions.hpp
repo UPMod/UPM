@@ -96,8 +96,8 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugUpdate);
 			};
-			// upm_fnc_debugListUnits
-			class debugListUnits
+			// upm_fnc_debugLists
+			class debugLists
 			{
 				file = PATHF_SUB(debug,debugLists);
 			};
