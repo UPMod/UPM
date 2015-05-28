@@ -99,7 +99,7 @@ class CfgFunctions
 			// upm_fnc_debugListUnits
 			class debugListUnits
 			{
-				file = PATHF_SUB(debug,debugListUnits);
+				file = PATHF_SUB(debug,debugLists);
 			};
 		};
 	};
