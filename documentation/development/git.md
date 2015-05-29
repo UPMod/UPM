@@ -37,14 +37,39 @@ $ git config branch.master.rebase true
 ```sh
 $ git status
 ```
-**Download and automatically apply changes (with rebase on master by config)**
+**Download and automatically apply changes (with rebase in master by config)**
 ```sh
 $ git pull
 ```
-**Download and manually apply changes (on master)**
+**Download and manually apply changes (in master)**
 ```sh
 $ git fetch
 $ git rebase origin/master
+```
+**Do commits (always in local)**
+```sh
+# All files with changes
+$ git commit -am "#60: bla bla bla"
+# Single folder/file
+$ git add addons/groups/config.cpp
+git commit -m "#14: bla bla bla"
+```
+**Show changes single commit**
+```sh
+$ git show dc094cb...
+```
+**Upload changes to server**
+```sh
+$ git push
+```
+**Upload branch to master**
+```sh
+$ git checkout master
+$ git merge --no-ff bug#60
+```
+**Show diff between 2 branches or 2 commits**
+```sh
+$ git diff bug#60..master
 ```
 
 ## Workflow
