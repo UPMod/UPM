@@ -72,5 +72,15 @@ $ git merge --no-ff bug#60
 ```sh
 $ git diff bug#60..master
 ```
+**Resolve conflicts**
+```sh
+# 1.- Search all files with conflicts
+# 2.- Find <<<<<<< HEAD or =====
+# 3.- Edit
+# 4.- Exec commands below 
+$ git add addons/groups/config.cpp
+# Default "git commit" git unless says otherwise
+$ git commit, git commit --continue or git rebase --continue
+```
 
 ## Workflow
