@@ -82,5 +82,13 @@ $ git add addons/groups/config.cpp
 # Default "git commit" unless says otherwise
 $ git commit, git commit --continue or git rebase --continue
 ```
-
+**History of changes**
+```sh
+# List all changes, show id of commit
+$ git log --oneline
+# Filter by text
+$ git log --grep="#60" --oneline
+# Filter by author
+$ git log --author="oscarmolinadev" --oneline
+```
 ## Workflow
