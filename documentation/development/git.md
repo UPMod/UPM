@@ -79,7 +79,7 @@ $ git diff bug#60..master
 # 3.- Edit
 # 4.- Exec commands below 
 $ git add addons/groups/config.cpp
-# Default "git commit" unless says otherwise
+# Default "git commit" unless "git status" says otherwise
 $ git commit, git commit --continue or git rebase --continue
 ```
 **History of changes**
@@ -91,4 +91,16 @@ $ git log --grep="#60" --oneline
 # Filter by author
 $ git log --author="oscarmolinadev" --oneline
 ```
+**Cherry Pick**
+```sh
+# Use in specific cases
+# Apply a single commit
+$ git cherry-pick dc094cb
+```
+**Reset**
+```sh
+# It is used to reset the local branch to another. To avoid problems, merges and rebases if the server is good
+$ git fetch && git reset --hard origin/master
+```
+
 ## Workflow
