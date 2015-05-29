@@ -77,11 +77,6 @@ $ git pull
 ```sh
 $ git push
 ```
-**Download and manually apply changes (in master)**
-```sh
-$ git fetch
-$ git rebase origin/master
-```
 **Show changes single commit**
 ```sh
 $ git show dc094cb...
@@ -114,6 +109,11 @@ $ git log --oneline
 $ git log --grep="#60" --oneline
 # Filter by author
 $ git log --author="oscarmolinadev" --oneline
+```
+**Download and manually apply changes (in master)**
+```sh
+$ git fetch
+$ git rebase origin/master
 ```
 **Cherry Pick**
 ```sh
