@@ -79,7 +79,7 @@ $ git diff bug#60..master
 # 3.- Edit
 # 4.- Exec commands below 
 $ git add addons/groups/config.cpp
-# Default "git commit" git unless says otherwise
+# Default "git commit" unless says otherwise
 $ git commit, git commit --continue or git rebase --continue
 ```
 
