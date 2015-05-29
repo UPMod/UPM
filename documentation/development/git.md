@@ -61,15 +61,6 @@ $ git branch -d name_of_branch
 # Delete branch (forced)
 $ git branch -D name_of_branch
 ```
-**Download and automatically apply changes (with rebase in master by config)**
-```sh
-$ git pull
-```
-**Download and manually apply changes (in master)**
-```sh
-$ git fetch
-$ git rebase origin/master
-```
 **Do commits (always in local)**
 ```sh
 # All files with changes
@@ -78,13 +69,22 @@ $ git commit -am "#60: bla bla bla"
 $ git add addons/groups/config.cpp
 git commit -m "#14: bla bla bla"
 ```
-**Show changes single commit**
+**Download and automatically apply changes (with rebase in master by config)**
 ```sh
-$ git show dc094cb...
+$ git pull
 ```
 **Upload changes to server**
 ```sh
 $ git push
+```
+**Download and manually apply changes (in master)**
+```sh
+$ git fetch
+$ git rebase origin/master
+```
+**Show changes single commit**
+```sh
+$ git show dc094cb...
 ```
 **Upload branch to master**
 ```sh
