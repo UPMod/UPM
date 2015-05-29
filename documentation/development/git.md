@@ -18,7 +18,7 @@ $ cd ../../
 **Name/nick and email address**
 ```sh
 $ git config --global user.name "YOUR NAME/NICKNAME"
-$ git config --global user.email "YOUR EMAIL ADDRESS"
+$ git config --global user.email "YOUR EMAIL ADDRESS(GITHUB)"
 ```
 **Global settings**
 ```sh
@@ -33,5 +33,18 @@ $ git config branch.master.rebase true
 ```
 ## Commands
 
+**Show status of working copy**
+```sh
+$ git status
+```
+**Download and automatically apply changes (with rebase on master by config)**
+```sh
+$ git pull
+```
+**Download and manually apply changes (on master)**
+```sh
+$ git fetch
+$ git rebase origin/master
+```
 
 ## Workflow
