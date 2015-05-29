@@ -37,6 +37,30 @@ $ git config branch.master.rebase true
 ```sh
 $ git status
 ```
+**Branches**
+```sh
+# Show locals
+$ git branch
+# Show remotes
+$ git branch -r
+# Show all
+$ git branch -a
+# Show with extra info
+$ git branch -avvv
+# Show merged
+$ git branch --merged
+# Show without merged
+$ git branch --no-merged
+# Create branch and go (recommended)
+$ git checkout -b name_of_branch
+# Create branch 2 steps
+$ git branch name_of_branch
+$ git checkout name_of_branch
+# Delete branch (normal)
+$ git branch -d name_of_branch
+# Delete branch (forced)
+$ git branch -D name_of_branch
+```
 **Download and automatically apply changes (with rebase in master by config)**
 ```sh
 $ git pull
