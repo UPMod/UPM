@@ -65,6 +65,7 @@ $ git push
 **Upload branch to master**
 ```sh
 $ git checkout master
+$ git pull
 $ git merge --no-ff bug#60
 ```
 **Show diff between 2 branches or 2 commits**
