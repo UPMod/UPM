@@ -115,16 +115,21 @@ $ git log --author="oscarmolinadev" --oneline
 $ git fetch
 $ git rebase origin/master
 ```
+**Reset**
+```sh
+# It is used to reset the local branch to another. To avoid problems, merges and rebases if the server is good
+$ git fetch && git reset --hard origin/master
+```
 **Cherry Pick**
 ```sh
 # Use in specific cases
 # Apply a single commit
 $ git cherry-pick dc094cb
 ```
-**Reset**
+**Patch**
 ```sh
-# It is used to reset the local branch to another. To avoid problems, merges and rebases if the server is good
-$ git fetch && git reset --hard origin/master
+# Alternative to Cherry Pick
+# Apply big changes from commit
+$ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```
-
 ## Workflow
