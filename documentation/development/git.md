@@ -27,6 +27,11 @@ $ git config --global core.mergeoptions --no-edit
 $ git config --global push.default simple
 $ git config --global credential.helper wincred
 ```
-## Workflow
+**Force master to use rebase (pulls). Simulate workflow SVN, all devs working on master**
+```sh
+$ git config branch.master.rebase true
+```
+## Commands
 
-## Help commands
+
+## Workflow
