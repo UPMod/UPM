@@ -25,10 +25,6 @@ $ git config --global core.mergeoptions --no-edit
 $ git config --global push.default simple
 $ git config --global credential.helper wincred
 ```
-**Force master to use rebase**
-```sh
-$ git config branch.master.rebase true
-```
 ## Workflow
 
 ## Help commands
