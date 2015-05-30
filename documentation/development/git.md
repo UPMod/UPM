@@ -129,7 +129,22 @@ $ git cherry-pick dc094cb
 **Patch**
 ```sh
 # Alternative to Cherry Pick
-# Apply big changes from commit
+# Apply big changes from commits
 $ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```
 ## Workflow
+
+**Start bug/request/experimental**
+```sh
+$ git checkout master
+$ git pull
+# Bugs
+# For all types of bugs, name of branch: bug#number_of_issue 
+$ git checkout -b bug#45
+# Features
+# For all types of features, name of branch: feature#number_of_issue
+$ git checkout -b feature#730
+# Experimental
+# Other things, test, etc, name of branch: experimental#name_description
+$ git checkout -b experimental#test_markers_of_debug
+```
