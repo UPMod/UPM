@@ -147,6 +147,9 @@ $ git checkout master
 $ git pull
 # Types ==================================================================
 # ========================================================================
+# Tasks
+# Every task
+$ git checkout -b task#test_markers_of_debug
 # Bugs
 # For all types of bugs, name of branch: bug#number_of_issue 
 $ git checkout -b bug#45
