@@ -162,3 +162,15 @@ $ git checkout -b experimental#test_markers_of_debug
 # Bash file: check if branch already exist and push to GitHub
 $ tools/deploy
 ```
+**Upload changes to branch**
+```sh
+$ git commit -am "#40: bla bla bla"
+$ git push
+```
+**Incorporate changes to master**
+```sh
+$ git checkout master
+$ git pull
+$ git merge --no-ff bug#40
+$ git push
+```

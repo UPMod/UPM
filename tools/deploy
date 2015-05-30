@@ -9,7 +9,7 @@ if [ "$current_branch" == "master" ] || [ "$current_branch" == "release" ] || [ 
 	echo "ERROR: You can't deploy one branch as $current_branch"
 	exit 1
 else
-	echo "Creating $current_branch on origin ..."
+	echo "Creating $current_branch on GitHub ..."
 	if [ `git ls-remote --heads -q | grep refs/heads/$current_branch | awk '{print $1}'` ]; then
 		echo "ERROR: The branch: $current_branch is already exist in GitHub!"
 		echo "  (use \"git branch -avv\" to see all branch)"
