@@ -61,7 +61,7 @@ $ git branch -d name_of_branch
 # Delete branch (forced)
 $ git branch -D name_of_branch
 ```
-**Add files**
+**Add files to repository/branch**
 ```sh
 # Add single file
 $ git add addons/groups/config.cpp
@@ -156,4 +156,9 @@ $ git checkout -b feature#730
 # Experimental
 # Other things, test, etc, name of branch: experimental#name_description
 $ git checkout -b experimental#test_markers_of_debug
+```
+**Upload branch to GitHub**
+```sh
+# Bash file: check if branch already exist and push to GitHub
+$ tools/deploy
 ```
