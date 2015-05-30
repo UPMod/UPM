@@ -174,3 +174,11 @@ $ git pull
 $ git merge --no-ff bug#40
 $ git push
 ```
+**Close bug/request/experimental**
+```sh
+# Option 1 from branch
+$ git checkout bug#40
+$ tools/delete-branch
+# Option 2 from master
+$ tools/delete-branch bug#40
+```
