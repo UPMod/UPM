@@ -183,4 +183,5 @@ $ tools/delete-branch
 $ tools/delete-branch bug#40
 ```
 ## Links
+[https://training.github.com/] (https://training.github.com/)
 [https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf] (https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
