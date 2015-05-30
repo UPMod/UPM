@@ -61,13 +61,20 @@ $ git branch -d name_of_branch
 # Delete branch (forced)
 $ git branch -D name_of_branch
 ```
+**Add files**
+```sh
+# Add single file
+$ git add addons/groups/config.cpp
+# Add all files
+$ git add --all
+```
 **Do commits (always in local)**
 ```sh
 # All files with changes
 $ git commit -am "#60: bla bla bla"
 # Single folder/file
 $ git add addons/groups/config.cpp
-git commit -m "#14: bla bla bla"
+$ git commit -m "#14: bla bla bla"
 ```
 **Download and automatically apply changes (with rebase in master by config)**
 ```sh
