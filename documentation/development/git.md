@@ -138,6 +138,8 @@ $ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```sh
 $ git checkout master
 $ git pull
+# Types ==================================================================
+# ========================================================================
 # Bugs
 # For all types of bugs, name of branch: bug#number_of_issue 
 $ git checkout -b bug#45
