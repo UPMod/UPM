@@ -127,6 +127,11 @@ $ git rebase origin/master
 # It is used to reset the local branch to another. To avoid problems, merges and rebases if the server is good
 $ git fetch && git reset --hard origin/master
 ```
+**Purge branches**
+```sh
+# Purge other branches that have already eliminated from the server
+$ git fetch -p
+```
 **Cherry Pick**
 ```sh
 # Use in specific cases
@@ -151,8 +156,6 @@ $ git shortlog master..bug#45
 $ git diff --name-status master..bug#45
 #
 $ git diff --stat --color master..bug#45
-#
-$ git fetch -p
 #
 $ git log -p addons/groups/config.cpp
 # 
