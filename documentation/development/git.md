@@ -139,6 +139,26 @@ $ git cherry-pick dc094cb
 # Apply big changes from commits
 $ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```
+**Others**
+```sh
+# Show graphic branches
+$ git log --oneline --graph
+#
+$ git log master..bug#45
+#
+$ git shortlog master..bug#45
+#
+$ git diff --name-status master..bug#45
+#
+$ git diff --stat --color master..bug#45
+#
+$ git fetch -p
+#
+$ git log -p addons/groups/config.cpp
+# 
+$ git blame addons/groups/config.cpp
+
+```
 ## Workflow
 
 **Start bug/request/experimental**
