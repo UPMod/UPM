@@ -148,17 +148,17 @@ $ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```sh
 # Show graphic branches
 $ git log --oneline --graph
-#
+# Show commits between branches
 $ git log master..bug#45
-#
+# Sho commits between branches (compact)
 $ git shortlog master..bug#45
-#
+# Show commit diferences between branches
 $ git diff --name-status master..bug#45
-#
+# Show resume of changes between branches
 $ git diff --stat --color master..bug#45
-#
+# History of file
 $ git log -p addons/groups/config.cpp
-# 
+# Show authors every line of file
 $ git blame addons/groups/config.cpp
 
 ```
