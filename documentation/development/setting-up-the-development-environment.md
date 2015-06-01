@@ -62,7 +62,7 @@ This also means that you cannot distribute this build to others.
 To start the game using this build, you can use the following modline:
 
 ```
--mod=@cba_a3;u\upm
+-mod=@CBA_A3;u\upm
 ```
 
 ## 6. Creating a Release Build
