@@ -169,13 +169,13 @@ $ git pull
 # Types ==================================================================
 # ========================================================================
 # Tasks
-# Every task
+# All task
 $ git checkout -b task#test_markers_of_debug
 # Bugs
-# For all types of bugs, name of branch: bug#number_of_issue 
+# All types of bugs, name of branch: bug#number_of_issue 
 $ git checkout -b bug#45
 # Features
-# For all types of features, name of branch: feature#number_of_issue
+# All types of features, name of branch: feature#number_of_issue
 $ git checkout -b feature#730
 # Experimental
 # Other things, test, etc, name of branch: experimental#name_description
