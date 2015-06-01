@@ -1,6 +1,6 @@
-# Git
+## Git
 
-## Make repository for work
+### Make repository for work
 **Clone repository from GitHub**
 ```sh
 $ git clone https://github.com/upmod/UPM.git
@@ -12,7 +12,7 @@ $ ln -s ../../tools/hooks/commit-msg commit-msg
 $ chmod +x commit-msg
 $ cd ../../
 ```
-## Required configuration
+### Required configuration
 **Name/nick and email address**
 ```sh
 $ git config --global user.name "YOUR NAME/NICKNAME"
@@ -29,7 +29,7 @@ $ git config --global credential.helper wincred
 ```sh
 $ git config branch.master.rebase true
 ```
-## Commands
+### Commands
 
 **Show status of working copy**
 ```sh
@@ -160,7 +160,7 @@ $ git log -p addons/groups/config.cpp
 $ git blame addons/groups/config.cpp
 
 ```
-## Workflow
+### Workflow
 
 **Start bug/request/experimental**
 ```sh
@@ -206,7 +206,7 @@ $ tools/delete-branch
 # Option 2 from master
 $ tools/delete-branch bug#40
 ```
-## Links
+### Links
 [https://training.github.com/] (https://training.github.com/)
 
 [https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf] (https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
