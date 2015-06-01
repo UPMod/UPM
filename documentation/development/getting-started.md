@@ -1,5 +1,6 @@
 ## Getting Started
 
-### Setting up the development environment
+This page describes all technical info about UPM.
 
-### Git
+### Where do you start?
+
