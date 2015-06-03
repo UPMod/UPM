@@ -1,6 +1,6 @@
 ## Getting Started
 
-This page describes all technical info about UPM.
+This page describes all technical info about UPM step by step.
 
 ### Where do you start?
 
