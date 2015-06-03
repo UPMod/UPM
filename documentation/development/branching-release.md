@@ -18,7 +18,7 @@ Because this modification is for Arma and backwards compatability is not always 
 
 * New features, bug fixes that are not a hotfix or other work will always be branched off `master` or another branch but never a `Hotfix branch`,`Version branch` or `Release branch`. 
 * Hotfixes are always branched off the `Release branch`
-* The release branch is never merged or deleted. Only master or hotfixes are allowed to merge into the `Release branch`. 
+* The `Release branch` is never merged or deleted. Only version branch or hotfixes are allowed to merge into the `Release branch`. 
 
 #### Branches & Diagram
 
