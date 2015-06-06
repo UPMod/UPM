@@ -106,6 +106,8 @@ SETUVAR(upm_RscTools,nil);
 
 player switchCamera "INTERNAL";
 
+player allowDamage true;
+
 //  DEBUG ------------------------------------------------------- //
 //----------------------------------------------------------------//
 

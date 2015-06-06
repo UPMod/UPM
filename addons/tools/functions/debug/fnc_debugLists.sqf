@@ -57,8 +57,38 @@ _tmpGroups = [];
 	} else {
 
 		// Vehicles
-
-
+		switch (true) do {
+		    case (_vehicle isKindOf "Car" && !(_vehicle isKindOf "Tank")): {
+		    	if(!(_vehicle in _tmpLightVehicles)) then {
+		    		_tmpLightVehicles pushBack _vehicle;
+		    	};
+		    };
+		    case (_vehicle isKindOf "Tank"): {
+		    	if(!(_vehicle in _tmpHeavyVehicles)) then {
+		    		_tmpHeavyVehicles pushBack _vehicle;
+		    	};
+		    };
+		    case (_vehicle isKindOf "Helicopter"): {
+		    	if(!(_vehicle in _tmpHelis)) then {
+		    		_tmpHelis pushBack _vehicle;
+		    	};
+		    };
+		    case (_vehicle isKindOf "Plane"): {
+		    	if(!(_vehicle in _tmpPlanes)) then {
+		    		_tmpPlanes pushBack _vehicle;
+		    	};
+		    };
+		    case (_vehicle isKindOf "Ship"): {
+		    	if(!(_vehicle in _tmpNaval)) then {
+		    		_tmpNaval pushBack _vehicle;
+		    	};
+		    };
+		    case (_vehicle isKindOf "StaticWeapon"): {
+		    	if(!(_vehicle in _tmpStatics)) then {
+		    		_tmpStatics pushBack _vehicle;
+		    	};
+		    };
+		};
 
 	};
 
@@ -66,15 +96,17 @@ _tmpGroups = [];
 		_tmpGroups pushBack _grp;
 	};
 
-
-	//[format["Unit: %1 || Vehicle: %2 || Group: %3 || Rank: %4",_unit, _vehicle, _grp, _rank],2] call FUNC(debug);
-	//[format["Type: %1",_type],2] call FUNC(debug);
-
 } forEach allUnits;
 
 ["===============================================================================================",2] call FUNC(debug);
 
 [format["Units: %1",_tmpUnits],2] call FUNC(debug);
+[format["Light Vehicles: %1",_tmpLightVehicles],2] call FUNC(debug);
+[format["Heavy Vehicles: %1",_tmpHeavyVehicles],2] call FUNC(debug);
+[format["Helicopters: %1",_tmpHelis],2] call FUNC(debug);
+[format["Planes: %1",_tmpPlanes],2] call FUNC(debug);
+[format["Naval: %1",_tmpNaval],2] call FUNC(debug);
+[format["Static Weapon: %1",_tmpStatics],2] call FUNC(debug);
 [format["Groups: %1",_tmpGroups],2] call FUNC(debug);
 
 ["===============================================================================================",2] call FUNC(debug);
