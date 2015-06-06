@@ -41,14 +41,19 @@ _tmpStatics = [];
 _tmpGroups = [];
 
 {
-	// All info
+
 	_unit = _x;
 	_grp = group _unit;
-	_rank = [rank _unit,"displayNameShort"] call BIS_fnc_rankParams;
 	_vehicle = vehicle _unit;
 
-	// Init
+	// All info
+	_rank = [rank _unit,"displayNameShort"] call BIS_fnc_rankParams;
+	SETVAR(_unit,GVAR(debugRank),_rank);
 
+	// Init
+	SETVAR(_unit,GVAR(debugMarker),false);
+
+	// Save temporary arrays
 	if (_unit == _vehicle && !(_unit in _tmpUnits)) then {
 
 		// Soldiers
@@ -98,18 +103,14 @@ _tmpGroups = [];
 
 } forEach allUnits;
 
-["===============================================================================================",2] call FUNC(debug);
-
-[format["Units: %1",_tmpUnits],2] call FUNC(debug);
-[format["Light Vehicles: %1",_tmpLightVehicles],2] call FUNC(debug);
-[format["Heavy Vehicles: %1",_tmpHeavyVehicles],2] call FUNC(debug);
-[format["Helicopters: %1",_tmpHelis],2] call FUNC(debug);
-[format["Planes: %1",_tmpPlanes],2] call FUNC(debug);
-[format["Naval: %1",_tmpNaval],2] call FUNC(debug);
-[format["Static Weapon: %1",_tmpStatics],2] call FUNC(debug);
-[format["Groups: %1",_tmpGroups],2] call FUNC(debug);
-
-["===============================================================================================",2] call FUNC(debug);
+GVAR(listUnits) = _tmpUnits;
+GVAR(listLightVehicles) = _tmpLightVehicles;
+GVAR(listHeavyVehicles) = _tmpHeavyVehicles;
+GVAR(listHelis) = _tmpHelis;
+GVAR(listPlanes) = _tmpPlanes;
+GVAR(listNaval) = _tmpNaval;
+GVAR(listStatics) = _tmpStatics;
+GVAR(listGroups) = _tmpGroups;
 
 if !(GVAR(state)) then {
 	[_pfh] call CBA_fnc_removePerFrameHandler;

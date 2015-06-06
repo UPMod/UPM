@@ -34,5 +34,4 @@ GVAR(listHelis) = [];
 GVAR(listPlanes) = [];
 GVAR(listNaval) = [];
 GVAR(listStatics) = [];
-
 GVAR(listGroups) = [];
