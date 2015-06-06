@@ -48,4 +48,4 @@ _control drawIcon [
 //----------------------------------------------------------------//
 
 //Draw All 2D Markers
-//[_control] call FUNC(debugDraw2dMarkers);
+[_control] call FUNC(debugDraw2dMarkers);
