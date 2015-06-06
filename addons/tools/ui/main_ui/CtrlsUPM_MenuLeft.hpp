@@ -32,6 +32,7 @@ class TabGroups: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(markerGroups)) then {[1] call FUNC(debugAllMarkersGroups); GVAR(markerGroups) = true;} else {[0] call FUNC(debugAllMarkersGroups);GVAR(markerGroups) = false;});
 };
 
 class TabLightVehicles: RscButtonUPM_Tools

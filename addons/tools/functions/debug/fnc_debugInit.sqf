@@ -35,3 +35,5 @@ GVAR(listPlanes) = [];
 GVAR(listNaval) = [];
 GVAR(listStatics) = [];
 GVAR(listGroups) = [];
+
+GVAR(markerGroups) = false;

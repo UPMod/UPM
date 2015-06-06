@@ -126,6 +126,11 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugGetColorRgbaBehaviour);
 			};
+			// upm_fnc_debugAllMarkersGroups
+			class debugAllMarkersGroups
+			{
+				file = PATHF_SUB(debug,debugAllMarkersGroups);
+			};
 		};
 	};
 };

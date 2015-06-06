@@ -26,7 +26,8 @@ PARAMS_1(_control);
 
 private [
 	"_unit",
-	"_vehicle"
+	"_vehicle",
+	"_grp","_leader"
 ];
 
 {
@@ -188,27 +189,30 @@ private [
 
 } count GVAR(listStatics) > 0;
 
-/*{
-	_unit = _x;
+{
+	_grp = _x;
+	_leader = leader _grp;
 
-	if (!isNull _unit) then {
-		if (alive _unit) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _unit) >> "Icon");
-			_markerColor = [side _unit] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _unit,
-				0.5 / ctrlMapScale _control,
-				0.5 / ctrlMapScale _control,
-				direction (vehicle _unit),
-				_text
-			];
+	if (!isNull _grp) then {
+		if (alive _leader) then {
+			if ((GETVAR(_grp,GVAR(debugMarker),0)) == 1) then {
+				_text = "";
+				_drawIcon = [_grp,side _leader] call FUNC(debugGetIconGroup);
+				_markerColor = [side _grp] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _leader,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _leader),
+					_text
+				];
+			};
 		};
 	};
 
-} count GVAR(listGroups) > 0;*/
+} count GVAR(listGroups) > 0;
 
 
 /*private ["_grpid","_grp","_leader","_units","_rankshort","_lastname","_markercolor","_drawicon","_text","_waypoints","_wppos","_behaviourcolor","_unit"];

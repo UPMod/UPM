@@ -46,50 +46,52 @@ _tmpGroups = [];
 	_grp = group _unit;
 	_vehicle = vehicle _unit;
 
-	// All info
-	_rank = [rank _unit,"displayNameShort"] call BIS_fnc_rankParams;
-	SETVAR(_unit,GVAR(debugRank),_rank);
-
-	// Init
-	SETVAR(_unit,GVAR(debugMarker),false);
-
 	// Save temporary arrays
 	if (_unit == _vehicle && !(_unit in _tmpUnits)) then {
+		// Info
+		_rank = [rank _unit,"displayNameShort"] call BIS_fnc_rankParams;
+		SETVAR(_unit,GVAR(debugRank),_rank);
+		SETVAR(_unit,GVAR(debugMarker),false);
 
 		// Soldiers
 		_tmpUnits pushBack _unit;
-
 	} else {
 
 		// Vehicles
 		switch (true) do {
 		    case (_vehicle isKindOf "Car" && !(_vehicle isKindOf "Tank")): {
 		    	if(!(_vehicle in _tmpLightVehicles)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpLightVehicles pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Tank"): {
 		    	if(!(_vehicle in _tmpHeavyVehicles)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpHeavyVehicles pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Helicopter"): {
 		    	if(!(_vehicle in _tmpHelis)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpHelis pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Plane"): {
 		    	if(!(_vehicle in _tmpPlanes)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpPlanes pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Ship"): {
 		    	if(!(_vehicle in _tmpNaval)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpNaval pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "StaticWeapon"): {
 		    	if(!(_vehicle in _tmpStatics)) then {
+		    		SETVAR(_vehicle,GVAR(debugMarker),false);
 		    		_tmpStatics pushBack _vehicle;
 		    	};
 		    };
@@ -98,6 +100,9 @@ _tmpGroups = [];
 	};
 
 	if (!(_grp in _tmpGroups)) then {
+		if(GETVAR(_grp,GVAR(debugMarker),-1) == -1) then {
+			SETVAR(_grp,GVAR(debugMarker),0);
+		};
 		_tmpGroups pushBack _grp;
 	};
 
