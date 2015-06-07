@@ -35,7 +35,7 @@ private [
 
 	if (!isNull _unit) then {
 		if (alive _unit) then {
-			if ((GETVAR(_unit,GVAR(debugMarker),0)) == 1) then {
+			if (GETVAR(_unit,GVAR(debugMarker),false)) then {
 				_text = "";
 				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _unit) >> "Icon");
 				_markerColor = [side _unit] call FUNC(debugGetColorRgbaSide);
@@ -198,7 +198,7 @@ private [
 	if (!isNull _grp) then {
 		if (alive _leader) then {
 			// Markers
-			if ((GETVAR(_grp,GVAR(debugMarker),0)) == 1) then {
+			if (GETVAR(_grp,GVAR(debugMarker),false)) then {
 				_text = format["GRP: %1",_grp];
 				_drawIcon = [_grp,side _leader] call FUNC(debugGetIconGroup);
 				_markerColor = [side _grp] call FUNC(debugGetColorRgbaSide);

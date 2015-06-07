@@ -48,9 +48,6 @@ _tmpGroups = [];
 
 	// Save temporary arrays
 	if (_unit == _vehicle && !(_unit in _tmpUnits)) then {
-		if(GETVAR(_unit,GVAR(debugMarker),-1) == -1) then {
-			SETVAR(_unit,GVAR(debugMarker),0);
-		};
 		// Soldiers
 		_tmpUnits pushBack _unit;
 	} else {
@@ -59,49 +56,31 @@ _tmpGroups = [];
 		switch (true) do {
 		    case (_vehicle isKindOf "Car" && !(_vehicle isKindOf "Tank")): {
 		    	if(!(_vehicle in _tmpLightVehicles)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpLightVehicles pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Tank"): {
 		    	if(!(_vehicle in _tmpHeavyVehicles)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpHeavyVehicles pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Helicopter"): {
 		    	if(!(_vehicle in _tmpHelis)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpHelis pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Plane"): {
 		    	if(!(_vehicle in _tmpPlanes)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpPlanes pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "Ship"): {
 		    	if(!(_vehicle in _tmpNaval)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpNaval pushBack _vehicle;
 		    	};
 		    };
 		    case (_vehicle isKindOf "StaticWeapon"): {
 		    	if(!(_vehicle in _tmpStatics)) then {
-		    		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
-		    			SETVAR(_vehicle,GVAR(debugMarker),0);
-		    		};
 		    		_tmpStatics pushBack _vehicle;
 		    	};
 		    };
