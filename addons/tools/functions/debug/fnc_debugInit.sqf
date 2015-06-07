@@ -25,8 +25,10 @@ Returns:
 // GLOBAL VARIABLES --------------------------------------------- //
 //----------------------------------------------------------------//
 
+// Global
 GVAR(state) = true;
 
+// Lists
 GVAR(listUnits) = [];
 GVAR(listLightVehicles) = [];
 GVAR(listHeavyVehicles) = [];
@@ -36,4 +38,5 @@ GVAR(listNaval) = [];
 GVAR(listStatics) = [];
 GVAR(listGroups) = [];
 
+// Markers: Groups
 GVAR(markerGroups) = false;
