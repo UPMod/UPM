@@ -59,18 +59,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
@@ -82,18 +84,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
@@ -105,18 +109,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
@@ -128,18 +134,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
@@ -151,18 +159,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
@@ -174,18 +184,20 @@ private [
 
 	if (!isNull _vehicle) then {
 		if (alive _vehicle) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
-			_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _vehicle,
-				0.8 / ctrlMapScale _control,
-				0.8 / ctrlMapScale _control,
-				direction (vehicle _vehicle),
-				_text
-			];
+			if (GETVAR(_vehicle,GVAR(debugMarker),false)) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _vehicle) >> "Icon");
+				_markerColor = [side _vehicle] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _vehicle,
+					0.8 / ctrlMapScale _control,
+					0.8 / ctrlMapScale _control,
+					direction (vehicle _vehicle),
+					_text
+				];
+			};
 		};
 	};
 
