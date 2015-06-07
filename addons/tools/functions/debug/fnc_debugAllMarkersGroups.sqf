@@ -27,4 +27,6 @@ PARAMS_1(_bool);
 {
 	_grp = _x;
 	SETVAR(_grp,GVAR(debugMarker),_bool);
+	SETVAR(_grp,GVAR(debugWaypoints),_bool);
+
 } count GVAR(listGroups) > 0;

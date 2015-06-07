@@ -110,12 +110,6 @@ _tmpGroups = [];
 	};
 
 	if (!(_grp in _tmpGroups)) then {
-		if(GETVAR(_grp,GVAR(debugMarker),-1) == -1) then {
-			SETVAR(_grp,GVAR(debugMarker),0);
-		};
-		if(GETVAR(_grp,GVAR(debugWaypoints),-1) == -1) then {
-			SETVAR(_grp,GVAR(debugWaypoints),1);
-		};
 		_tmpGroups pushBack _grp;
 	};
 

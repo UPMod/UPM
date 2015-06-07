@@ -217,7 +217,7 @@ private [
 				];
 			};
 			// Waypoints
-			if ((GETVAR(_grp,GVAR(debugWaypoints),0)) == 1) then {
+			if (GETVAR(_grp,GVAR(debugWaypoints),false)) then {
 				_waypoints = waypoints _grp;
 				if (!(_waypoints isEqualTo [])) then {
 					{
@@ -245,7 +245,7 @@ private [
 							};
 						};
 					} forEach _waypoints;
-					if ((GETVAR(_grp,GVAR(debugMarker),0)) == 1 || (GETVAR(_leader,GVAR(debugMarker),0)) == 1) then {
+					if (GETVAR(_grp,GVAR(debugMarker),false) || GETVAR(_leader,GVAR(debugMarker),false)) then {
 						_wpPos = waypointPosition [_grp,currentWaypoint _grp];
 						if (!(_wpPos isEqualTo [0,0,0])) then {
 							_behaviourColor =  [side _leader] call FUNC(debugGetColorRgbaBehaviour);
