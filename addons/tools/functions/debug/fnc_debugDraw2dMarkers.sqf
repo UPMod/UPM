@@ -209,7 +209,9 @@ private [
 					direction (vehicle _leader),
 					_text,
 					false,
-					0.03
+					0.03,
+					"TahomaB",
+					"left"
 				];
 			};
 			// Waypoints
