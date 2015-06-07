@@ -27,7 +27,7 @@ PARAMS_1(_control);
 private [
 	"_unit",
 	"_vehicle",
-	"_grp","_leader","_waypoints","_wpPos","_behaviourColor"
+	"_grp","_leader","_waypoints","_wpPos","_wp","_wpOrder","_behaviourColor"
 ];
 
 {
@@ -35,18 +35,20 @@ private [
 
 	if (!isNull _unit) then {
 		if (alive _unit) then {
-			_text = "";
-			_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _unit) >> "Icon");
-			_markerColor = [side _unit] call FUNC(debugGetColorRgbaSide);
-			_control drawIcon [
-				_drawIcon,
-				_markerColor,
-				visiblePosition _unit,
-				0.5 / ctrlMapScale _control,
-				0.5 / ctrlMapScale _control,
-				direction (vehicle _unit),
-				_text
-			];
+			if ((GETVAR(_unit,GVAR(debugMarker),0)) == 1) then {
+				_text = "";
+				_drawIcon = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _unit) >> "Icon");
+				_markerColor = [side _unit] call FUNC(debugGetColorRgbaSide);
+				_control drawIcon [
+					_drawIcon,
+					_markerColor,
+					visiblePosition _unit,
+					0.5 / ctrlMapScale _control,
+					0.5 / ctrlMapScale _control,
+					direction (vehicle _unit),
+					_text
+				];
+			};
 		};
 	};
 
@@ -219,10 +221,12 @@ private [
 				_waypoints = waypoints _grp;
 				if (!(_waypoints isEqualTo [])) then {
 					{
-						if ((_x select 1) >= currentWaypoint _grp) then {
-							_wpPos = waypointPosition _x;
+						_wp = _x;
+						_wpOrder = _wp select 1;
+						if ((_wpOrder) >= currentWaypoint _grp) then {
+							_wpPos = waypointPosition _wp;
 							if (!(_wpPos isEqualTo [0,0,0])) then {
-								_text = "";
+								_text = format["WP: %1 GRP: %2",_wpOrder,_grp];
 								_drawIcon = getText (configFile >> "CfgMarkers" >> "waypoint" >> "icon");
 								_markerColor = [side _grp] call FUNC(debugGetColorRgbaSide);
 								_control drawIcon [
@@ -232,16 +236,22 @@ private [
 									0.8 / ctrlMapScale _control,
 									0.8 / ctrlMapScale _control,
 									0,
-									_text
+									_text,
+									false,
+									0.025,
+									"TahomaB",
+									"right"
 								];
 							};
 						};
 					} forEach _waypoints;
-					_wpPos = waypointPosition [_grp,currentWaypoint _grp];
-					if (!(_wpPos isEqualTo [0,0,0])) then {
-						_behaviourColor =  [side _leader] call FUNC(debugGetColorRgbaBehaviour);
-						_control drawArrow [visiblePosition _leader,_wpPos,_behaviourColor];
-					};
+					if ((GETVAR(_grp,GVAR(debugMarker),0)) == 1 || (GETVAR(_leader,GVAR(debugMarker),0)) == 1) then {
+						_wpPos = waypointPosition [_grp,currentWaypoint _grp];
+						if (!(_wpPos isEqualTo [0,0,0])) then {
+							_behaviourColor =  [side _leader] call FUNC(debugGetColorRgbaBehaviour);
+							_control drawArrow [visiblePosition _leader,_wpPos,_behaviourColor];
+						};
+					}
 				};
 			};
 		};

@@ -48,7 +48,7 @@ _tmpGroups = [];
 
 	// Save temporary arrays
 	if (_unit == _vehicle && !(_unit in _tmpUnits)) then {
-		if(GETVAR(_vehicle,GVAR(debugMarker),-1) == -1) then {
+		if(GETVAR(_unit,GVAR(debugMarker),-1) == -1) then {
 			SETVAR(_unit,GVAR(debugMarker),0);
 		};
 		// Soldiers
