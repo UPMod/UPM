@@ -1,10 +1,11 @@
 /****************************************************************
 
 Author(s):
-	Azroul13
+	oscarmolinadev
+	Azroul
 
 File:
-	fnc_debugDraw2dMkrs.sqf
+	fnc_debugDraw2dMarkers.sqf
 
 Description:
 	Draw all markers relative to groups.
@@ -16,7 +17,7 @@ Parameter(s):
 	0: Control (Map)
 
 Returns:
-
+	NOTHING
 
 ****************************************************************/
 

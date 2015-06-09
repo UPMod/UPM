@@ -1,7 +1,7 @@
 /****************************************************************
 
 Author(s):
-	UPMTeam
+	Azroul
 
 File:
 	fnc_debugGeticonGroup.sqf
@@ -13,11 +13,11 @@ Performance:
 	0 ms
 
 Parameter(s):
-	<-group name
-	<-side
+	0: Group name
+	1: Side
 
 Returns:
-	icon.paa
+	STRING: Icon file
 
 ****************************************************************/
 
