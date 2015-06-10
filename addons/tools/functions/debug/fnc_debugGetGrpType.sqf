@@ -27,7 +27,7 @@ PARAMS_1(_grp);
 
 //private ["_type","_vehicle_checked","_infos","_vehicle","_iscargo","_armor","_canon","_mg_gun","_missiles","_parents","_weapon","_mun"];
 private [
-	"_unit","_vehicle"
+	"_unit","_vehicle",
 	"_type","_vehChecked","_typesGrp",
 	"_isCargo","_armor","_canon","_mgGun","_missiles",
 	"_turrets","_weapons","_weapon","_mun"
@@ -94,7 +94,7 @@ _typesGrp = [];
 
 							_isCargo = (getNumber (configFile >> "CfgVehicles" >> _vehType >> "transportSoldier")) > 6;
 							_armor = getNumber (configFile >> "CfgVehicles" >> _vehType >> "armor");
-							_turrets = getArray (configFile >> "cfgVehicles" >> _vehType >> "Turrets" >> "MainTurret" >> "weapons")
+							_turrets = getArray (configFile >> "cfgVehicles" >> _vehType >> "Turrets" >> "MainTurret" >> "weapons");
 
 							_canon = false;
 							_mgGun = false;
