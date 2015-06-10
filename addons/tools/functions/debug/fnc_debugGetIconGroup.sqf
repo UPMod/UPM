@@ -27,7 +27,6 @@ PARAMS_2(_grp,_side);
 
 private ["_icon","_array"];
 
-
 _icon = switch ([_grp] call FUNC(debugGetGrpType)) do {
 	case "plane": {"b_plane"};
 	case "helicopter": {"b_air"};
@@ -49,6 +48,6 @@ switch (_side) do {
 	default {};
 };
 
-_icon = gettext (configfile >> "CfgMarkers" >> _icon >> "icon");
+_icon = getText (configFile >> "CfgMarkers" >> _icon >> "icon");
 
 _icon
