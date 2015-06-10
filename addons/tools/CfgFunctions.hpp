@@ -101,10 +101,10 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugLists);
 			};
-			// upm_fnc_debugDraw2dMkrs
-			class debugDraw2dMkrs
+			// upm_fnc_debugDraw2dMakers
+			class debugDraw2dMarkers
 			{
-				file = PATHF_SUB(debug,debugDraw2dMkrs);
+				file = PATHF_SUB(debug,debugDraw2dMarkers);
 			};
 			// upm_fnc_debugGetGrpType
 			class debugGetGrpType
@@ -125,6 +125,11 @@ class CfgFunctions
 			class debugGetColorRgbaBehaviour
 			{
 				file = PATHF_SUB(debug,debugGetColorRgbaBehaviour);
+			};
+			// upm_fnc_debugAllMarkersGroups
+			class debugAllMarkersGroups
+			{
+				file = PATHF_SUB(debug,debugAllMarkersGroups);
 			};
 		};
 	};

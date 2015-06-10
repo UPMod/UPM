@@ -44,5 +44,8 @@ _control drawIcon [
 	1
 ];
 
-//Draw group markers
-[_control] call FUNC(debugDraw2dMkrs);
+// DEBUG -------------------------------------------------------- //
+//----------------------------------------------------------------//
+
+//Draw All 2D Markers
+[_control] call FUNC(debugDraw2dMarkers);

@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_debugInit.sqf
+	fnc_debugExit.sqf
 
 Description:
 
@@ -25,18 +25,13 @@ Returns:
 // GLOBAL VARIABLES --------------------------------------------- //
 //----------------------------------------------------------------//
 
-// Global
-GVAR(state) = true;
+GVAR(state) = nil;
 
-// Lists
-GVAR(listUnits) = [];
-GVAR(listLightVehicles) = [];
-GVAR(listHeavyVehicles) = [];
-GVAR(listHelis) = [];
-GVAR(listPlanes) = [];
-GVAR(listNaval) = [];
-GVAR(listStatics) = [];
-GVAR(listGroups) = [];
-
-// Markers: Groups
-GVAR(markerGroups) = false;
+GVAR(listUnits) = nil;
+GVAR(listLightVehicles) = nil;
+GVAR(listHeavyVehicles) = nil;
+GVAR(listHelis) = nil;
+GVAR(listPlanes) = nil;
+GVAR(listNaval) = nil;
+GVAR(listStatics) = nil;
+GVAR(listGroups) = nil;

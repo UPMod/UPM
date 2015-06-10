@@ -10,7 +10,6 @@ class RscUPM_Tools
 	onKeyUp = "_this call upm_fnc_spectatorKeyUp;";
 	onMouseButtonDown = "_this call upm_fnc_spectatorMouseButtonDown;";
 	onMouseButtonUp = "_this call upm_fnc_spectatorMouseButtonUp;";
-
 	class ControlsBackground
 	{
 		class MouseArea: RscText
