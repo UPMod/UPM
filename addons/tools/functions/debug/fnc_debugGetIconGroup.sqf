@@ -1,7 +1,7 @@
 /****************************************************************
 
 Author(s):
-	UPMTeam
+	Azroul
 
 File:
 	fnc_debugGeticonGroup.sqf
@@ -13,11 +13,11 @@ Performance:
 	0 ms
 
 Parameter(s):
-	<-group name
-	<-side
+	0: Group name
+	1: Side
 
 Returns:
-	icon.paa
+	STRING: Icon file
 
 ****************************************************************/
 
@@ -26,7 +26,6 @@ Returns:
 PARAMS_2(_grp,_side);
 
 private ["_icon","_array"];
-
 
 _icon = switch ([_grp] call FUNC(debugGetGrpType)) do {
 	case "plane": {"b_plane"};
@@ -49,6 +48,6 @@ switch (_side) do {
 	default {};
 };
 
-_icon = gettext (configfile >> "CfgMarkers" >> _icon >> "icon");
+_icon = getText (configFile >> "CfgMarkers" >> _icon >> "icon");
 
 _icon

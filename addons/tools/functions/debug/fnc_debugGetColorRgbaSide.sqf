@@ -1,7 +1,7 @@
 /****************************************************************
 
 Author(s):
-	azroul13
+	Azroul
 
 File:
 	fnc_getColorRgbaSide.sqf

@@ -73,10 +73,10 @@ switch (_key) do {
 			_ctrlMap ctrlEnable true;
 			ctrlSetFocus _ctrlMap;
 			_ctrlMapPos = [
-				safezoneX + 0.1 * safezoneW,
-				safezoneY + 0.1 * safezoneH,
-				0.8 * safezoneW,
-				0.8 * safezoneH
+				safezoneX + 0.05 * safezoneW,
+				safezoneY + 0.05 * safezoneH,
+				0.898 * safezoneW,
+				0.88 * safezoneH
 			];
 			_ctrlMap ctrlSetPosition _ctrlMapPos;
 			_ctrlMap ctrlSetFade 0;
