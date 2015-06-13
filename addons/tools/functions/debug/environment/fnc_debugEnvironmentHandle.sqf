@@ -30,7 +30,7 @@ switch (_action) do {
 		GVAR(environmentWindow) = true;
     };
     case "CLOSE": {
-		["CLOSE UNITS",2] call FUNC(debug);
+		["CLOSE ENVIRONMENT",2] call FUNC(debug);
 		GVAR(environmentWindow) = false;
 	};
 };
