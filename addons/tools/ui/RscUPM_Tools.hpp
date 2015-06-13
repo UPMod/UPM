@@ -40,5 +40,9 @@ class RscUPM_Tools
 	{
 		#include <main_ui\CtrlsUPM_MenuLeft.hpp>
 		#include <main_ui\CtrlsUPM_Bar.hpp>
+
+		//
+		//#include <units\CtrlsUPM_Units.hpp>
+
 	};
 };

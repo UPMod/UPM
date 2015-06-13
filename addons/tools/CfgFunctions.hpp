@@ -85,6 +85,7 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(spectator,spectatorSelectView);
 			};
+			// Debug ==================================
 			// ========================================
 			// upm_fnc_debugInit
 			class debugInit
@@ -96,40 +97,51 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugUpdate);
 			};
+			// Common =================================
+			// ========================================
 			// upm_fnc_debugLists
 			class debugLists
 			{
-				file = PATHF_SUB(debug,debugLists);
+				file = PATHF_SUB(debug\common,debugLists);
 			};
 			// upm_fnc_debugDraw2dMakers
 			class debugDraw2dMarkers
 			{
-				file = PATHF_SUB(debug,debugDraw2dMarkers);
-			};
-			// upm_fnc_debugGetGrpType
-			class debugGetGrpType
-			{
-				file = PATHF_SUB(debug,debugGetGrpType);
-			};
-			// upm_fnc_debugGeticonGroup
-			class debugGeticonGroup
-			{
-				file = PATHF_SUB(debug,debugGeticonGroup);
+				file = PATHF_SUB(debug\common,debugDraw2dMarkers);
 			};
 			// upm_fnc_debugGetColorRgbaSide
 			class debugGetColorRgbaSide
 			{
-				file = PATHF_SUB(debug,debugGetColorRgbaSide);
+				file = PATHF_SUB(debug\common,debugGetColorRgbaSide);
 			};
 			// upm_fnc_debugGetColorRgbaBehaviour
 			class debugGetColorRgbaBehaviour
 			{
-				file = PATHF_SUB(debug,debugGetColorRgbaBehaviour);
+				file = PATHF_SUB(debug\common,debugGetColorRgbaBehaviour);
+			};
+			// Groups =================================
+			// ========================================
+			// upm_fnc_debugGetTypeGroup
+			class debugGetTypeGroup
+			{
+				file = PATHF_SUB(debug\groups,debugGetTypeGroup);
+			};
+			// upm_fnc_debugGeticonGroup
+			class debugGeticonGroup
+			{
+				file = PATHF_SUB(debug\groups,debugGeticonGroup);
 			};
 			// upm_fnc_debugAllMarkersGroups
 			class debugAllMarkersGroups
 			{
-				file = PATHF_SUB(debug,debugAllMarkersGroups);
+				file = PATHF_SUB(debug\groups,debugAllMarkersGroups);
+			};
+			// Units ==================================
+			// ========================================
+			// upm_fnc_debugUnitsHandle
+			class debugUnitsHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsHandle);
 			};
 		};
 	};

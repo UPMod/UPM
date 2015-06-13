@@ -14,6 +14,7 @@ class TabUnits: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(unitsWindow)) then {['OPEN'] call FUNC(debugUnitsHandle);} else {['CLOSE'] call FUNC(debugUnitsHandle);});
 };
 
 class TabGroups: RscButtonUPM_Tools

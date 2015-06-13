@@ -40,3 +40,6 @@ GVAR(listGroups) = [];
 
 // Markers: Groups
 GVAR(markerGroups) = false;
+
+// Markers: Groups
+GVAR(unitsWindow) = false;
