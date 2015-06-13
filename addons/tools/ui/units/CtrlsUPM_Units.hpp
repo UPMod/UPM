@@ -8,7 +8,7 @@ class UnitsWindow: RscControlsGroup
 	h = 0.4048 * safezoneH;
 	class controls
 	{
-		class UnitsHeader: RscCSSA3HeaderText
+		class UnitsHeader: RscHeaderUPM_Window
 		{
 			idc = -1;
 			x = 0;

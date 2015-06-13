@@ -152,6 +152,12 @@ _ctrlMap ctrlEnable false;
 _ctrlMap ctrlAddEventHandler ["Draw","_this call upm_fnc_spectatorMapDraw;"];
 _ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMapClick;"];
 
+
+// CONTROLS: ALL WINDOWS ---------------------------------------- //
+//----------------------------------------------------------------//
+
+['CLOSE'] call FUNC(debugUnitsHandle);
+
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//
 

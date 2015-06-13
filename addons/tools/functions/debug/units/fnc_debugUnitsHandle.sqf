@@ -24,20 +24,34 @@ Returns:
 
 PARAMS_1(_action);
 
+private [
+	"_display",
+	"_window"
+];
+
+_display = GETUVAR(upm_RscTools,displayNull);
+
 switch (_action) do {
     case "OPEN": {
+
     	["OPEN UNITS",2] call FUNC(debug);
 
-
-		_settingsControl = _display displayCtrl D_C_WUNITS;
-		_settingsControl ctrlShow true;
-		_settingsControl ctrlCommit 0;
+		_window = _display displayCtrl D_C_WUNITS;
+		_window ctrlShow true;
+		_window ctrlCommit 0;
 		ctrlEnable [D_C_WUNITS, true];
 
 		GVAR(unitsWindow) = true;
     };
     case "CLOSE": {
+
 		["CLOSE UNITS",2] call FUNC(debug);
+
+		_window = _display displayCtrl D_C_WUNITS;
+		_window ctrlShow false;
+		_window ctrlCommit 0;
+		ctrlEnable [D_C_WUNITS, false];
+
 		GVAR(unitsWindow) = false;
 	};
 };
