@@ -41,5 +41,15 @@ GVAR(listGroups) = [];
 // Markers: Groups
 GVAR(markerGroups) = false;
 
-// Markers: Groups
+// Windows
+GVAR(environmentWindow) = false;
+GVAR(groupsWindow) = false;
+GVAR(heavyVehiclesWindow) = false;
+GVAR(helisWindow) = false;
+GVAR(lightVehiclesWindow) = false;
+GVAR(navalWindow) = false;
+GVAR(performanceWindow) = false;
+GVAR(planesWindow) = false;
+GVAR(settingsWindow) = false;
+GVAR(staticsWindow) = false;
 GVAR(unitsWindow) = false;

@@ -1,4 +1,10 @@
-		class CSSA3_settingsControl: RscControlsGroup
+
+
+
+/*		
+	GUIDE
+
+class CSSA3_settingsControl: RscControlsGroup
 		{
 			idc = 7914;
 			text = "";
@@ -139,3 +145,4 @@
 				};
 			};
 		};
+	*/

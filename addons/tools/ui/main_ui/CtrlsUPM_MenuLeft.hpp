@@ -33,7 +33,8 @@ class TabGroups: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
-	action = QUOTE(if !(GVAR(markerGroups)) then {[true] call FUNC(debugAllMarkersGroups); GVAR(markerGroups) = true;} else {[false] call FUNC(debugAllMarkersGroups);GVAR(markerGroups) = false;});
+	action = QUOTE(if !(GVAR(groupsWindow)) then {['OPEN'] call FUNC(debugGroupsHandle);} else {['CLOSE'] call FUNC(debugGroupsHandle);});
+	//action = QUOTE(if !(GVAR(markerGroups)) then {[true] call FUNC(debugAllMarkersGroups); GVAR(markerGroups) = true;} else {[false] call FUNC(debugAllMarkersGroups);GVAR(markerGroups) = false;});
 };
 
 class TabLightVehicles: RscButtonUPM_Tools
@@ -52,6 +53,7 @@ class TabLightVehicles: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(lightVehiclesWindow)) then {['OPEN'] call FUNC(debugLightVehiclesHandle);} else {['CLOSE'] call FUNC(debugLightVehiclesHandle);});
 };
 
 class TabHeavyVehicles: RscButtonUPM_Tools
@@ -70,6 +72,7 @@ class TabHeavyVehicles: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(heavyVehiclesWindow)) then {['OPEN'] call FUNC(debugHeavyVehiclesHandle);} else {['CLOSE'] call FUNC(debugHeavyVehiclesHandle);});
 };
 
 class TabHelis: RscButtonUPM_Tools
@@ -88,6 +91,7 @@ class TabHelis: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(helisWindow)) then {['OPEN'] call FUNC(debugHelisHandle);} else {['CLOSE'] call FUNC(debugHelisHandle);});
 };
 
 class TabPlanes: RscButtonUPM_Tools
@@ -106,6 +110,7 @@ class TabPlanes: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(planesWindow)) then {['OPEN'] call FUNC(debugPlanesHandle);} else {['CLOSE'] call FUNC(debugPlanesHandle);});
 };
 
 class TabNaval: RscButtonUPM_Tools
@@ -124,6 +129,7 @@ class TabNaval: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(navalWindow)) then {['OPEN'] call FUNC(debugNavalHandle);} else {['CLOSE'] call FUNC(debugNavalHandle);});
 };
 
 class TabStatics: RscButtonUPM_Tools
@@ -142,6 +148,7 @@ class TabStatics: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(staticsWindow)) then {['OPEN'] call FUNC(debugStaticsHandle);} else {['CLOSE'] call FUNC(debugStaticsHandle);});
 };
 
 class TabEnvironment: RscButtonUPM_Tools
@@ -160,6 +167,7 @@ class TabEnvironment: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(environmentWindow)) then {['OPEN'] call FUNC(debugEnvironmentHandle);} else {['CLOSE'] call FUNC(debugEnvironmentHandle);});
 };
 
 class TabPerformance: RscButtonUPM_Tools
@@ -178,6 +186,7 @@ class TabPerformance: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(performanceWindow)) then {['OPEN'] call FUNC(debugPerformanceHandle);} else {['CLOSE'] call FUNC(debugPerformanceHandle);});
 };
 
 class TabSettings: RscButtonUPM_Tools
@@ -196,4 +205,5 @@ class TabSettings: RscButtonUPM_Tools
 		right = 0;
 		bottom = 0;
 	};
+	action = QUOTE(if !(GVAR(settingsWindow)) then {['OPEN'] call FUNC(debugSettingsHandle);} else {['CLOSE'] call FUNC(debugSettingsHandle);});
 };

@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_toolsHandle.sqf
+	fnc_debugUnitsHandle.sqf
 
 Description:
 
@@ -13,10 +13,10 @@ Performance:
 	0 ms
 
 Parameter(s):
-
+	0: STRING - Action
 
 Returns:
-
+	NOTHING
 
 ****************************************************************/
 

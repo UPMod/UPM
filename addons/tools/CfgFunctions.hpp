@@ -138,6 +138,76 @@ class CfgFunctions
 			};
 			// Units ==================================
 			// ========================================
+			// upm_fnc_debugEnvironmentHandle
+			class debugEnvironmentHandle
+			{
+				file = PATHF_SUB(debug\environment,debugEnvironmentHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugGroupsHandle
+			class debugGroupsHandle
+			{
+				file = PATHF_SUB(debug\groups,debugGroupsHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugHeavyVehiclesHandle
+			class debugHeavyVehiclesHandle
+			{
+				file = PATHF_SUB(debug\heavy_vehicles,debugHeavyVehiclesHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugHelisHandle
+			class debugHelisHandle
+			{
+				file = PATHF_SUB(debug\helis,debugHelisHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugLightVehiclesHandle
+			class debugLightVehiclesHandle
+			{
+				file = PATHF_SUB(debug\light_vehicles,debugLightVehiclesHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugNavalHandle
+			class debugNavalHandle
+			{
+				file = PATHF_SUB(debug\naval,debugNavalHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugPerformanceHandle
+			class debugPerformanceHandle
+			{
+				file = PATHF_SUB(debug\performance,debugPerformanceHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugPlanesHandle
+			class debugPlanesHandle
+			{
+				file = PATHF_SUB(debug\planes,debugPlanesHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugSettingsHandle
+			class debugSettingsHandle
+			{
+				file = PATHF_SUB(debug\settings,debugSettingsHandle);
+			};
+						// Units ==================================
+			// ========================================
+			// upm_fnc_debugStaticsHandle
+			class debugStaticsHandle
+			{
+				file = PATHF_SUB(debug\statics,debugStaticsHandle);
+			};
+			// Units ==================================
+			// ========================================
 			// upm_fnc_debugUnitsHandle
 			class debugUnitsHandle
 			{
