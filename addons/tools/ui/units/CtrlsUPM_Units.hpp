@@ -2,9 +2,9 @@ class UnitsWindow: RscControlsGroup
 {
 	idc = D_C_WUNITS;
 	text = "";
-	x = 0.319531 * safezoneW + safezoneX;
-	y = 0.302 * safezoneH + safezoneY;
-	w = 0.350625 * safezoneW;
+	x = 5.44616e-005 * safezoneW + safezoneX + 0.05;
+	y = (0.1 * safezoneH + safezoneY) + (1.6 * 1) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+	w = 0.8 * safezoneW;
 	h = 0.4048 * safezoneH;
 	class controls
 	{
@@ -13,25 +13,17 @@ class UnitsWindow: RscControlsGroup
 			idc = -1;
 			x = 0;
 			y = 0;
-			w = 0.351661 * safezoneW;
-			h = 0.02 * safezoneH;
-			text = "$STR_CSSA3_CSSA3Settings";
+			w = 0.8 * safezoneW;
+			h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			text = "UNITS";
 		};
 		class UnitsBackground: RscBackgroundUPM_Window
 		{
 			idc = -1;
 			x = -0.00103095 * safezoneW;
-			y = 0.02220002 * safezoneH;
-			w = 0.351661 * safezoneW;
+			y = 0.035 * safezoneH;
+			w = 0.8 * safezoneW;
 			h = 0.3803 * safezoneH;
-		};
-		class UnitsFrame: RscFrame
-		{
-			idc = 79141;
-			x = 0.00020 * safezoneW;
-			y = 0.0004 * safezoneH;
-			w = 0.350841 * safezoneW;
-			h = 0.4040 * safezoneH;
 		};
 	};
 };
