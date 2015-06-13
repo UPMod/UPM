@@ -30,3 +30,16 @@ class RscButtonUPM_Tools: RscButtonMenu
 		h = 0;
 	};
 };
+
+class RscBackgroundUPM_Window
+{
+    type = CT_STATIC;
+    idc = -1;
+    style = ST_CENTER;
+    shadow = 2;
+    colorText[] = {1,1,1,1};
+    font = "puristaMedium";
+    sizeEx = 0.02;
+    colorBackground[] = { 0.2,0.23,0.2, 0.7 };
+    text = "";
+};
