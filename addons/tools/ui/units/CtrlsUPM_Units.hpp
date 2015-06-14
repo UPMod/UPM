@@ -5,7 +5,7 @@ class UnitsWindow: RscControlsGroup
 	x = 5.44616e-005 * safezoneW + safezoneX + 0.05;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 1) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 	w = 0.738 * safezoneW;
-	h = 0.8 * safezoneH;
+	h = 0.736 * safezoneH;
 	class controls
 	{
 		// WINDOW
@@ -26,6 +26,6 @@ class UnitsWindow: RscControlsGroup
 			w = 0.738 * safezoneW;
 			h = 0.7 * safezoneH;
 		};
-		//
+
 	};
 };
