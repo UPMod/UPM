@@ -26,6 +26,7 @@ class UnitsWindow: RscControlsGroup
 			w = 0.738 * safezoneW;
 			h = 0.7 * safezoneH;
 		};
-
+		//
+		#include <CtrlsUPM_UnitsMenu.hpp>
 	};
 };
