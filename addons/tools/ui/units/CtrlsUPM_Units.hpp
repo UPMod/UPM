@@ -8,6 +8,7 @@ class UnitsWindow: RscControlsGroup
 	h = 0.8 * safezoneH;
 	class controls
 	{
+		// WINDOW
 		class UnitsHeader: RscHeaderUPM_Window
 		{
 			idc = -1;
@@ -25,5 +26,6 @@ class UnitsWindow: RscControlsGroup
 			w = 0.738 * safezoneW;
 			h = 0.7 * safezoneH;
 		};
+		//
 	};
 };
