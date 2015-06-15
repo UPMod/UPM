@@ -80,12 +80,6 @@ class RscBackgroundUPM_Window
     colorText[] = {1,1,1,1};
     font = "puristaMedium";
     sizeEx = 0.02;
-    //colorBackground[] = {1,1,1,0.5}; //GrisBlanco-Transp
-    //colorBackground[] = {0.2,0.2,0.2,0.2}; // Gris-UltrTransp
-    //colorBackground[] = {0.1,0.1,0.1,0.4}; // NegroGris-MuyTransp
-    //colorBackground[] = {0.95,0.95,0.95,1}; // Blanco-Solid
-    //colorBackground[] = {0.6,0.6,0.6,0.4}; //Gris-Transp
-    //colorBackground[] = {0.1,0.1,0.1,1}; //Negro-Solid
     colorBackground[] = {0,0,0,0.7}; //Negro-Transp
     text = "";
 };
