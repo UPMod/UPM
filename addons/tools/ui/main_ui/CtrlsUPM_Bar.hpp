@@ -78,8 +78,8 @@ class BarBottom: RscControlsGroup
 		    colorText[] = {1,1,1,1};
 		    font = "puristaMedium";
 		    sizeEx = 0.02;
-	    	colorBackground[] = {0,0,0,0.5};
-			colorBackground2[] = {0,0,0,0.5};
+	    	colorBackground[] = {0,0,0,0.7};
+			colorBackground2[] = {0,0,0,0.7};
 		    text = "";
 		};
 

@@ -4,6 +4,7 @@ class RscButtonMenu;
 class RscControlsGroup;
 class RscFrame;
 class RscCheckbox;
+class RscShortcutButton;
 
 class RscLogoUPM_Tab
 {
@@ -37,9 +38,9 @@ class RscButtonUPM_Tools: RscButtonMenu
 	color2[] = {1,1,1,1};
 	colorFocused[] = {1,1,1,1};
 	colorDisabled[] = {1,1,1,1};
-	colorBackground[] = {0,0,0,0.7};
-	colorBackground2[] = {0,0,0,0.7};
-	colorBackgroundFocused[] = {0,0,0,0.7};
+	colorBackground[] = {0,0,0,0.8};
+	colorBackground2[] = {0,0,0,0.8};
+	colorBackgroundFocused[] = {0,0,0,0.8};
 	shadow = 0;
 	style = 2;
 	class ShortcutPos
@@ -80,6 +81,6 @@ class RscBackgroundUPM_Window
     colorText[] = {1,1,1,1};
     font = "puristaMedium";
     sizeEx = 0.02;
-    colorBackground[] = {0,0,0,0.7}; //Negro-Transp
+    colorBackground[] = {0,0,0,0.8}; //Negro-Transp
     text = "";
 };
