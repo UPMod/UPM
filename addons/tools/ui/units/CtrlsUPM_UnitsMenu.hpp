@@ -8,7 +8,7 @@ class UnitsMenu: RscControlsGroup
 	h = 0.2 * safezoneH;
 	class controls
 	{
-		class Test1Button: RscButtonUPM_Tools
+		class GeneralButton: RscButtonUPM_Tools
 		{
 			idc = -1;
 			text = "GENERAL";
@@ -38,7 +38,7 @@ class UnitsMenu: RscControlsGroup
 			action = QUOTE(hint 'helloooooooo';);
 		};
 
-		class Test2Button: RscButtonUPM_Tools
+		class SpectatorButton: RscButtonUPM_Tools
 		{
 			idc = -1;
 			text = "SPECTATOR";
@@ -68,7 +68,7 @@ class UnitsMenu: RscControlsGroup
 			action = QUOTE(hint 'helloooooooo';);
 		};
 
-		class Test3Button: RscButtonUPM_Tools
+		class Markers2dButton: RscButtonUPM_Tools
 		{
 			idc = -1;
 			text = "MARKERS 2D";
@@ -95,7 +95,7 @@ class UnitsMenu: RscControlsGroup
 			periodOver = 0;
 			action = QUOTE(hint 'helloooooooo';);
 		};
-		class Test4Button: RscButtonUPM_Tools
+		class Markers3dButton: RscButtonUPM_Tools
 		{
 			idc = -1;
 			text = "MARKERS 3D";
