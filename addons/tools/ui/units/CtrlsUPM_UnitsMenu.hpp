@@ -12,9 +12,7 @@ class UnitsMenu: RscControlsGroup
 		{
 			idc = -1;
 			text = "GENERAL";
-			//x = 0.005 * safezoneW;
 			x = ((0.47 * safezoneW + safezoneX) + (7 * 0)) * (			((safezoneW / safezoneH) min 1.2) / 40);
-			//x = (6.4 * 1) * 			(			((safezoneW / safezoneH) min 1.2) / 10);
 			y = 0;
 			w = "1.65 * 			(			((safezoneW / safezoneH) min 1.2) / 10)";
 			h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -42,9 +40,7 @@ class UnitsMenu: RscControlsGroup
 		{
 			idc = -1;
 			text = "SPECTATOR";
-			//x = 0.005 * safezoneW;
 			x = ((0.47 * safezoneW + safezoneX) + (7 * 1)) * (			((safezoneW / safezoneH) min 1.2) / 40);
-			//x = (6.4 * 1) * 			(			((safezoneW / safezoneH) min 1.2) / 10);
 			y = 0;
 			w = "1.65 * 			(			((safezoneW / safezoneH) min 1.2) / 10)";
 			h = "1.4 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -72,7 +68,6 @@ class UnitsMenu: RscControlsGroup
 		{
 			idc = -1;
 			text = "MARKERS 2D";
-			//x = 0.005 * safezoneW;
 			x = ((0.47 * safezoneW + safezoneX) + (7 * 2)) * (			((safezoneW / safezoneH) min 1.2) / 40);
 			y = 0;
 			w = "1.65 * 			(			((safezoneW / safezoneH) min 1.2) / 10)";
@@ -99,7 +94,6 @@ class UnitsMenu: RscControlsGroup
 		{
 			idc = -1;
 			text = "MARKERS 3D";
-			//x = 0.005 * safezoneW;
 			x = ((0.47 * safezoneW + safezoneX) + (7 * 3)) * (			((safezoneW / safezoneH) min 1.2) / 40);
 			y = 0;
 			w = "1.65 * 			(			((safezoneW / safezoneH) min 1.2) / 10)";
