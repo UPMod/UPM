@@ -33,7 +33,6 @@ _display = GETUVAR(upm_RscTools,displayNull);
 
 switch (_action) do {
     case "OPEN": {
-
     	["OPEN UNITS",2] call FUNC(debug);
 
 		_window = _display displayCtrl D_C_WUNITS;
@@ -42,9 +41,9 @@ switch (_action) do {
 		ctrlEnable [D_C_WUNITS, true];
 
 		GVAR(unitsWindow) = true;
+
     };
     case "CLOSE": {
-
 		["CLOSE UNITS",2] call FUNC(debug);
 
 		_window = _display displayCtrl D_C_WUNITS;
@@ -53,5 +52,36 @@ switch (_action) do {
 		ctrlEnable [D_C_WUNITS, false];
 
 		GVAR(unitsWindow) = false;
+
+	};
+	case "OPEN_GENERAL": {
+
+	};
+	case "CLOSE_GENERAL": {
+
+	};
+	case "OPEN_SPECTATOR": {
+
+	};
+	case "CLOSE_SPECTATOR": {
+
+	};
+	case "OPEN_MARKERS2D": {
+
+	};
+	case "CLOSE_MARKERS2D": {
+
+	};
+	case "OPEN_MARKERS3D": {
+
+	};
+	case "CLOSE_MARKERS3D": {
+
+	};
+	case "OPEN_UPMINFO": {
+
+	};
+	case "CLOSE_UPMINFO": {
+
 	};
 };

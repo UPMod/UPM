@@ -30,3 +30,4 @@
 
 // UNITS
 #define D_C_WUNITS 8502
+#define D_C_CUNITS 850201
