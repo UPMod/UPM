@@ -52,4 +52,12 @@ GVAR(performanceWindow) = false;
 GVAR(planesWindow) = false;
 GVAR(settingsWindow) = false;
 GVAR(staticsWindow) = false;
+
+// UNITS
 GVAR(unitsWindow) = false;
+// -- CONTENT
+GVAR(unitsGeneral) = false;
+GVAR(unitsSpectator) = false;
+GVAR(unitsMarkers2d) = false;
+GVAR(unitsMarkers3d) = false;
+GVAR(unitsUPMInfo) = false;

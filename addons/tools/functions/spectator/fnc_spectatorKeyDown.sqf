@@ -149,7 +149,7 @@ switch (_key) do {
 				nil,
 				true,
 				_display
-			] call bis_fnc_guimessage;
+			] call BIS_fnc_guiMessage;
 
 			if (_message) then {
 				_display closeDisplay 2;

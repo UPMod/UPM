@@ -11,7 +11,7 @@ class UnitsWindow: RscControlsGroup
 		// WINDOW
 		class UnitsHeader: RscHeaderUPM_Window
 		{
-			idc = -1;
+			idc = D_C_WHUNITS;
 			x = 0;
 			y = 0;
 			w = 0.738 * safezoneW;
@@ -30,5 +30,9 @@ class UnitsWindow: RscControlsGroup
 		#include <CtrlsUPM_UnitsMenu.hpp>
 		// CONTENT
 		#include <CtrlsUPM_UnitsGeneral.hpp>
+		#include <CtrlsUPM_UnitsSpectator.hpp>
+		#include <CtrlsUPM_UnitsMarkers2d.hpp>
+		#include <CtrlsUPM_UnitsMarkers3d.hpp>
+		#include <CtrlsUPM_UnitsUPMInfo.hpp>
 	};
 };

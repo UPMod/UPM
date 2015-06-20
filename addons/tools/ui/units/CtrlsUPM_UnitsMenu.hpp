@@ -33,7 +33,7 @@ class UnitsMenu: RscControlsGroup
 			periodFocus = 0;
 			periodOver = 0;
 			sizeEx = (((((2.42424 / 1.81818) min 1.2) / 1.2) / 25) * 0.4);
-			action = QUOTE(hint 'helloooooooo';);
+			action = QUOTE(if !(GVAR(unitsGeneral)) then {['OPEN_GENERAL'] call FUNC(debugUnitsHandle);});
 		};
 
 		class SpectatorButton: RscButtonUPM_Tools
@@ -61,7 +61,7 @@ class UnitsMenu: RscControlsGroup
 			periodFocus = 0;
 			periodOver = 0;
 			sizeEx = (((((2.42424 / 1.81818) min 1.2) / 1.2) / 25) * 0.4);
-			action = QUOTE(hint 'helloooooooo';);
+			action = QUOTE(if !(GVAR(unitsSpectator)) then {['OPEN_SPECTATOR'] call FUNC(debugUnitsHandle);});
 		};
 
 		class Markers2dButton: RscButtonUPM_Tools
@@ -88,7 +88,7 @@ class UnitsMenu: RscControlsGroup
 			period = 0;
 			periodFocus = 0;
 			periodOver = 0;
-			action = QUOTE(hint 'helloooooooo';);
+			action = QUOTE(if !(GVAR(unitsMarkers2d)) then {['OPEN_MARKERS2D'] call FUNC(debugUnitsHandle);});
 		};
 		class Markers3dButton: RscButtonUPM_Tools
 		{
@@ -114,7 +114,7 @@ class UnitsMenu: RscControlsGroup
 			period = 0;
 			periodFocus = 0;
 			periodOver = 0;
-			action = QUOTE(hint 'helloooooooo';);
+			action = QUOTE(if !(GVAR(unitsMarkers3d)) then {['OPEN_MARKERS3D'] call FUNC(debugUnitsHandle);});
 		};
 		class UPMInfoButton: RscButtonUPM_Tools
 		{
@@ -140,7 +140,7 @@ class UnitsMenu: RscControlsGroup
 			period = 0;
 			periodFocus = 0;
 			periodOver = 0;
-			action = QUOTE(hint 'helloooooooo';);
+			action = QUOTE(if !(GVAR(unitsUPMInfo)) then {['OPEN_UPMINFO'] call FUNC(debugUnitsHandle);});
 		};
 	};
 };

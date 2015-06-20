@@ -1,6 +1,6 @@
-class UnitsContent: RscControlsGroup
+class UnitsGeneral: RscControlsGroup
 {
-	idc = D_C_CUNITS;
+	idc = D_C_CUNITSGENERAL;
 	text = "";
 	x = (0.47 * safezoneW + safezoneX) * (			((safezoneW / safezoneH) min 1.2) / 40);
 	y = 0.084 * safezoneH;

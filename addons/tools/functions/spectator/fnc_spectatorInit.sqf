@@ -156,7 +156,9 @@ _ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMa
 // CONTROLS: ALL WINDOWS ---------------------------------------- //
 //----------------------------------------------------------------//
 
+// ---- UNITS
 ['CLOSE'] call FUNC(debugUnitsHandle);
+
 
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//
