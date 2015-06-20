@@ -15,7 +15,7 @@ class UnitsGeneral: RscControlsGroup
 			y = 0;
 			w = 0.7271 * safezoneW;
 			h = 0.6425 * safezoneH;
-			colorBackground[] = {0.6,0.6,0.6,0.55};
+			colorBackground[] = {0.1,0.6,0.4,0.55};
 		};
 	};
 };

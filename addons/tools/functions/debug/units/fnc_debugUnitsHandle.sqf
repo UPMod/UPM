@@ -33,7 +33,6 @@ _display = GETUVAR(upm_RscTools,displayNull);
 
 switch (_action) do {
     case "OPEN": {
-    	["OPEN UNITS",2] call FUNC(debug);
 
     	// OPEN MAIN WINDOW UNITS
 		_window = _display displayCtrl D_C_WUNITS;
@@ -55,7 +54,6 @@ switch (_action) do {
 
     };
     case "CLOSE": {
-		["CLOSE UNITS",2] call FUNC(debug);
 
 		// CLOSE MAIN WINDOW UNITS
 		_window = _display displayCtrl D_C_WUNITS;
@@ -67,7 +65,6 @@ switch (_action) do {
 
 	};
 	case "OPEN_GENERAL": {
-    	["OPEN UNITS - GENERAL",2] call FUNC(debug);
 
     	_ctrlText = _display displayCtrl D_C_WHUNITS;
 		ctrlSetText [D_C_WHUNITS, "UNITS -  GENERAL"];
@@ -88,7 +85,6 @@ switch (_action) do {
 
 	};
 	case "CLOSE_GENERAL": {
-		["CLOSE UNITS - GENERAL",2] call FUNC(debug);
 
 		// CLOSE CONTENT GENERAL
 		_window = _display displayCtrl D_C_CUNITSGENERAL;
@@ -99,7 +95,6 @@ switch (_action) do {
 		GVAR(unitsGeneral) = false;
 	};
 	case "OPEN_SPECTATOR": {
-    	["OPEN UNITS - SPECTATOR",2] call FUNC(debug);
 
     	_ctrlText = _display displayCtrl D_C_WHUNITS;
 		ctrlSetText [D_C_WHUNITS, "UNITS -  SPECTATOR"];
@@ -109,6 +104,7 @@ switch (_action) do {
 		_window ctrlShow true;
 		_window ctrlCommit 0;
 		ctrlEnable [D_C_CUNITSSPECTATOR, true];
+		ctrlSetFocus _window;
 
 		GVAR(unitsSpectator) = true;
 
@@ -120,7 +116,6 @@ switch (_action) do {
 
 	};
 	case "CLOSE_SPECTATOR": {
-		["CLOSE UNITS - SPECTATOR",2] call FUNC(debug);
 
 		// CLOSE CONTENT SPECTATOR
 		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
@@ -131,7 +126,6 @@ switch (_action) do {
 		GVAR(unitsSpectator) = false;
 	};
 	case "OPEN_MARKERS2D": {
-    	["OPEN UNITS - MARKERS 2D",2] call FUNC(debug);
 
     	_ctrlText = _display displayCtrl D_C_WHUNITS;
 		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 2D"];
@@ -141,6 +135,7 @@ switch (_action) do {
 		_window ctrlShow true;
 		_window ctrlCommit 0;
 		ctrlEnable [D_C_CUNITSMARKERS2D, true];
+		ctrlSetFocus _window;
 
 		GVAR(unitsMarkers2d) = true;
 
@@ -152,7 +147,6 @@ switch (_action) do {
 
 	};
 	case "CLOSE_MARKERS2D": {
-		["CLOSE UNITS - MARKERS 2D",2] call FUNC(debug);
 
 		// CLOSE CONTENT MARKERS2D
 		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
@@ -163,7 +157,6 @@ switch (_action) do {
 		GVAR(unitsMarkers2d) = false;
 	};
 	case "OPEN_MARKERS3D": {
-    	["OPEN UNITS - MARKERS 3D",2] call FUNC(debug);
 
     	_ctrlText = _display displayCtrl D_C_WHUNITS;
 		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 3D"];
@@ -173,6 +166,7 @@ switch (_action) do {
 		_window ctrlShow true;
 		_window ctrlCommit 0;
 		ctrlEnable [D_C_CUNITSMARKERS3D, true];
+		ctrlSetFocus _window;
 
 		GVAR(unitsMarkers3d) = true;
 
@@ -184,7 +178,6 @@ switch (_action) do {
 
 	};
 	case "CLOSE_MARKERS3D": {
-		["CLOSE UNITS - MARKERS 3D",2] call FUNC(debug);
 
 		// CLOSE CONTENT MARKERS3D
 		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
@@ -195,7 +188,6 @@ switch (_action) do {
 		GVAR(unitsMarkers3d) = false;
 	};
 	case "OPEN_UPMINFO": {
-    	["OPEN UNITS - UPM INFO",2] call FUNC(debug);
 
     	_ctrlText = _display displayCtrl D_C_WHUNITS;
 		ctrlSetText [D_C_WHUNITS, "UNITS -  UPM INFO"];
@@ -205,6 +197,7 @@ switch (_action) do {
 		_window ctrlShow true;
 		_window ctrlCommit 0;
 		ctrlEnable [D_C_CUNITSUPMINFO, true];
+		ctrlSetFocus _window;
 
 		GVAR(unitsUPMInfo) = true;
 
@@ -216,7 +209,6 @@ switch (_action) do {
 
 	};
 	case "CLOSE_UPMINFO": {
-		["CLOSE UNITS - UPM INFO",2] call FUNC(debug);
 
 		// CLOSE CONTENT UPMINFO
 		_window = _display displayCtrl D_C_CUNITSUPMINFO;
