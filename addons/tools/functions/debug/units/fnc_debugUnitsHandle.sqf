@@ -69,7 +69,10 @@ switch (_action) do {
 	case "OPEN_GENERAL": {
     	["OPEN UNITS - GENERAL",2] call FUNC(debug);
 
-    	// OPEN MAIN WINDOW UNITS
+    	_ctrlText = _display displayCtrl D_C_WHUNITS;
+		ctrlSetText [D_C_WHUNITS, "UNITS -  GENERAL"];
+
+    	// OPEN CONTENT GENERAL
 		_window = _display displayCtrl D_C_CUNITSGENERAL;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
@@ -77,7 +80,7 @@ switch (_action) do {
 
 		GVAR(unitsGeneral) = true;
 
-    	// CLOSE ALL
+    	// CLEAN CONTENT
 		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
@@ -87,7 +90,7 @@ switch (_action) do {
 	case "CLOSE_GENERAL": {
 		["CLOSE UNITS - GENERAL",2] call FUNC(debug);
 
-		// CLOSE MAIN WINDOW UNITS
+		// CLOSE CONTENT GENERAL
 		_window = _display displayCtrl D_C_CUNITSGENERAL;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
@@ -98,7 +101,10 @@ switch (_action) do {
 	case "OPEN_SPECTATOR": {
     	["OPEN UNITS - SPECTATOR",2] call FUNC(debug);
 
-    	// OPEN MAIN WINDOW UNITS
+    	_ctrlText = _display displayCtrl D_C_WHUNITS;
+		ctrlSetText [D_C_WHUNITS, "UNITS -  SPECTATOR"];
+
+    	// OPEN CONTENT SPECTATOR
 		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
@@ -106,7 +112,7 @@ switch (_action) do {
 
 		GVAR(unitsSpectator) = true;
 
-		// CLOSE ALL
+		// CLEAN CONTENT
 		['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
@@ -116,7 +122,7 @@ switch (_action) do {
 	case "CLOSE_SPECTATOR": {
 		["CLOSE UNITS - SPECTATOR",2] call FUNC(debug);
 
-		// CLOSE MAIN WINDOW UNITS
+		// CLOSE CONTENT SPECTATOR
 		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
@@ -127,7 +133,10 @@ switch (_action) do {
 	case "OPEN_MARKERS2D": {
     	["OPEN UNITS - MARKERS 2D",2] call FUNC(debug);
 
-    	// OPEN MAIN WINDOW UNITS
+    	_ctrlText = _display displayCtrl D_C_WHUNITS;
+		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 2D"];
+
+    	// OPEN CONTENT MARKERS2D
 		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
@@ -135,7 +144,7 @@ switch (_action) do {
 
 		GVAR(unitsMarkers2d) = true;
 
-		// CLOSE ALL
+		// CLEAN CONTENT
     	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
 		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
@@ -145,7 +154,7 @@ switch (_action) do {
 	case "CLOSE_MARKERS2D": {
 		["CLOSE UNITS - MARKERS 2D",2] call FUNC(debug);
 
-		// CLOSE MAIN WINDOW UNITS
+		// CLOSE CONTENT MARKERS2D
 		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
@@ -156,7 +165,10 @@ switch (_action) do {
 	case "OPEN_MARKERS3D": {
     	["OPEN UNITS - MARKERS 3D",2] call FUNC(debug);
 
-    	// OPEN MAIN WINDOW UNITS
+    	_ctrlText = _display displayCtrl D_C_WHUNITS;
+		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 3D"];
+
+    	// OPEN CONTENT MARKERS3D
 		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
@@ -164,7 +176,7 @@ switch (_action) do {
 
 		GVAR(unitsMarkers3d) = true;
 
-		// CLOSE ALL
+		// CLEAN CONTENT
     	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
 		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
@@ -174,7 +186,7 @@ switch (_action) do {
 	case "CLOSE_MARKERS3D": {
 		["CLOSE UNITS - MARKERS 3D",2] call FUNC(debug);
 
-		// CLOSE MAIN WINDOW UNITS
+		// CLOSE CONTENT MARKERS3D
 		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
@@ -185,7 +197,10 @@ switch (_action) do {
 	case "OPEN_UPMINFO": {
     	["OPEN UNITS - UPM INFO",2] call FUNC(debug);
 
-    	// OPEN MAIN WINDOW UNITS
+    	_ctrlText = _display displayCtrl D_C_WHUNITS;
+		ctrlSetText [D_C_WHUNITS, "UNITS -  UPM INFO"];
+
+    	// OPEN CONTENT UPMINFO
 		_window = _display displayCtrl D_C_CUNITSUPMINFO;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
@@ -193,7 +208,7 @@ switch (_action) do {
 
 		GVAR(unitsUPMInfo) = true;
 
-		// CLOSE ALL
+		// CLEAN CONTENT
     	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
 		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
 		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
@@ -203,7 +218,7 @@ switch (_action) do {
 	case "CLOSE_UPMINFO": {
 		["CLOSE UNITS - UPM INFO",2] call FUNC(debug);
 
-		// CLOSE MAIN WINDOW UNITS
+		// CLOSE CONTENT UPMINFO
 		_window = _display displayCtrl D_C_CUNITSUPMINFO;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
