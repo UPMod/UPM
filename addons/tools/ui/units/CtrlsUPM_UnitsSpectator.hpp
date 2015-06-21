@@ -23,7 +23,7 @@ class UnitsSpectator: RscControlsGroup
 			text = "";
 			x = 0;
 			y = 0;
-			w = 0.3 * safezoneW;
+			w = 0.29 * safezoneW;
 			h = 0.6425 * safezoneH;
 			class controls
 			{
@@ -33,8 +33,9 @@ class UnitsSpectator: RscControlsGroup
 					idc = 79121;
 					x = 0;
 					y = 0;
-					w = 0.3 * safezoneW;
+					w = 0.28932 * safezoneW;
 					h = 0.02 * safezoneH;
+					shadow = 0;
 				};
 				class ListBox: RscIGUIUPM_ListBox
 				{
@@ -42,7 +43,7 @@ class UnitsSpectator: RscControlsGroup
 					text = "";
 					x = 0 * safezoneW;
 					y = 0.0435 * safezoneH;
-					w = 0.3 * safezoneW;
+					w = 0.2892 * safezoneW;
 					h = 0.597 * safezoneH;
 					canDrag = 1;
 					onLBSelChanged = "";
@@ -51,67 +52,87 @@ class UnitsSpectator: RscControlsGroup
 				class BluforTab: RscButton
 				{
 					idc = 79126;
-					text = "";
+					text = "BLUFOR";
 					x = 0;
 					y = 0.02 * safezoneH;
-					w = 0.01866667 * safezoneW;
-					h = 0.020 * safezoneH;
+					w = 0.058 * safezoneW;
+					h = 0.023 * safezoneH;
 					tooltip = "BLUFOR";
 					action = "hint 'blufor';";
-				    colorBackground[] = {0,0.2,0.4,0.6};
+				    colorBackground[] = {0,0.2,0.4,0.7};
     				colorBackgroundActive[] = {0,0.2,0.4,1};
+    				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
+    				shadow = 0;
+    				style = ST_CENTER;
+    				font = "puristaMedium";
 				};
 				class OpforTab: RscButton
 				{
 					idc = 79127;
-					text = "";
-					x = 0.03733334 * safezoneW;
+					text = "OPFOR";
+					x = 0.058 * safezoneW;
 					y = 0.02 * safezoneH;
-					w = 0.01866667 * safezoneW;
-					h = 0.020 * safezoneH;
+					w = 0.058 * safezoneW;
+					h = 0.023 * safezoneH;
 					tooltip = "OPFOR";
 					action = "hint 'opfor';";
-				    colorBackground[] = {0.502,0,0,0.6};
+				    colorBackground[] = {0.502,0,0,0.7};
     				colorBackgroundActive[] = {0.502,0,0,1};
+    				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
+    				shadow = 0;
+    				style = ST_CENTER;
+    				font = "puristaMedium";
 				};
-				class IndependentTab: RscButton
+				class IndependentsTab: RscButton
 				{
 					idc = 79128;
-					text = "";
-					x = 0.05600001 * safezoneW;
+					text = "INDEPENDENTS";
+					x = 0.116 * safezoneW;
 					y = 0.02 * safezoneH;
-					w = 0.01866667 * safezoneW;
-					h = 0.020 * safezoneH;
-					tooltip = "Independent";
+					w = 0.058 * safezoneW;
+					h = 0.023 * safezoneH;
+					tooltip = "INDEPENDENTS";
 					action = "hint 'ind'; ";
-				    colorBackground[] = {0.071,0.278,0.071,0.6};
+				    colorBackground[] = {0.071,0.278,0.071,0.7};
    					colorBackgroundActive[] = {0.071,0.278,0.071,1};
+    				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
+    				shadow = 0;
+    				style = ST_CENTER;
+    				font = "puristaMedium";
 				};
 				class CivilianTab: RscButton
 				{
 					idc = 79129;
-					text = "";
-					x = 0.07479668 * safezoneW;
+					text = "CIVILIANS";
+					x = 0.174 * safezoneW;
 					y = 0.02 * safezoneH;
-					w = 0.01866667 * safezoneW;
-					h = 0.020 * safezoneH;
+					w = 0.058 * safezoneW;
+					h = 0.023 * safezoneH;
 					tooltip = "CIVILIAN";
 					action = "hint 'civ';";
-				    colorBackground[] = {0.373,0.016,0.706,0.6};
+				    colorBackground[] = {0.373,0.016,0.706,0.7};
     				colorBackgroundActive[] = {0.373,0.016,0.706,1};
+    				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
+    				shadow = 0;
+    				style = ST_CENTER;
+    				font = "puristaMedium";
 				};
 				class PlayersTab: RscButton
 				{
 					idc = 791210;
-					text = "";
-					x = 0.09356335 * safezoneW;
+					text = "PLAYERS";
+					x = 0.232 * safezoneW;
 					y = 0.02 * safezoneH;
-					w = 0.01866667 * safezoneW;
-					h = 0.020 * safezoneH;
-					tooltip = "Players";
+					w = 0.058 * safezoneW;
+					h = 0.023 * safezoneH;
+					tooltip = "PLAYERS";
 					action = "hint 'players';";
-				    colorBackground[] = {0.682,0.447,0.216,0.6};
+				    colorBackground[] = {0.682,0.447,0.216,0.7};
     				colorBackgroundActive[] = {0.682,0.447,0.216,1};
+    				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
+    				shadow = 0;
+    				style = ST_CENTER;
+    				font = "puristaMedium";
 				};
 			};
 		};
