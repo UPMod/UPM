@@ -39,7 +39,7 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class ListBox: RscIGUIUPM_ListBox
 				{
-					idc = 79124;
+					idc = D_C_UNITSSPELISTBOX;
 					text = "";
 					x = 0 * safezoneW;
 					y = 0.0435 * safezoneH;
