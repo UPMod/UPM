@@ -64,7 +64,7 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-					action = QUOTE(GVAR(selectedList) = "BLUFOR"; [] call FUNC(debugUnitsSelectList));
+					action = QUOTE(GVAR(selectedList) = 'BLUFOR'; [] call FUNC(debugUnitsSelectList));
 				};
 				class OpforTab: RscButton
 				{
@@ -75,13 +75,13 @@ class UnitsSpectator: RscControlsGroup
 					w = 0.058 * safezoneW;
 					h = 0.023 * safezoneH;
 					tooltip = "OPFOR";
-					action = "hint 'opfor';";
 				    colorBackground[] = {0.502,0,0,0.7};
     				colorBackgroundActive[] = {0.502,0,0,1};
     				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
+    				action = QUOTE(GVAR(selectedList) = 'OPFOR'; [] call FUNC(debugUnitsSelectList));
 				};
 				class IndependentsTab: RscButton
 				{
@@ -92,13 +92,13 @@ class UnitsSpectator: RscControlsGroup
 					w = 0.058 * safezoneW;
 					h = 0.023 * safezoneH;
 					tooltip = "INDEPENDENTS";
-					action = "hint 'ind'; ";
 				    colorBackground[] = {0.071,0.278,0.071,0.7};
    					colorBackgroundActive[] = {0.071,0.278,0.071,1};
     				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
+    				action = QUOTE(GVAR(selectedList) = 'INDEPENDENTS'; [] call FUNC(debugUnitsSelectList));
 				};
 				class CivilianTab: RscButton
 				{
@@ -109,13 +109,13 @@ class UnitsSpectator: RscControlsGroup
 					w = 0.058 * safezoneW;
 					h = 0.023 * safezoneH;
 					tooltip = "CIVILIAN";
-					action = "hint 'civ';";
 				    colorBackground[] = {0.373,0.016,0.706,0.7};
     				colorBackgroundActive[] = {0.373,0.016,0.706,1};
     				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
+    				action = QUOTE(GVAR(selectedList) = 'CIVILIANS'; [] call FUNC(debugUnitsSelectList));
 				};
 				class PlayersTab: RscButton
 				{
@@ -126,13 +126,13 @@ class UnitsSpectator: RscControlsGroup
 					w = 0.058 * safezoneW;
 					h = 0.023 * safezoneH;
 					tooltip = "PLAYERS";
-					action = "hint 'players';";
 				    colorBackground[] = {0.682,0.447,0.216,0.7};
     				colorBackgroundActive[] = {0.682,0.447,0.216,1};
     				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
+    				action = QUOTE(GVAR(selectedList) = 'PLAYERS'; [] call FUNC(debugUnitsSelectList));
 				};
 			};
 		};

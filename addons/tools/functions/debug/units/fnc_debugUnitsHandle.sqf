@@ -114,6 +114,9 @@ switch (_action) do {
 		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
 		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
 
+		GVAR(selectedList) = 'BLUFOR';
+		[] call FUNC(debugUnitsSelectList);
+
 	};
 	case "CLOSE_SPECTATOR": {
 

@@ -211,6 +211,11 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\units,debugUnitsHandle);
 			};
+			// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
 		};
 	};
 };
