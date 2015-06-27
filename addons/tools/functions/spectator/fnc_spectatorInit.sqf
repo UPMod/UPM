@@ -95,9 +95,6 @@ GVAR(cameraVision) = 0;
 // upm_tools_visibleHUD
 GVAR(visibleHUD) = true;
 
-// upm_tools_prespective
-GVAR(prespective) = "FREECAM";
-
 // INIT UNIT ---------------------------------------------------- //
 //----------------------------------------------------------------//
 
@@ -105,6 +102,8 @@ player allowDamage false;
 
 // upm_tools_spectateUnit
 GVAR(spectateUnit) = player;
+// upm_tools_prespective
+GVAR(prespective) = "FREECAM";
 
 // CAMERA ------------------------------------------------------- //
 //----------------------------------------------------------------//

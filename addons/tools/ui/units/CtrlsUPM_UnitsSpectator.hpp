@@ -30,7 +30,7 @@ class UnitsSpectator: RscControlsGroup
 				class ListHeader: RscHeaderUPM_List
 				{
 					text = "UNITS";
-					idc = 79121;
+					idc = D_C_UNITSSPELISTHEADER;
 					x = 0;
 					y = 0;
 					w = 0.28932 * safezoneW;
@@ -51,24 +51,24 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class BluforTab: RscButton
 				{
-					idc = 79126;
+					idc = -1;
 					text = "BLUFOR";
 					x = 0;
 					y = 0.02 * safezoneH;
 					w = 0.058 * safezoneW;
 					h = 0.023 * safezoneH;
 					tooltip = "BLUFOR";
-					action = "hint 'blufor';";
 				    colorBackground[] = {0,0.2,0.4,0.7};
     				colorBackgroundActive[] = {0,0.2,0.4,1};
     				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 35) * 1)";
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
+					action = QUOTE(GVAR(selectedList) = "BLUFOR"; [] call FUNC(debugUnitsSelectList));
 				};
 				class OpforTab: RscButton
 				{
-					idc = 79127;
+					idc = -1;
 					text = "OPFOR";
 					x = 0.058 * safezoneW;
 					y = 0.02 * safezoneH;
@@ -85,7 +85,7 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class IndependentsTab: RscButton
 				{
-					idc = 79128;
+					idc = -1;
 					text = "INDEPENDENTS";
 					x = 0.116 * safezoneW;
 					y = 0.02 * safezoneH;
@@ -102,7 +102,7 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class CivilianTab: RscButton
 				{
-					idc = 79129;
+					idc = -1;
 					text = "CIVILIANS";
 					x = 0.174 * safezoneW;
 					y = 0.02 * safezoneH;
@@ -119,7 +119,7 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class PlayersTab: RscButton
 				{
-					idc = 791210;
+					idc = -1;
 					text = "PLAYERS";
 					x = 0.232 * safezoneW;
 					y = 0.02 * safezoneH;

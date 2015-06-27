@@ -34,7 +34,7 @@ class TabThirdPerson: RscButtonUPM_Tools
 		bottom = 0;
 	};
 	action = QUOTE(GVAR(prespective) = 'THIRDPERSON'; [] call FUNC(spectatorSelectView););
-}; 
+};
 
 class TabFirstPerson: RscButtonUPM_Tools
 {
