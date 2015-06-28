@@ -216,6 +216,11 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\units,debugUnitsSelectList);
 			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
+			};
 		};
 	};
 };

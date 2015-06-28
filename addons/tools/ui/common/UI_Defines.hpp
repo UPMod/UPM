@@ -112,7 +112,7 @@ class RscIGUIUPM_ListBox : RscIGUIListBox
     color[] = {1,1,1,1};
     colorBackground[] = {0.6,0.6,0.6,0.55};
     colorSelect2[] = {1,1,1,1};
-    colorSelect[] = {1,1,1,1};
+    colorSelect[] = {0,0,0,1};
     colorSelectBackground2[] = {1,1,1,1};
     colorSelectBackground[] = {1,1,1,1};
     shadow = 1;

@@ -46,8 +46,7 @@ lbClear _list;
 		switch (_selectedList) do {
 			case "BLUFOR": {
 				if(_side == west) then {
-					//_color = [_side] call FUNC(debugGetColorRgbaSide);
-					_color = [0.227,0.341,0.584,1];
+					_color = [0,0.2,0.4,0.7];
 					_index = lbAdd [_list, name _unit];
 					lbSetData [_list, _index, str _unit];
 					lbSetColor [_list, _index, _color];
@@ -56,7 +55,7 @@ lbClear _list;
 
 			case "OPFOR" : {
 				if(_side == east) then {
-					_color = [_side] call FUNC(debugGetColorRgbaSide);
+					_color = [0.502,0,0,0.7];
 					_index = lbAdd [_list, name _unit];
 					lbSetData [_list, _index, str _unit];
 					lbSetColor [_list, _index, _color];
@@ -65,16 +64,16 @@ lbClear _list;
 
 			case "INDEPENDENTS" : {
 				if(_side == independent) then {
-					_color = [_side] call FUNC(debugGetColorRgbaSide);
+					_color = [0.071,0.278,0.071,0.7];
 					_index = lbAdd [_list, name _unit];
 					lbSetData [_list, _index, str _unit];
 					lbSetColor [_list, _index, _color];
 				};
 			};
 
-			case "CILVILIANS" : {
+			case "CIVILIANS" : {
 				if(_side == civilian) then {
-					_color = [_side] call FUNC(debugGetColorRgbaSide);
+					_color = [0.373,0.016,0.706,0.7];
 					_index = lbAdd [_list, name _unit];
 					lbSetData [_list, _index, str _unit];
 					lbSetColor [_list, _index, _color];
@@ -83,7 +82,7 @@ lbClear _list;
 
 			case "PLAYERS" : {
 				if(isPlayer _unit) then {
-					_color = [_side] call FUNC(debugGetColorRgbaSide);
+					_color = [0.682,0.447,0.216,0.7];
 					_index = lbAdd [_list, name _unit];
 					lbSetData [_list, _index, str _unit];
 					lbSetColor [_list, _index, _color];

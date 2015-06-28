@@ -154,3 +154,6 @@ switch (GVAR(prespective)) do {
 
     };
 };
+
+_ctrlText = _display displayCtrl D_C_BAR_C_SPECTATORNAME;
+ctrlSetText [D_C_BAR_C_SPECTATORNAME, name GVAR(spectateUnit)];
