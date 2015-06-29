@@ -1,8 +1,6 @@
-# Git
+## Git
 
-Guide and workflow
-
-## Make repository for work
+### Make repository for work
 **Clone repository from GitHub**
 ```sh
 $ git clone https://github.com/upmod/UPM.git
@@ -14,7 +12,7 @@ $ ln -s ../../tools/hooks/commit-msg commit-msg
 $ chmod +x commit-msg
 $ cd ../../
 ```
-## Required configuration
+### Required configuration
 **Name/nick and email address**
 ```sh
 $ git config --global user.name "YOUR NAME/NICKNAME"
@@ -31,7 +29,7 @@ $ git config --global credential.helper wincred
 ```sh
 $ git config branch.master.rebase true
 ```
-## Commands
+### Commands
 
 **Show status of working copy**
 ```sh
@@ -127,6 +125,11 @@ $ git rebase origin/master
 # It is used to reset the local branch to another. To avoid problems, merges and rebases if the server is good
 $ git fetch && git reset --hard origin/master
 ```
+**Purge branches**
+```sh
+# Purge other branches that have already eliminated from the server
+$ git fetch -p
+```
 **Cherry Pick**
 ```sh
 # Use in specific cases
@@ -139,7 +142,25 @@ $ git cherry-pick dc094cb
 # Apply big changes from commits
 $ git diff 0da94be 59ff30c > my.patch git apply my.patch
 ```
-## Workflow
+**Others**
+```sh
+# Show graphic branches
+$ git log --oneline --graph
+# Show commits between branches
+$ git log master..bug#45
+# Sho commits between branches (compact)
+$ git shortlog master..bug#45
+# Show commit diferences between branches
+$ git diff --name-status master..bug#45
+# Show resume of changes between branches
+$ git diff --stat --color master..bug#45
+# History of file
+$ git log -p addons/groups/config.cpp
+# Show authors every line of file
+$ git blame addons/groups/config.cpp
+
+```
+### Workflow
 
 **Start bug/request/experimental**
 ```sh
@@ -148,13 +169,13 @@ $ git pull
 # Types ==================================================================
 # ========================================================================
 # Tasks
-# Every task
+# All task
 $ git checkout -b task#test_markers_of_debug
 # Bugs
-# For all types of bugs, name of branch: bug#number_of_issue 
+# All types of bugs, name of branch: bug#number_of_issue 
 $ git checkout -b bug#45
 # Features
-# For all types of features, name of branch: feature#number_of_issue
+# All types of features, name of branch: feature#number_of_issue
 $ git checkout -b feature#730
 # Experimental
 # Other things, test, etc, name of branch: experimental#name_description
@@ -185,7 +206,7 @@ $ tools/delete-branch
 # Option 2 from master
 $ tools/delete-branch bug#40
 ```
-## Links
+### Links
 [https://training.github.com/] (https://training.github.com/)
 
 [https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf] (https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
