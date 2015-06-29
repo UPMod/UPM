@@ -131,6 +131,16 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugAllMarkersGroups);
 			};
+			// upm_fnc_debugCreateMarker
+			class debugCreateMarker
+			{
+				file = PATHF_SUB(debug,debugCreateMarker);
+			};
+			// upm_fnc_debugCreateSign
+			class debugCreateSign
+			{
+				file = PATHF_SUB(debug,debugCreateSign);
+			};
 		};
 	};
 };
