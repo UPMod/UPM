@@ -95,9 +95,6 @@ GVAR(cameraVision) = 0;
 // upm_tools_visibleHUD
 GVAR(visibleHUD) = true;
 
-// upm_tools_prespective
-GVAR(prespective) = "FREECAM";
-
 // INIT UNIT ---------------------------------------------------- //
 //----------------------------------------------------------------//
 
@@ -105,6 +102,8 @@ player allowDamage false;
 
 // upm_tools_spectateUnit
 GVAR(spectateUnit) = player;
+// upm_tools_prespective
+GVAR(prespective) = "FREECAM";
 
 // CAMERA ------------------------------------------------------- //
 //----------------------------------------------------------------//
@@ -151,6 +150,14 @@ _ctrlMap = _display displayCtrl D_CB_MAP;
 _ctrlMap ctrlEnable false;
 _ctrlMap ctrlAddEventHandler ["Draw","_this call upm_fnc_spectatorMapDraw;"];
 _ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMapClick;"];
+
+
+// CONTROLS: ALL WINDOWS ---------------------------------------- //
+//----------------------------------------------------------------//
+
+// ---- UNITS
+['CLOSE'] call FUNC(debugUnitsHandle);
+
 
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//

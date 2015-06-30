@@ -34,7 +34,7 @@ class TabThirdPerson: RscButtonUPM_Tools
 		bottom = 0;
 	};
 	action = QUOTE(GVAR(prespective) = 'THIRDPERSON'; [] call FUNC(spectatorSelectView););
-}; 
+};
 
 class TabFirstPerson: RscButtonUPM_Tools
 {
@@ -78,8 +78,8 @@ class BarBottom: RscControlsGroup
 		    colorText[] = {1,1,1,1};
 		    font = "puristaMedium";
 		    sizeEx = 0.02;
-	    	colorBackground[] = {0,0,0,0.8};
-			colorBackground2[] = {0,0,0,0.8};
+	    	colorBackground[] = {0,0,0,0.7};
+			colorBackground2[] = {0,0,0,0.7};
 		    text = "";
 		};
 

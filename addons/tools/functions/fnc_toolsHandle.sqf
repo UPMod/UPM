@@ -35,6 +35,6 @@ if (_mode == "INIT") exitWith {
 if (_mode == "EXIT") exitWith {
 	if (!isNull (findDisplay D_TOOLS)) then {closeDialog 0};
 	if (!isNil {GVAR(LMB)}) then {
-		['Exit'] call FUNC(spectatorExit);
+		[] call FUNC(spectatorExit);
 	}
 };

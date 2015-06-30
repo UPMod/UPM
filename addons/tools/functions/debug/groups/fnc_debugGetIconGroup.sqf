@@ -27,7 +27,7 @@ PARAMS_2(_grp,_side);
 
 private ["_icon","_array"];
 
-_icon = switch ([_grp] call FUNC(debugGetGrpType)) do {
+_icon = switch ([_grp] call FUNC(debugGetTypeGroup)) do {
 	case "plane": {"b_plane"};
 	case "helicopter": {"b_air"};
 	case "boats": {"b_naval"};
