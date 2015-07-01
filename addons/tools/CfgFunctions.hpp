@@ -148,12 +148,32 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\groups,debugAllMarkersGroups);
 			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
+			};
 			// Heavy Vehicles =========================
 			// ========================================
 			// upm_fnc_debugHeavyVehiclesHandle
 			class debugHeavyVehiclesHandle
 			{
 				file = PATHF_SUB(debug\heavy_vehicles,debugHeavyVehiclesHandle);
+			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
 			};
 			// Helis ==================================
 			// ========================================
@@ -162,12 +182,32 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\helis,debugHelisHandle);
 			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
+			};
 			// Light Vehicles ==================================
 			// ========================================
 			// upm_fnc_debugLightVehiclesHandle
 			class debugLightVehiclesHandle
 			{
 				file = PATHF_SUB(debug\light_vehicles,debugLightVehiclesHandle);
+			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
 			};
 			// Naval ==================================
 			// ========================================
@@ -176,6 +216,16 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\naval,debugNavalHandle);
 			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
+			};
 			// Performance ==================================
 			// ========================================
 			// upm_fnc_debugPerformanceHandle
@@ -183,12 +233,23 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\performance,debugPerformanceHandle);
 			};
+
 			// Planes ==================================
 			// ========================================
 			// upm_fnc_debugPlanesHandle
 			class debugPlanesHandle
 			{
 				file = PATHF_SUB(debug\planes,debugPlanesHandle);
+			};
+						// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
 			};
 			// Settings ==================================
 			// ========================================
@@ -203,6 +264,16 @@ class CfgFunctions
 			class debugStaticsHandle
 			{
 				file = PATHF_SUB(debug\statics,debugStaticsHandle);
+			};
+			// upm_fnc_debugUnitsSelectList
+			class debugUnitsSelectList
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+			};
+			// upm_fnc_debugUnitsSpectatorHandle
+			class debugUnitsSpectatorHandle
+			{
+				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
 			};
 			// Units ==================================
 			// ========================================
