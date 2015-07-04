@@ -241,7 +241,7 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\planes,debugPlanesHandle);
 			};
-						// upm_fnc_debugUnitsSelectList
+			// upm_fnc_debugUnitsSelectList
 			class debugUnitsSelectList
 			{
 				file = PATHF_SUB(debug\units,debugUnitsSelectList);
@@ -265,15 +265,15 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug\statics,debugStaticsHandle);
 			};
-			// upm_fnc_debugUnitsSelectList
-			class debugUnitsSelectList
+			// upm_fnc_debugStaticsSelectList
+			class debugStaticsSelectList
 			{
-				file = PATHF_SUB(debug\units,debugUnitsSelectList);
+				file = PATHF_SUB(debug\units,debugStaticsSelectList);
 			};
-			// upm_fnc_debugUnitsSpectatorHandle
-			class debugUnitsSpectatorHandle
+			// upm_fnc_debugStaticsSpectatorHandle
+			class debugStaticsSpectatorHandle
 			{
-				file = PATHF_SUB(debug\units,debugUnitsSpectatorHandle);
+				file = PATHF_SUB(debug\units,debugStaticsSpectatorHandle);
 			};
 			// Units ==================================
 			// ========================================

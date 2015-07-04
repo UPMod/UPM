@@ -1,6 +1,6 @@
-class UnitsMarkers3d: RscControlsGroup
+class StaticsMarkers3d: RscControlsGroup
 {
-	idc = D_C_CUNITSMARKERS3D;
+	idc = D_C_CSTATICSMARKERS3D;
 	text = "";
 	x = (0.47 * safezoneW + safezoneX) * (			((safezoneW / safezoneH) min 1.2) / 40);
 	y = 0.084 * safezoneH;
@@ -8,7 +8,7 @@ class UnitsMarkers3d: RscControlsGroup
 	h = 0.6425 * safezoneH;
 	class controls
 	{
-		class UnitsBackground: RscBackgroundUPM_Window
+		class StaticsBackground: RscBackgroundUPM_Window
 		{
 			idc = -1;
 			x = 0;

@@ -1,6 +1,6 @@
-class UnitsSpectator: RscControlsGroup
+class GroupsSpectator: RscControlsGroup
 {
-	idc = D_C_CUNITSSPECTATOR;
+	idc = D_C_CGROUPSSPECTATOR;
 	text = "";
 	x = (0.47 * safezoneW + safezoneX) * (			((safezoneW / safezoneH) min 1.2) / 40);
 	y = 0.084 * safezoneH;
@@ -8,7 +8,7 @@ class UnitsSpectator: RscControlsGroup
 	h = 0.6425 * safezoneH;
 	class controls
 	{
-		/*class UnitsBackground: RscBackgroundUPM_Window
+		/*class GroupsBackground: RscBackgroundUPM_Window
 		{
 			idc = -1;
 			x = 0;
@@ -17,7 +17,7 @@ class UnitsSpectator: RscControlsGroup
 			h = 0.6425 * safezoneH;
 			colorBackground[] = {0.6,0.6,0.6,0.55};
 		};*/
-		class UnitsList: RscControlsGroup
+		class GroupsList: RscControlsGroup
 		{
 			idc = 7912;
 			text = "";
@@ -29,8 +29,8 @@ class UnitsSpectator: RscControlsGroup
 			{
 				class ListHeader: RscHeaderUPM_List
 				{
-					text = "UNITS";
-					idc = D_C_UNITSSPELISTHEADER;
+					text = "Groups";
+					idc = D_C_GROUPSSPELISTHEADER;
 					x = 0;
 					y = 0;
 					w = 0.289447 * safezoneW;
@@ -39,7 +39,7 @@ class UnitsSpectator: RscControlsGroup
 				};
 				class ListBox: RscIGUIUPM_ListBox
 				{
-					idc = D_C_UNITSSPELISTBOX;
+					idc = D_C_GROUPSSPELISTBOX;
 					text = "";
 					x = 0 * safezoneW;
 					y = 0.0435 * safezoneH;
@@ -64,7 +64,7 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-					action = QUOTE(GVAR(selectedList) = 'BLUFOR'; [] call FUNC(debugUnitsSelectList));
+					action = QUOTE(GVAR(selectedList) = 'BLUFOR'; [] call FUNC(debugGroupsSelectList));
 				};
 				class OpforTab: RscButton
 				{
@@ -81,7 +81,7 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-    				action = QUOTE(GVAR(selectedList) = 'OPFOR'; [] call FUNC(debugUnitsSelectList));
+    				action = QUOTE(GVAR(selectedList) = 'OPFOR'; [] call FUNC(debugGroupsSelectList));
 				};
 				class IndependentsTab: RscButton
 				{
@@ -98,7 +98,7 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-    				action = QUOTE(GVAR(selectedList) = 'INDEPENDENTS'; [] call FUNC(debugUnitsSelectList));
+    				action = QUOTE(GVAR(selectedList) = 'INDEPENDENTS'; [] call FUNC(debugGroupsSelectList));
 				};
 				class CivilianTab: RscButton
 				{
@@ -115,7 +115,7 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-    				action = QUOTE(GVAR(selectedList) = 'CIVILIANS'; [] call FUNC(debugUnitsSelectList));
+    				action = QUOTE(GVAR(selectedList) = 'CIVILIANS'; [] call FUNC(debugGroupsSelectList));
 				};
 				class PlayersTab: RscButton
 				{
@@ -132,11 +132,11 @@ class UnitsSpectator: RscControlsGroup
     				shadow = 0;
     				style = ST_CENTER;
     				font = "puristaMedium";
-    				action = QUOTE(GVAR(selectedList) = 'PLAYERS'; [] call FUNC(debugUnitsSelectList));
+    				action = QUOTE(GVAR(selectedList) = 'PLAYERS'; [] call FUNC(debugGroupsSelectList));
 				};
 			};
 		};
-		class UnitsMap: RscControlsGroup
+		class GroupsMap: RscControlsGroup
 		{
 			idc = 79130;
 			text = "";
@@ -175,7 +175,7 @@ class UnitsSpectator: RscControlsGroup
 					colorBackground[] = {0.6,0.6,0.6,0.55};
 					colorBackground2[] = {0.6,0.6,0.6,0.55};
 					colorBackgroundFocused[] = {0.6,0.6,0.6,1};
-					action = QUOTE(GVAR(unitSpectatorPrespective) = 'FREECAM'; [] call FUNC(debugUnitsSpectatorHandle));
+					action = QUOTE(GVAR(GroupspectatorPrespective) = 'FREECAM'; [] call FUNC(debugGroupsSpectatorHandle));
 				};
 				class ButtonThirdPerson: RscButtonUPM_Tools
 				{
@@ -196,7 +196,7 @@ class UnitsSpectator: RscControlsGroup
 					colorBackground[] = {0.6,0.6,0.6,0.55};
 					colorBackground2[] = {0.6,0.6,0.6,0.55};
 					colorBackgroundFocused[] = {0.6,0.6,0.6,1};
-					action = QUOTE(GVAR(unitSpectatorPrespective) = 'THIRDPERSON'; [] call FUNC(debugUnitsSpectatorHandle));
+					action = QUOTE(GVAR(GroupspectatorPrespective) = 'THIRDPERSON'; [] call FUNC(debugGroupsSpectatorHandle));
 				};
 				class ButtonFirstPerson: RscButtonUPM_Tools
 				{
@@ -217,7 +217,7 @@ class UnitsSpectator: RscControlsGroup
 					colorBackground[] = {0.6,0.6,0.6,0.55};
 					colorBackground2[] = {0.6,0.6,0.6,0.55};
 					colorBackgroundFocused[] = {0.6,0.6,0.6,1};
-					action = QUOTE(GVAR(unitSpectatorPrespective) = 'FIRSTPERSON'; [] call FUNC(debugUnitsSpectatorHandle));
+					action = QUOTE(GVAR(GroupspectatorPrespective) = 'FIRSTPERSON'; [] call FUNC(debugGroupsSpectatorHandle));
 				};
 			};
 		};

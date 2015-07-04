@@ -1,6 +1,6 @@
-class UnitsGeneral: RscControlsGroup
+class EnvironmentGeneral: RscControlsGroup
 {
-	idc = D_C_CUNITSGENERAL;
+	idc = D_C_CENVIRONMENTGENERAL;
 	text = "";
 	x = (0.47 * safezoneW + safezoneX) * (			((safezoneW / safezoneH) min 1.2) / 40);
 	y = 0.084 * safezoneH;
@@ -8,7 +8,7 @@ class UnitsGeneral: RscControlsGroup
 	h = 0.6425 * safezoneH;
 	class controls
 	{
-		class UnitsBackground: RscBackgroundUPM_Window
+		class EnvironmentBackground: RscBackgroundUPM_Window
 		{
 			idc = -1;
 			x = 0;
