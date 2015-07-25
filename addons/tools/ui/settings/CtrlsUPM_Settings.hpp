@@ -1,6 +1,6 @@
 class SettingsWindow: RscControlsGroup
 {
-	idc = D_C_WUNITS;
+	idc = D_C_WSETTINGS;
 	text = "";
 	x = 5.44616e-005 * safezoneW + safezoneX + 0.05;
 	y = (0.1 * safezoneH + safezoneY) + (1.6 * 1) * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
@@ -11,7 +11,7 @@ class SettingsWindow: RscControlsGroup
 		// WINDOW
 		class SettingsHeader: RscHeaderUPM_Window
 		{
-			idc = D_C_WHUNITS;
+			idc = D_C_WHSETTINGS;
 			x = 0;
 			y = 0;
 			w = 0.738 * safezoneW;
@@ -30,9 +30,5 @@ class SettingsWindow: RscControlsGroup
 		#include <CtrlsUPM_SettingsMenu.hpp>
 		// CONTENT
 		#include <CtrlsUPM_SettingsGeneral.hpp>
-		#include <CtrlsUPM_SettingsSpectator.hpp>
-		#include <CtrlsUPM_SettingsMarkers2d.hpp>
-		#include <CtrlsUPM_SettingsMarkers3d.hpp>
-		#include <CtrlsUPM_SettingsUPMInfo.hpp>
 	};
 };

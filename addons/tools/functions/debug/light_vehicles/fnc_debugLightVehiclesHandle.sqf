@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_debugUnitsHandle.sqf
+	fnc_debugLightVehiclesHandle.sqf
 
 Description:
 
@@ -34,191 +34,203 @@ _display = GETUVAR(upm_RscTools,displayNull);
 switch (_action) do {
     case "OPEN": {
 
-    	// OPEN MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE ALL
+		['CLOSE'] call FUNC(debugEnvironmentHandle);
+		['CLOSE'] call FUNC(debugGroupsHandle);
+		['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+		['CLOSE'] call FUNC(debugHelisHandle);
+		['CLOSE'] call FUNC(debugNavalHandle);
+		['CLOSE'] call FUNC(debugPerformanceHandle);
+		['CLOSE'] call FUNC(debugPlanesHandle);
+		['CLOSE'] call FUNC(debugSettingsHandle);
+		['CLOSE'] call FUNC(debugStaticsHandle);
+		['CLOSE'] call FUNC(debugUnitsHandle);
+
+    	// OPEN MAIN WINDOW LIGHTVEHICLES
+		_window = _display displayCtrl D_C_WLIGHTVEHICLES;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, true];
+		ctrlEnable [D_C_WLIGHTVEHICLES, true];
 
-		GVAR(unitsWindow) = true;
+		GVAR(lightVehiclesWindow) = true;
 
     	// CLOSE ALL
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugLightVehiclesHandle);
 
 		// START
-		['OPEN_GENERAL'] call FUNC(debugUnitsHandle);
+		['OPEN_GENERAL'] call FUNC(debugLightVehiclesHandle);
 
     };
     case "CLOSE": {
 
-		// CLOSE MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE MAIN WINDOW LIGHTVEHICLES
+		_window = _display displayCtrl D_C_WLIGHTVEHICLES;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, false];
+		ctrlEnable [D_C_WLIGHTVEHICLES, false];
 
-		GVAR(unitsWindow) = false;
+		GVAR(lightVehiclesWindow) = false;
 
 	};
 	case "OPEN_GENERAL": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  GENERAL"];
+    	_ctrlText = _display displayCtrl D_C_WHLIGHTVEHICLES;
+		ctrlSetText [D_C_WHLIGHTVEHICLES, "LIGHT VEHICLES -  GENERAL"];
 
     	// OPEN CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESGENERAL;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, true];
+		ctrlEnable [D_C_CLIGHTVEHICLESGENERAL, true];
 
-		GVAR(unitsGeneral) = true;
+		GVAR(lightVehiclesGeneral) = true;
 
     	// CLEAN CONTENT
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugLightVehiclesHandle);
 
 	};
 	case "CLOSE_GENERAL": {
 
 		// CLOSE CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESGENERAL;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, false];
+		ctrlEnable [D_C_CLIGHTVEHICLESGENERAL, false];
 
-		GVAR(unitsGeneral) = false;
+		GVAR(lightVehiclesGeneral) = false;
 	};
 	case "OPEN_SPECTATOR": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  SPECTATOR"];
+    	_ctrlText = _display displayCtrl D_C_WHLIGHTVEHICLES;
+		ctrlSetText [D_C_WHLIGHTVEHICLES, "LIGHT VEHICLES -  SPECTATOR"];
 
     	// OPEN CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESSPECTATOR;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, true];
+		ctrlEnable [D_C_CLIGHTVEHICLESSPECTATOR, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsSpectator) = true;
+		GVAR(lightVehiclesSpectator) = true;
 
 		// CLEAN CONTENT
-		['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+		['CLOSE_GENERAL'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugLightVehiclesHandle);
 
 		GVAR(selectedList) = 'BLUFOR';
-		[] call FUNC(debugUnitsSelectList);
+		[] call FUNC(debugLightVehiclesSelectList);
 
 	};
 	case "CLOSE_SPECTATOR": {
 
 		// CLOSE CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESSPECTATOR;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, false];
+		ctrlEnable [D_C_CLIGHTVEHICLESSPECTATOR, false];
 
-		GVAR(unitsSpectator) = false;
+		GVAR(lightVehiclesSpectator) = false;
 	};
 	case "OPEN_MARKERS2D": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 2D"];
+    	_ctrlText = _display displayCtrl D_C_WHLIGHTVEHICLES;
+		ctrlSetText [D_C_WHLIGHTVEHICLES, "LIGHT VEHICLES -  MARKERS 2D"];
 
     	// OPEN CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESMARKERS2D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, true];
+		ctrlEnable [D_C_CLIGHTVEHICLESMARKERS2D, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsMarkers2d) = true;
+		GVAR(lightVehiclesMarkers2d) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugLightVehiclesHandle);
 
 	};
 	case "CLOSE_MARKERS2D": {
 
 		// CLOSE CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESMARKERS2D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, false];
+		ctrlEnable [D_C_CLIGHTVEHICLESMARKERS2D, false];
 
-		GVAR(unitsMarkers2d) = false;
+		GVAR(lightVehiclesMarkers2d) = false;
 	};
 	case "OPEN_MARKERS3D": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 3D"];
+    	_ctrlText = _display displayCtrl D_C_WHLIGHTVEHICLES;
+		ctrlSetText [D_C_WHLIGHTVEHICLES, "LIGHT VEHICLES -  MARKERS 3D"];
 
     	// OPEN CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESMARKERS3D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, true];
+		ctrlEnable [D_C_CLIGHTVEHICLESMARKERS3D, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsMarkers3d) = true;
+		GVAR(lightVehiclesMarkers3d) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugLightVehiclesHandle);
 
 	};
 	case "CLOSE_MARKERS3D": {
 
 		// CLOSE CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESMARKERS3D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, false];
+		ctrlEnable [D_C_CLIGHTVEHICLESMARKERS3D, false];
 
-		GVAR(unitsMarkers3d) = false;
+		GVAR(lightVehiclesMarkers3d) = false;
 	};
 	case "OPEN_UPMINFO": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  UPM INFO"];
+    	_ctrlText = _display displayCtrl D_C_WHLIGHTVEHICLES;
+		ctrlSetText [D_C_WHLIGHTVEHICLES, "LIGHT VEHICLES -  UPM INFO"];
 
     	// OPEN CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESUPMINFO;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, true];
+		ctrlEnable [D_C_CLIGHTVEHICLESUPMINFO, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsUPMInfo) = true;
+		GVAR(lightVehiclesUPMInfo) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugLightVehiclesHandle);
 
 	};
 	case "CLOSE_UPMINFO": {
 
 		// CLOSE CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
+		_window = _display displayCtrl D_C_CLIGHTVEHICLESUPMINFO;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, false];
+		ctrlEnable [D_C_CLIGHTVEHICLESUPMINFO, false];
 
-		GVAR(unitsUPMInfo) = false;
+		GVAR(lightVehiclesUPMInfo) = false;
 	};
 };

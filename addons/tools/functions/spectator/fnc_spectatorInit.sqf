@@ -156,8 +156,17 @@ _ctrlMap ctrlAddEventHandler ["MouseButtonClick","_this call upm_fnc_spectatorMa
 //----------------------------------------------------------------//
 
 // ---- UNITS
+['CLOSE'] call FUNC(debugEnvironmentHandle);
+['CLOSE'] call FUNC(debugGroupsHandle);
+['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+['CLOSE'] call FUNC(debugHelisHandle);
+['CLOSE'] call FUNC(debugLightVehiclesHandle);
+['CLOSE'] call FUNC(debugNavalHandle);
+['CLOSE'] call FUNC(debugPerformanceHandle);
+['CLOSE'] call FUNC(debugPlanesHandle);
+['CLOSE'] call FUNC(debugSettingsHandle);
+['CLOSE'] call FUNC(debugStaticsHandle);
 ['CLOSE'] call FUNC(debugUnitsHandle);
-
 
 // SELECT VIEW -------------------------------------------------- //
 //----------------------------------------------------------------//

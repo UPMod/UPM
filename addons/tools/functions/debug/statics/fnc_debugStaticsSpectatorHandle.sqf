@@ -29,15 +29,15 @@ private [
 	"_list"
 ];
 
-_list = D_C_UNITSSPELISTBOX;
+_list = D_C_STATICSSPELISTBOX;
 
 {
 	_unit = _x;
 
 	if ((lbData [_list, lbCurSel _list]) == (str _unit)) exitWith {
 		GVAR(spectateUnit) = _unit;
-		GVAR(prespective) = GVAR(unitSpectatorPrespective);
+		GVAR(prespective) = GVAR(staticSpectatorPrespective);
 		[] call FUNC(spectatorSelectView);
 	};
 
-} count GVAR(listUnits) > 0;
+} count GVAR(listStatics) > 0;

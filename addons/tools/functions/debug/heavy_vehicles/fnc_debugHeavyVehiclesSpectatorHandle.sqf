@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_debugUnitsSpectatorHandle.sqf
+	fnc_debugHeavyVehiclesSpectatorHandle.sqf
 
 Description:
 
@@ -29,15 +29,15 @@ private [
 	"_list"
 ];
 
-_list = D_C_UNITSSPELISTBOX;
+_list = D_C_HEAVYVEHICLESSPELISTBOX;
 
 {
 	_unit = _x;
 
 	if ((lbData [_list, lbCurSel _list]) == (str _unit)) exitWith {
 		GVAR(spectateUnit) = _unit;
-		GVAR(prespective) = GVAR(unitSpectatorPrespective);
+		GVAR(prespective) = GVAR(heavyVehicleSpectatorPrespective);
 		[] call FUNC(spectatorSelectView);
 	};
 
-} count GVAR(listUnits) > 0;
+} count GVAR(listHeavyVehicles) > 0;

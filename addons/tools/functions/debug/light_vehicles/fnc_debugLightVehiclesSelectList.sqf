@@ -32,7 +32,7 @@ private [
 if (isNil {GVAR(selectedList)}) exitWith {};
 
 _selectedList = GVAR(selectedList);
-_list = D_C_UNITSSPELISTBOX;
+_list = D_C_LIGHTVEHICLESSPELISTBOX;
 
 lbClear _list;
 
@@ -92,4 +92,4 @@ lbClear _list;
 
 	};
 
-} count GVAR(listUnits) > 0;
+} count GVAR(listLightVehicles) > 0;

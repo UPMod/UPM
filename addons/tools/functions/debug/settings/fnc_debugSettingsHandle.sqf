@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_debugUnitsHandle.sqf
+	fnc_debugSettingsHandle.sqf
 
 Description:
 
@@ -34,191 +34,70 @@ _display = GETUVAR(upm_RscTools,displayNull);
 switch (_action) do {
     case "OPEN": {
 
-    	// OPEN MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE ALL
+		['CLOSE'] call FUNC(debugEnvironmentHandle);
+		['CLOSE'] call FUNC(debugGroupsHandle);
+		['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+		['CLOSE'] call FUNC(debugHelisHandle);
+		['CLOSE'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE'] call FUNC(debugNavalHandle);
+		['CLOSE'] call FUNC(debugPerformanceHandle);
+		['CLOSE'] call FUNC(debugPlanesHandle);
+		['CLOSE'] call FUNC(debugStaticsHandle);
+		['CLOSE'] call FUNC(debugUnitsHandle);
+
+    	// OPEN MAIN WINDOW SETTINGS
+		_window = _display displayCtrl D_C_WSETTINGS;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, true];
+		ctrlEnable [D_C_WSETTINGS, true];
 
-		GVAR(unitsWindow) = true;
+		GVAR(settingsWindow) = true;
 
     	// CLOSE ALL
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugSettingsHandle);
+
 
 		// START
-		['OPEN_GENERAL'] call FUNC(debugUnitsHandle);
+		['OPEN_GENERAL'] call FUNC(debugSettingsHandle);
 
     };
     case "CLOSE": {
 
-		// CLOSE MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE MAIN WINDOW SETTINGS
+		_window = _display displayCtrl D_C_WSETTINGS;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, false];
+		ctrlEnable [D_C_WSETTINGS, false];
 
-		GVAR(unitsWindow) = false;
+		GVAR(settingsWindow) = false;
 
 	};
 	case "OPEN_GENERAL": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  GENERAL"];
+    	_ctrlText = _display displayCtrl D_C_WHSETTINGS;
+		ctrlSetText [D_C_WHSETTINGS, "SETTINGS -  GENERAL"];
 
     	// OPEN CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CSETTINGSGENERAL;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, true];
+		ctrlEnable [D_C_CSETTINGSGENERAL, true];
 
-		GVAR(unitsGeneral) = true;
+		GVAR(settingsGeneral) = true;
 
     	// CLEAN CONTENT
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+
 
 	};
 	case "CLOSE_GENERAL": {
 
 		// CLOSE CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CSETTINGSGENERAL;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, false];
+		ctrlEnable [D_C_CSETTINGSGENERAL, false];
 
-		GVAR(unitsGeneral) = false;
-	};
-	case "OPEN_SPECTATOR": {
-
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  SPECTATOR"];
-
-    	// OPEN CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
-		_window ctrlShow true;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, true];
-		ctrlSetFocus _window;
-
-		GVAR(unitsSpectator) = true;
-
-		// CLEAN CONTENT
-		['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
-
-		GVAR(selectedList) = 'BLUFOR';
-		[] call FUNC(debugUnitsSelectList);
-
-	};
-	case "CLOSE_SPECTATOR": {
-
-		// CLOSE CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
-		_window ctrlShow false;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, false];
-
-		GVAR(unitsSpectator) = false;
-	};
-	case "OPEN_MARKERS2D": {
-
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 2D"];
-
-    	// OPEN CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
-		_window ctrlShow true;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, true];
-		ctrlSetFocus _window;
-
-		GVAR(unitsMarkers2d) = true;
-
-		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
-
-	};
-	case "CLOSE_MARKERS2D": {
-
-		// CLOSE CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
-		_window ctrlShow false;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, false];
-
-		GVAR(unitsMarkers2d) = false;
-	};
-	case "OPEN_MARKERS3D": {
-
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 3D"];
-
-    	// OPEN CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
-		_window ctrlShow true;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, true];
-		ctrlSetFocus _window;
-
-		GVAR(unitsMarkers3d) = true;
-
-		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
-
-	};
-	case "CLOSE_MARKERS3D": {
-
-		// CLOSE CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
-		_window ctrlShow false;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, false];
-
-		GVAR(unitsMarkers3d) = false;
-	};
-	case "OPEN_UPMINFO": {
-
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  UPM INFO"];
-
-    	// OPEN CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
-		_window ctrlShow true;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, true];
-		ctrlSetFocus _window;
-
-		GVAR(unitsUPMInfo) = true;
-
-		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-
-	};
-	case "CLOSE_UPMINFO": {
-
-		// CLOSE CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
-		_window ctrlShow false;
-		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, false];
-
-		GVAR(unitsUPMInfo) = false;
+		GVAR(settingsGeneral) = false;
 	};
 };

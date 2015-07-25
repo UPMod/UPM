@@ -32,7 +32,7 @@ private [
 if (isNil {GVAR(selectedList)}) exitWith {};
 
 _selectedList = GVAR(selectedList);
-_list = D_C_UNITSSPELISTBOX;
+_list = D_C_NAVALSPELISTBOX;
 
 lbClear _list;
 

@@ -4,7 +4,7 @@ Author(s):
 	oscarmolinadev
 
 File:
-	fnc_debugUnitsHandle.sqf
+	fnc_debugHelisHandle.sqf
 
 Description:
 
@@ -34,191 +34,203 @@ _display = GETUVAR(upm_RscTools,displayNull);
 switch (_action) do {
     case "OPEN": {
 
-    	// OPEN MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE ALL
+		['CLOSE'] call FUNC(debugEnvironmentHandle);
+		['CLOSE'] call FUNC(debugGroupsHandle);
+		['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+		['CLOSE'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE'] call FUNC(debugNavalHandle);
+		['CLOSE'] call FUNC(debugPerformanceHandle);
+		['CLOSE'] call FUNC(debugPlanesHandle);
+		['CLOSE'] call FUNC(debugSettingsHandle);
+		['CLOSE'] call FUNC(debugStaticsHandle);
+		['CLOSE'] call FUNC(debugUnitsHandle);
+
+    	// OPEN MAIN WINDOW HELIS
+		_window = _display displayCtrl D_C_WHELIS;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, true];
+		ctrlEnable [D_C_WHELIS, true];
 
-		GVAR(unitsWindow) = true;
+		GVAR(helisWindow) = true;
 
     	// CLOSE ALL
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugHelisHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugHelisHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugHelisHandle);
 
 		// START
-		['OPEN_GENERAL'] call FUNC(debugUnitsHandle);
+		['OPEN_GENERAL'] call FUNC(debugHelisHandle);
 
     };
     case "CLOSE": {
 
-		// CLOSE MAIN WINDOW UNITS
-		_window = _display displayCtrl D_C_WUNITS;
+		// CLOSE MAIN WINDOW HELIS
+		_window = _display displayCtrl D_C_WHELIS;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_WUNITS, false];
+		ctrlEnable [D_C_WHELIS, false];
 
-		GVAR(unitsWindow) = false;
+		GVAR(helisWindow) = false;
 
 	};
 	case "OPEN_GENERAL": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  GENERAL"];
+    	_ctrlText = _display displayCtrl D_C_WHHELIS;
+		ctrlSetText [D_C_WHHELIS, "HELIS -  GENERAL"];
 
     	// OPEN CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CHELISGENERAL;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, true];
+		ctrlEnable [D_C_CHELISGENERAL, true];
 
-		GVAR(unitsGeneral) = true;
+		GVAR(helisGeneral) = true;
 
     	// CLEAN CONTENT
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugHelisHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugHelisHandle);
 
 	};
 	case "CLOSE_GENERAL": {
 
 		// CLOSE CONTENT GENERAL
-		_window = _display displayCtrl D_C_CUNITSGENERAL;
+		_window = _display displayCtrl D_C_CHELISGENERAL;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSGENERAL, false];
+		ctrlEnable [D_C_CHELISGENERAL, false];
 
-		GVAR(unitsGeneral) = false;
+		GVAR(helisGeneral) = false;
 	};
 	case "OPEN_SPECTATOR": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  SPECTATOR"];
+    	_ctrlText = _display displayCtrl D_C_WHHELIS;
+		ctrlSetText [D_C_WHHELIS, "HELIS -  SPECTATOR"];
 
     	// OPEN CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
+		_window = _display displayCtrl D_C_CHELISSPECTATOR;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, true];
+		ctrlEnable [D_C_CHELISSPECTATOR, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsSpectator) = true;
+		GVAR(helisSpectator) = true;
 
 		// CLEAN CONTENT
-		['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+		['CLOSE_GENERAL'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugHelisHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugHelisHandle);
 
 		GVAR(selectedList) = 'BLUFOR';
-		[] call FUNC(debugUnitsSelectList);
+		[] call FUNC(debugHelisSelectList);
 
 	};
 	case "CLOSE_SPECTATOR": {
 
 		// CLOSE CONTENT SPECTATOR
-		_window = _display displayCtrl D_C_CUNITSSPECTATOR;
+		_window = _display displayCtrl D_C_CHELISSPECTATOR;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSSPECTATOR, false];
+		ctrlEnable [D_C_CHELISSPECTATOR, false];
 
-		GVAR(unitsSpectator) = false;
+		GVAR(helisSpectator) = false;
 	};
 	case "OPEN_MARKERS2D": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 2D"];
+    	_ctrlText = _display displayCtrl D_C_WHHELIS;
+		ctrlSetText [D_C_WHHELIS, "HELIS -  MARKERS 2D"];
 
     	// OPEN CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
+		_window = _display displayCtrl D_C_CHELISMARKERS2D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, true];
+		ctrlEnable [D_C_CHELISMARKERS2D, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsMarkers2d) = true;
+		GVAR(helisMarkers2d) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugHelisHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugHelisHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugHelisHandle);
 
 	};
 	case "CLOSE_MARKERS2D": {
 
 		// CLOSE CONTENT MARKERS2D
-		_window = _display displayCtrl D_C_CUNITSMARKERS2D;
+		_window = _display displayCtrl D_C_CHELISMARKERS2D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS2D, false];
+		ctrlEnable [D_C_CHELISMARKERS2D, false];
 
-		GVAR(unitsMarkers2d) = false;
+		GVAR(helisMarkers2d) = false;
 	};
 	case "OPEN_MARKERS3D": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  MARKERS 3D"];
+    	_ctrlText = _display displayCtrl D_C_WHHELIS;
+		ctrlSetText [D_C_WHHELIS, "HELIS -  MARKERS 3D"];
 
     	// OPEN CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
+		_window = _display displayCtrl D_C_CHELISMARKERS3D;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, true];
+		ctrlEnable [D_C_CHELISMARKERS3D, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsMarkers3d) = true;
+		GVAR(helisMarkers3d) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_UPMINFO'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugHelisHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugHelisHandle);
+		['CLOSE_UPMINFO'] call FUNC(debugHelisHandle);
 
 	};
 	case "CLOSE_MARKERS3D": {
 
 		// CLOSE CONTENT MARKERS3D
-		_window = _display displayCtrl D_C_CUNITSMARKERS3D;
+		_window = _display displayCtrl D_C_CHELISMARKERS3D;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSMARKERS3D, false];
+		ctrlEnable [D_C_CHELISMARKERS3D, false];
 
-		GVAR(unitsMarkers3d) = false;
+		GVAR(helisMarkers3d) = false;
 	};
 	case "OPEN_UPMINFO": {
 
-    	_ctrlText = _display displayCtrl D_C_WHUNITS;
-		ctrlSetText [D_C_WHUNITS, "UNITS -  UPM INFO"];
+    	_ctrlText = _display displayCtrl D_C_WHHELIS;
+		ctrlSetText [D_C_WHHELIS, "HELIS -  UPM INFO"];
 
     	// OPEN CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
+		_window = _display displayCtrl D_C_CHELISUPMINFO;
 		_window ctrlShow true;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, true];
+		ctrlEnable [D_C_CHELISUPMINFO, true];
 		ctrlSetFocus _window;
 
-		GVAR(unitsUPMInfo) = true;
+		GVAR(helisUPMInfo) = true;
 
 		// CLEAN CONTENT
-    	['CLOSE_GENERAL'] call FUNC(debugUnitsHandle);
-		['CLOSE_SPECTATOR'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS2D'] call FUNC(debugUnitsHandle);
-		['CLOSE_MARKERS3D'] call FUNC(debugUnitsHandle);
+    	['CLOSE_GENERAL'] call FUNC(debugHelisHandle);
+		['CLOSE_SPECTATOR'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS2D'] call FUNC(debugHelisHandle);
+		['CLOSE_MARKERS3D'] call FUNC(debugHelisHandle);
 
 	};
 	case "CLOSE_UPMINFO": {
 
 		// CLOSE CONTENT UPMINFO
-		_window = _display displayCtrl D_C_CUNITSUPMINFO;
+		_window = _display displayCtrl D_C_CHELISUPMINFO;
 		_window ctrlShow false;
 		_window ctrlCommit 0;
-		ctrlEnable [D_C_CUNITSUPMINFO, false];
+		ctrlEnable [D_C_CHELISUPMINFO, false];
 
-		GVAR(unitsUPMInfo) = false;
+		GVAR(helisUPMInfo) = false;
 	};
 };

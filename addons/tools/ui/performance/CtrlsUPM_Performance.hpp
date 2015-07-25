@@ -11,7 +11,7 @@ class PerformanceWindow: RscControlsGroup
 		// WINDOW
 		class PerformanceHeader: RscHeaderUPM_Window
 		{
-			idc = D_C_WHPERFOMANCE;
+			idc = D_C_WHPERFORMANCE;
 			x = 0;
 			y = 0;
 			w = 0.738 * safezoneW;
