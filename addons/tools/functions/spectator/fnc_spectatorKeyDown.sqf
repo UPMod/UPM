@@ -137,26 +137,79 @@ switch (_key) do {
 	};
 
 	case (DIK_ESCAPE): {
-	// Exit spectator
+
 		_return = true;
 
-		_this spawn {
-			disableSerialization;
-			_display = _this select 0;
-			_message = [
-				"Do you really want to quit?",
-				"UPM Debug/Spectator",
-				nil,
-				true,
-				_display
-			] call BIS_fnc_guiMessage;
+		switch (true) do
+		{
+			case (GVAR(environmentWindow)):
+			{
+				['CLOSE'] call FUNC(debugEnvironmentHandle);
+			};
+			case (GVAR(groupsWindow)):
+			{
+				['CLOSE'] call FUNC(debugGroupsHandle);
+			};
+			case (GVAR(heavyVehiclesWindow)):
+			{
+				['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+			};
+			case (GVAR(helisWindow)):
+			{
+				['CLOSE'] call FUNC(debugHelisHandle);
+			};
+			case (GVAR(lightVehiclesWindow)):
+			{
+				['CLOSE'] call FUNC(debugLightVehiclesHandle);
+			};
+			case (GVAR(navalWindow)):
+			{
+				['CLOSE'] call FUNC(debugNavalHandle);
+			};
+			case (GVAR(performanceWindow)):
+			{
+				['CLOSE'] call FUNC(debugPerformanceHandle);
+			};
+			case (GVAR(planesWindow)):
+			{
+				['CLOSE'] call FUNC(debugPlanesHandle);
+			};
+			case (GVAR(settingsWindow)):
+			{
+				['CLOSE'] call FUNC(debugSettingsHandle);
+			};
+			case (GVAR(staticsWindow)):
+			{
+				['CLOSE'] call FUNC(debugStaticsHandle);
+			};
+			case (GVAR(unitsWindow)):
+			{
+				['CLOSE'] call FUNC(debugUnitsHandle);
+			};
 
-			if (_message) then {
-				_display closeDisplay 2;
+			default
+			{
+				// Exit spectator
+				_this spawn {
+					disableSerialization;
+					_display = _this select 0;
+					_message = [
+						"Do you really want to quit?",
+						"UPM Debug/Spectator",
+						nil,
+						true,
+						_display
+					] call BIS_fnc_guiMessage;
+
+					if (_message) then {
+						_display closeDisplay 2;
+					};
+				};
 			};
 		};
 
 	};
+
 	default {};
 };
 
