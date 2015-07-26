@@ -34,6 +34,18 @@ _display = GETUVAR(upm_RscTools,displayNull);
 switch (_action) do {
     case "OPEN": {
 
+		// CLOSE ALL
+		['CLOSE'] call FUNC(debugEnvironmentHandle);
+		['CLOSE'] call FUNC(debugGroupsHandle);
+		['CLOSE'] call FUNC(debugHeavyVehiclesHandle);
+		['CLOSE'] call FUNC(debugHelisHandle);
+		['CLOSE'] call FUNC(debugLightVehiclesHandle);
+		['CLOSE'] call FUNC(debugNavalHandle);
+		['CLOSE'] call FUNC(debugPerformanceHandle);
+		['CLOSE'] call FUNC(debugPlanesHandle);
+		['CLOSE'] call FUNC(debugSettingsHandle);
+		['CLOSE'] call FUNC(debugStaticsHandle);
+
     	// OPEN MAIN WINDOW UNITS
 		_window = _display displayCtrl D_C_WUNITS;
 		_window ctrlShow true;

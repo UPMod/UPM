@@ -33,7 +33,7 @@ class RscUPM_Tools
 			w = "0.8 * safezoneW";
 			h = "0.8 * safezoneH";
 		};
-		
+
 		#include <main_ui\CtrlsUPM_MenuLeftBG.hpp>
 	};
 	class Controls
@@ -42,7 +42,16 @@ class RscUPM_Tools
 		#include <main_ui\CtrlsUPM_Bar.hpp>
 
 		// WINDOWS
+		#include <environment\CtrlsUPM_Environment.hpp>
+		#include <groups\CtrlsUPM_Groups.hpp>
+		#include <heavy_vehicles\CtrlsUPM_HeavyVehicles.hpp>
+		#include <helis\CtrlsUPM_Helis.hpp>
+		#include <light_vehicles\CtrlsUPM_LightVehicles.hpp>
+		#include <naval\CtrlsUPM_Naval.hpp>
+		#include <performance\CtrlsUPM_Performance.hpp>
+		#include <planes\CtrlsUPM_Planes.hpp>
+		#include <settings\CtrlsUPM_Settings.hpp>
+		#include <statics\CtrlsUPM_Statics.hpp>
 		#include <units\CtrlsUPM_Units.hpp>
-
 	};
 };
