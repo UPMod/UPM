@@ -26,5 +26,5 @@ if (!isServer && hasInterface ) exitWith {};
 
 if !(GVAR(start)) exitWith{};
 
-// Loop for init all groups every time needed
-[FUNC(handleGroupInit), 20] call CBA_fnc_addPerFrameHandler;
+// INIT ALL GROUPS
+[] call FUNC(groupsHandleInit);

@@ -22,20 +22,18 @@ Returns:
 
 #include "script_component.hpp";
 
-PARAMS_1(_arrParams);
-
 private [
-		"_params","_object",
-		"_grpLeader","_grp","_grpName","_grpMembers","_grpId","_grpPosition","_grpDirection","_grpBeh", "_grpSpeed","_grpForm","_grpType","_grpCopyMembers",
-		"_marker","_shape",
-	 	"_random","_delete","_radioRange"
-	 ];
+	"_params","_object",
+	"_grpLeader","_grp","_grpName","_grpMembers","_grpId","_grpPosition","_grpDirection","_grpBeh", "_grpSpeed","_grpForm","_grpType","_grpCopyMembers",
+	"_marker","_shape",
+ 	"_random","_delete","_radioRange"
+];
 
 // INIT AND CHECK ----------------------------------------------- //
 //----------------------------------------------------------------//
 
 //Get params and convert all string parameters to uppercase
-_params = [_arrParams] call FUNC(arrStrToUpper);
+_params = [_this] call FUNC(arrStrToUpper);
 
 // Check if exist min 2 parameters on init leader of group
 if ((count _params)<2) exitWith {

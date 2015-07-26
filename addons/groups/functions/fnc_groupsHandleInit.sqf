@@ -29,6 +29,6 @@ private ["_grp"];
 
 	_grp call FUNC(groupBuild);
 
-	GVAR(init) = GVAR(init) - [_grp];
+	GVAR(init) = GVAR(init) - _grp;
 
 } count GVAR(init) > 0;

@@ -24,4 +24,4 @@ Returns:
 
 if (!isServer && hasInterface ) exitWith {};
 
-GVAR(init) pushBack [_this];
+GVAR(init) pushBack _this;
