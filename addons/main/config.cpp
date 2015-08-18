@@ -578,3 +578,6 @@ class CfgSettings {
 };
 
 #include "CfgModuleCategories.hpp"
+#include "CfgVehicles.hpp"
+#include "CfgEventHandlers.hpp"
+#include "CfgFunctions.hpp"
