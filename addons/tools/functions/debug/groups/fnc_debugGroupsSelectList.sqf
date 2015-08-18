@@ -26,7 +26,7 @@ disableserialization;
 
 private [
 	"_selectedList", "_list","_index",
-	"_unit", "_side","_color"
+	"_grp","_grpLeader", "_side","_color"
 ];
 
 if (isNil {GVAR(selectedList)}) exitWith {};
@@ -37,18 +37,19 @@ _list = D_C_GROUPSSPELISTBOX;
 lbClear _list;
 
 {
-	_unit = _x;
+	_grp = _x;
+	_grpLeader = leader _grp;
 
-	if(alive _unit) then {
+	if(alive _grpLeader) then {
 
-		_side = side _unit;
+		_side = side _grpLeader;
 
 		switch (_selectedList) do {
 			case "BLUFOR": {
 				if(_side == west) then {
 					_color = [0,0.2,0.4,0.7];
-					_index = lbAdd [_list, name _unit];
-					lbSetData [_list, _index, str _unit];
+					_index = lbAdd [_list, name _grpLeader];
+					lbSetData [_list, _index, str _grpLeader];
 					lbSetColor [_list, _index, _color];
 				};
 			};
@@ -56,8 +57,8 @@ lbClear _list;
 			case "OPFOR" : {
 				if(_side == east) then {
 					_color = [0.502,0,0,0.7];
-					_index = lbAdd [_list, name _unit];
-					lbSetData [_list, _index, str _unit];
+					_index = lbAdd [_list, name _grpLeader];
+					lbSetData [_list, _index, str _grpLeader];
 					lbSetColor [_list, _index, _color];
 				};
 			};
@@ -65,8 +66,8 @@ lbClear _list;
 			case "INDEPENDENTS" : {
 				if(_side == independent) then {
 					_color = [0.071,0.278,0.071,0.7];
-					_index = lbAdd [_list, name _unit];
-					lbSetData [_list, _index, str _unit];
+					_index = lbAdd [_list, name _grpLeader];
+					lbSetData [_list, _index, str _grpLeader];
 					lbSetColor [_list, _index, _color];
 				};
 			};
@@ -74,17 +75,17 @@ lbClear _list;
 			case "CIVILIANS" : {
 				if(_side == civilian) then {
 					_color = [0.373,0.016,0.706,0.7];
-					_index = lbAdd [_list, name _unit];
-					lbSetData [_list, _index, str _unit];
+					_index = lbAdd [_list, name _grpLeader];
+					lbSetData [_list, _index, str _grpLeader];
 					lbSetColor [_list, _index, _color];
 				};
 			};
 
 			case "PLAYERS" : {
-				if(isPlayer _unit) then {
+				if(isPlayer _grpLeader) then {
 					_color = [0.682,0.447,0.216,0.7];
-					_index = lbAdd [_list, name _unit];
-					lbSetData [_list, _index, str _unit];
+					_index = lbAdd [_list, name _grpLeader];
+					lbSetData [_list, _index, str _grpLeader];
 					lbSetColor [_list, _index, _color];
 				};
 			};

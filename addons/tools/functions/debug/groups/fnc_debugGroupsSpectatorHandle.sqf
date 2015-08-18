@@ -25,17 +25,18 @@ Returns:
 disableSerialization;
 
 private [
-	"_unit",
+	"_grp",
 	"_list"
 ];
 
 _list = D_C_GROUPSSPELISTBOX;
 
 {
-	_unit = _x;
+	_grp = _x;
+	_grpLeader = leader _grp;
 
-	if ((lbData [_list, lbCurSel _list]) == (str _unit)) exitWith {
-		GVAR(spectateUnit) = _unit;
+	if ((lbData [_list, lbCurSel _list]) == (str _grpLeader)) exitWith {
+		GVAR(spectateUnit) = _grpLeader;
 		GVAR(prespective) = GVAR(groupSpectatorPrespective);
 		[] call FUNC(spectatorSelectView);
 	};
