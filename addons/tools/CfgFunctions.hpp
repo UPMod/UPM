@@ -92,6 +92,11 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugInit);
 			};
+			// upm_fnc_debugTmpInit
+			class debugTmpInit
+			{
+				file = PATHF_SUB(debug,debugTmpInit);
+			};
 			// Common =================================
 			// ========================================
 			// upm_fnc_debugLists

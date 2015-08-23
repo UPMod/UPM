@@ -140,3 +140,5 @@ GVAR(unitsUPMInfo) = false;
 
 
 [FUNC(debugLists),1] call CBA_fnc_addPerFrameHandler;
+
+[FUNC(debugTmpInit),5] call CBA_fnc_addPerFrameHandler;
