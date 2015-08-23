@@ -233,6 +233,25 @@ Author:
     [THIS_FILE_, __LINE__, TITLE, MESSAGE] call CBA_fnc_error;
 
 /* -------------------------------------------
+Macro: MESSAGE_WITH_TITLE()
+    Record a single line, timestamped log entry in the RPT log.
+
+Parameters:
+    TITLE - Title of log message [String]
+    MESSAGE -  Body of message [String]
+
+Example:
+    (begin example)
+        MESSAGE_WITH_TITLE("Value found","Value of frog found in config <someconfig>");
+    (end)
+
+Author:
+    Killswitch
+------------------------------------------- */
+#define MESSAGE_WITH_TITLE(TITLE,MESSAGE) \
+    [THIS_FILE_, __LINE__, TITLE + ': ' + (MESSAGE)] call CBA_fnc_log;
+
+/* -------------------------------------------
 Macro: RETNIL()
     If a variable is undefined, return the value nil. Otherwise, return the
     variable itself.
@@ -851,6 +870,8 @@ Author:
 
 /* -------------------------------------------
 Macros: EXPLODE_n()
+    DEPRECATED - Use param/params commands added in Arma 3 1.48
+
     Splitting an ARRAY into a number of variables (A, B, C, etc).
 
     Note that this NOT does make the created variables private.
@@ -873,65 +894,74 @@ Parameters:
 Example:
     (begin example)
         _array = ["fred", 156.8, 120.9];
-        EXPLODE_3(_array,_name_height,_weight);
+        EXPLODE_3(_array,_name,_height,_weight);
     (end)
 
 Author:
     Spooner
 ------------------------------------------- */
-#define EXPLODE_1_SYS(ARRAY,A) A = if (IS_ARRAY((ARRAY))) then { (ARRAY) select 0 } else { ARRAY }
+#define EXPLODE_1_SYS(ARRAY,A) A = ARRAY param [0]
 #define EXPLODE_1(ARRAY,A) EXPLODE_1_SYS(ARRAY,A); TRACE_1("EXPLODE_1, " + QUOTE(ARRAY),A)
-#define EXPLODE_1_PVT(ARRAY,A) \
-    private #A; \
-    EXPLODE_1(ARRAY,A)
+#define EXPLODE_1_PVT(ARRAY,A) ARRAY params [#A]; TRACE_1("EXPLODE_1, " + QUOTE(ARRAY),A)
 
-#define EXPLODE_2_SYS(ARRAY,A,B) EXPLODE_1_SYS(ARRAY,A); B = (ARRAY) select 1
+#define EXPLODE_2_SYS(ARRAY,A,B) EXPLODE_1_SYS(ARRAY,A); B = ARRAY param [1]
 #define EXPLODE_2(ARRAY,A,B) EXPLODE_2_SYS(ARRAY,A,B); TRACE_2("EXPLODE_2, " + QUOTE(ARRAY),A,B)
-#define EXPLODE_2_PVT(ARRAY,A,B) \
-    private [#A,#B]; \
-    EXPLODE_2(ARRAY,A,B)
+#define EXPLODE_2_PVT(ARRAY,A,B) ARRAY params [#A,#B]; TRACE_2("EXPLODE_2, " + QUOTE(ARRAY),A,B)
 
-#define EXPLODE_3_SYS(ARRAY,A,B,C) EXPLODE_2_SYS(ARRAY,A,B); C = (ARRAY) select 2
+#define EXPLODE_3_SYS(ARRAY,A,B,C) EXPLODE_2_SYS(ARRAY,A,B); C = ARRAY param [2]
 #define EXPLODE_3(ARRAY,A,B,C) EXPLODE_3_SYS(ARRAY,A,B,C); TRACE_3("EXPLODE_3, " + QUOTE(ARRAY),A,B,C)
-#define EXPLODE_3_PVT(ARRAY,A,B,C) \
-    private [#A,#B,#C]; \
-    EXPLODE_3(ARRAY,A,B,C)
+#define EXPLODE_3_PVT(ARRAY,A,B,C) ARRAY params [#A,#B,#C]; TRACE_3("EXPLODE_3, " + QUOTE(ARRAY),A,B,C)
 
-#define EXPLODE_4_SYS(ARRAY,A,B,C,D) EXPLODE_3_SYS(ARRAY,A,B,C); D = (ARRAY) select 3
+#define EXPLODE_4_SYS(ARRAY,A,B,C,D) EXPLODE_3_SYS(ARRAY,A,B,C); D = ARRAY param [3]
 #define EXPLODE_4(ARRAY,A,B,C,D) EXPLODE_4_SYS(ARRAY,A,B,C,D); TRACE_4("EXPLODE_4, " + QUOTE(ARRAY),A,B,C,D)
-#define EXPLODE_4_PVT(ARRAY,A,B,C,D) \
-    private [#A,#B,#C,#D]; \
-    EXPLODE_4(ARRAY,A,B,C,D)
+#define EXPLODE_4_PVT(ARRAY,A,B,C,D) ARRAY params [#A,#B,#C,#D]; TRACE_4("EXPLODE_4, " + QUOTE(ARRAY),A,B,C,D)
 
-#define EXPLODE_5_SYS(ARRAY,A,B,C,D,E) EXPLODE_4_SYS(ARRAY,A,B,C,D); E = (ARRAY) select 4
+#define EXPLODE_5_SYS(ARRAY,A,B,C,D,E) EXPLODE_4_SYS(ARRAY,A,B,C,D); E = ARRAY param [4]
 #define EXPLODE_5(ARRAY,A,B,C,D,E) EXPLODE_5_SYS(ARRAY,A,B,C,D,E); TRACE_5("EXPLODE_5, " + QUOTE(ARRAY),A,B,C,D,E)
-#define EXPLODE_5_PVT(ARRAY,A,B,C,D,E) \
-    private [#A,#B,#C,#D,#E]; \
-    EXPLODE_5(ARRAY,A,B,C,D,E)
+#define EXPLODE_5_PVT(ARRAY,A,B,C,D,E) ARRAY params [#A,#B,#C,#D,#E]; TRACE_5("EXPLODE_5, " + QUOTE(ARRAY),A,B,C,D,E)
 
-#define EXPLODE_6_SYS(ARRAY,A,B,C,D,E,F) EXPLODE_5_SYS(ARRAY,A,B,C,D,E); F = (ARRAY) select 5
+#define EXPLODE_6_SYS(ARRAY,A,B,C,D,E,F) EXPLODE_5_SYS(ARRAY,A,B,C,D,E); F = ARRAY param [5]
 #define EXPLODE_6(ARRAY,A,B,C,D,E,F) EXPLODE_6_SYS(ARRAY,A,B,C,D,E,F); TRACE_6("EXPLODE_6, " + QUOTE(ARRAY),A,B,C,D,E,F)
-#define EXPLODE_6_PVT(ARRAY,A,B,C,D,E,F) \
-    private [#A,#B,#C,#D,#E,#F]; \
-    EXPLODE_6(ARRAY,A,B,C,D,E,F)
+#define EXPLODE_6_PVT(ARRAY,A,B,C,D,E,F) ARRAY params [#A,#B,#C,#D,#E,#F]; TRACE_6("EXPLODE_6, " + QUOTE(ARRAY),A,B,C,D,E,F)
 
-#define EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G) EXPLODE_6_SYS(ARRAY,A,B,C,D,E,F); G = (ARRAY) select 6
+#define EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G) EXPLODE_6_SYS(ARRAY,A,B,C,D,E,F); G = ARRAY param [6]
 #define EXPLODE_7(ARRAY,A,B,C,D,E,F,G) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); TRACE_7("EXPLODE_7, " + QUOTE(ARRAY),A,B,C,D,E,F,G)
-#define EXPLODE_7_PVT(ARRAY,A,B,C,D,E,F,G) \
-    private [#A,#B,#C,#D,#E,#F,#G]; \
-    EXPLODE_7(ARRAY,A,B,C,D,E,F,G)
+#define EXPLODE_7_PVT(ARRAY,A,B,C,D,E,F,G) ARRAY params [#A,#B,#C,#D,#E,#F,#G]; TRACE_7("EXPLODE_7, " + QUOTE(ARRAY),A,B,C,D,E,F,G)
 
-#define EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); H = (ARRAY) select 7
+#define EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_7_SYS(ARRAY,A,B,C,D,E,F,G); H = ARRAY param [7]
 #define EXPLODE_8(ARRAY,A,B,C,D,E,F,G,H) EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H); TRACE_8("EXPLODE_8, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H)
-#define EXPLODE_8_PVT(ARRAY,A,B,C,D,E,F,G,H) \
-    private [#A,#B,#C,#D,#E,#F,#G,#H]; \
-    EXPLODE_8(ARRAY,A,B,C,D,E,F,G,H)
+#define EXPLODE_8_PVT(ARRAY,A,B,C,D,E,F,G,H) ARRAY params [#A,#B,#C,#D,#E,#F,#G,#H]; TRACE_8("EXPLODE_8, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H)
 
-#define EXPLODE_9_SYS(ARRAY,A,B,C,D,E,F,G,H,I) EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H); I = (ARRAY) select 8
+#define EXPLODE_9_SYS(ARRAY,A,B,C,D,E,F,G,H,I) EXPLODE_8_SYS(ARRAY,A,B,C,D,E,F,G,H); I = ARRAY param [8]
 #define EXPLODE_9(ARRAY,A,B,C,D,E,F,G,H,I) EXPLODE_9_SYS(ARRAY,A,B,C,D,E,F,G,H,I); TRACE_9("EXPLODE_9, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H,I)
-#define EXPLODE_9_PVT(ARRAY,A,B,C,D,E,F,G,H,I) \
-    private [#A,#B,#C,#D,#E,#F,#G,#H,#I]; \
-    EXPLODE_9(ARRAY,A,B,C,D,E,F,G,H,I)
+#define EXPLODE_9_PVT(ARRAY,A,B,C,D,E,F,G,H,I) ARRAY params [#A,#B,#C,#D,#E,#F,#G,#H,#I]; TRACE_9("EXPLODE_9, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H,I)
+
+/* -------------------------------------------
+Macro: xSTRING()
+    Get full string identifier from a stringtable owned by this component.
+
+Parameters:
+    VARIABLE - Partial name of global variable owned by this component [Any].
+
+Example:
+    ADDON is CBA_Balls.
+    (begin example)
+        // Localized String (localize command must still be used with it)
+        LSTRING(Example); // STR_CBA_Balls_Example;
+        // Config String (note the $)
+        CSTRING(Example); // $STR_CBA_Balls_Example;
+    (end)
+
+Author:
+    Jonpas
+------------------------------------------- */
+#ifndef STRING_MACROS_GUARD
+#define STRING_MACROS_GUARD
+    #define LSTRING(var1) QUOTE(TRIPLES(STR,ADDON,var1))
+    #define ELSTRING(var1,var2) QUOTE(TRIPLES(STR,DOUBLES(PREFIX,var1),var2))
+    #define CSTRING(var1) QUOTE(TRIPLES($STR,ADDON,var1))
+    #define ECSTRING(var1,var2) QUOTE(TRIPLES($STR,DOUBLES(PREFIX,var1),var2))
+#endif
 
 
 /* -------------------------------------------
@@ -940,6 +970,8 @@ Group: Managing Function Parameters
 
 /* -------------------------------------------
 Macros: PARAMS_n()
+    DEPRECATED - Use param/params commands added in Arma 3 1.48
+
     Setting variables based on parameters passed to a function.
 
     Each parameter is defines as private and set to the appropriate value from _this.
@@ -984,6 +1016,8 @@ Author:
 
 /* -------------------------------------------
 Macro: DEFAULT_PARAM()
+    DEPRECATED - Use param/params commands added in Arma 3 1.48
+
     Getting a default function parameter. This may be used together with <PARAMS_n()> to have a mix of required and
     optional parameters.
 
@@ -1014,8 +1048,9 @@ Author:
     Spooner
 ------------------------------------------- */
 #define DEFAULT_PARAM(INDEX,NAME,DEF_VALUE) \
-    private #NAME; \
-    NAME = [RETNIL(_this), INDEX, DEF_VALUE] call CBA_fnc_defaultParam; \
+    private [#NAME,"_this"]; \
+    ISNILS(_this,[]); \
+    NAME = _this param [INDEX, DEF_VALUE]; \
     TRACE_3("DEFAULT_PARAM",INDEX,NAME,DEF_VALUE)
 
 /* -------------------------------------------
@@ -1133,6 +1168,122 @@ Author:
     if (isNil VARIABLE) then \
     { \
         ASSERTION_ERROR('Assertion (VARIABLE is defined) failed!\n\n' + (MESSAGE)); \
+    }
+
+/* -------------------------------------------
+Group: Unit tests
+------------------------------------------- */
+#define TEST_SUCCESS(MESSAGE) MESSAGE_WITH_TITLE("Test OK",MESSAGE)
+#define TEST_FAIL(MESSAGE) ERROR_WITH_TITLE("Test FAIL",MESSAGE)
+
+/* -------------------------------------------
+Macro: TEST_TRUE()
+    Tests that a CONDITION is true.
+    If the condition is not true, an error is raised with the given MESSAGE.
+
+Parameters:
+    CONDITION - Condition to assert as true [Boolean]
+    MESSSAGE - Message to display if (A OPERATOR B) is false [String]
+
+Example:
+    (begin example)
+        TEST_TRUE(_frogIsDead,"The frog is alive");
+    (end)
+
+Author:
+    Killswitch
+------------------------------------------- */
+#define TEST_TRUE(CONDITION, MESSAGE) \
+    if (CONDITION) then \
+    { \
+        TEST_SUCCESS('(CONDITION)'); \
+    } \
+    else \
+    { \
+        TEST_FAIL('(CONDITION) ' + (MESSAGE)); \
+    }
+
+/* -------------------------------------------
+Macro: TEST_FALSE()
+    Tests that a CONDITION is false.
+    If the condition is not false, an error is raised with the given MESSAGE.
+
+Parameters:
+    CONDITION - Condition to test as false [Boolean]
+    MESSSAGE - Message to display if (A OPERATOR B) is true [String]
+
+Example:
+    (begin example)
+        TEST_FALSE(_frogIsDead,"The frog died");
+    (end)
+
+Author:
+    Killswitch
+------------------------------------------- */
+#define TEST_FALSE(CONDITION, MESSAGE) \
+    if (not (CONDITION)) then \
+    { \
+        TEST_SUCCESS('(not (CONDITION))'); \
+    } \
+    else \
+    { \
+        TEST_FAIL('(not (CONDITION)) ' + (MESSAGE)); \
+    }
+
+/* -------------------------------------------
+Macro: TEST_OP()
+    Tests that (A OPERATOR B) is true.
+    If the test fails, an error is raised with the given MESSAGE.
+
+Parameters:
+    A - First value [Any]
+    OPERATOR - Binary operator to use [Operator]
+    B - Second value [Any]
+    MESSSAGE - Message to display if (A OPERATOR B)  is false. [String]
+
+Example:
+    (begin example)
+        TEST_OP(_fish,>,5,"Too few fish!");
+    (end)
+
+Author:
+    Killswitch
+------------------------------------------- */
+#define TEST_OP(A,OPERATOR,B,MESSAGE) \
+    if ((A) OPERATOR (B)) then \
+    { \
+        TEST_SUCCESS('(A OPERATOR B)') \
+    } \
+    else \
+    { \
+        TEST_FAIL('(A OPERATOR B)') \
+    };
+
+/* -------------------------------------------
+Macro: TEST_DEFINED()
+    Tests that a VARIABLE is defined.
+
+Parameters:
+    VARIABLE - Variable to test if defined [String or Function].
+    MESSAGE - Message to display if variable is undefined [String].
+
+Examples:
+    (begin example)
+        TEST_DEFINED("_anUndefinedVar","Too few fish!");
+        TEST_DEFINED({ obj getVariable "anUndefinedVar" },"Too many fish!");
+    (end)
+
+Author:
+    Killswitch
+------------------------------------------- */
+#define TEST_DEFINED(VARIABLE,MESSAGE) \
+    if (not isNil VARIABLE) then \
+    { \
+        TEST_SUCCESS('(' + VARIABLE + ' is defined)'); \
+    } \
+    else \
+    { \
+        TEST_FAIL('(' + VARIABLE + ' is not defined)' + (MESSAGE)); \
     }
 
 /* -------------------------------------------
