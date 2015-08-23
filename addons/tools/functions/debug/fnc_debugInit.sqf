@@ -26,7 +26,7 @@ Returns:
 //----------------------------------------------------------------//
 
 // Global
-GVAR(state) = true;
+GVAR(exitTools) = true;
 
 // Lists
 GVAR(listUnits) = [];

@@ -25,7 +25,7 @@ Returns:
 // GLOBAL VARIABLES --------------------------------------------- //
 //----------------------------------------------------------------//
 
-GVAR(state) = nil;
+GVAR(exitTools) = nil;
 
 GVAR(listUnits) = nil;
 GVAR(listLightVehicles) = nil;

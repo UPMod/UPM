@@ -103,6 +103,6 @@ GVAR(listNaval) = _tmpNaval;
 GVAR(listStatics) = _tmpStatics;
 GVAR(listGroups) = _tmpGroups;
 
-if !(GVAR(state)) then {
+if !(GVAR(exitTools)) then {
 	[_pfh] call CBA_fnc_removePerFrameHandler;
 };
