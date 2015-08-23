@@ -92,11 +92,6 @@ class CfgFunctions
 			{
 				file = PATHF_SUB(debug,debugInit);
 			};
-			// upm_fnc_debugUpdate
-			class debugUpdate
-			{
-				file = PATHF_SUB(debug,debugUpdate);
-			};
 			// Common =================================
 			// ========================================
 			// upm_fnc_debugLists

@@ -137,3 +137,6 @@ GVAR(unitsSpectator) = false;
 GVAR(unitsMarkers2d) = false;
 GVAR(unitsMarkers3d) = false;
 GVAR(unitsUPMInfo) = false;
+
+
+[FUNC(debugLists),1] call CBA_fnc_addPerFrameHandler;
