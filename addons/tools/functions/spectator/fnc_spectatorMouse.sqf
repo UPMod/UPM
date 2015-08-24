@@ -8,7 +8,7 @@ File:
 	fnc_spectatorMouse.sqf
 
 Description:
-	Spectator Mouse
+	Spectator Mouse movement
 
 Performance:
 	0 ms
