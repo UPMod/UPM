@@ -25,3 +25,6 @@ Returns:
 if (!isServer && hasInterface ) exitWith {};
 
 GVAR(start) = false;
+
+GVAR(listHcs) = [];
+GVAR(timeLoopHC) = 1;

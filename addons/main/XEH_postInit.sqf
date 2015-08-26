@@ -26,5 +26,13 @@ if (!isServer && hasInterface ) exitWith {};
 
 if !(GVAR(start)) exitWith{};
 
+// INIT HEADLESS CLIENT
+[] call FUNC(hcInit);
+
+[format["%1",GVAR(timeLoopHC)],2] call FUNC(debug);
+
+// HANDLE HEADLESS CLIENT
+[FUNC(hcHandleGroups),1] call CBA_fnc_addPerFrameHandler;
+
 // INIT ALL GROUPS
 [] call FUNC(groupsHandleInit);
